@@ -1,0 +1,49 @@
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "missionMacros.h"
+#define MODULES_DIRECTORY node_modules
+
+author = "Fusselwurm";
+loadScreen = "";
+onLoadName = $STR_GRAD_onLoadName;
+onLoadMission = $STR_GRAD_onLoadMission;
+onLoadMissionTime = false;
+overviewPicture = "";
+overviewText = $STR_GRAD_overviewText;
+
+disabledAI = 0;
+enableDebugConsole = 1;
+
+respawn = 3;
+respawnDelay = 9999999;
+respawnTemplates[] = {"ace_spectator"};
+
+class Header
+{
+	gameType = RPG;
+	minPlayers = 15;
+	maxPlayers = 99;
+};
+
+class Params
+{
+	class DebugMode
+	{
+		title = $STR_GRAD_debugMode;
+		values[] = {0,1};
+		texts[] = {$STR_GRAD_no, $STR_GRAD_yes};
+		default = 0;
+	};
+};
+
+class CfgFunctions {
+    #include "node_modules\grad-loadout\cfgFunctions.hpp"
+
+    class Mission {
+        class Setup {
+            PATHTO_FNC(setAllSidesFriendly);
+        };
+    };
+};
+
+#include "aceOptions.h"
+#include "loadouts.h"

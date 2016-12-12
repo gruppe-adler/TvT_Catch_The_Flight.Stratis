@@ -1,0 +1,22 @@
+{
+    "author": "Moritz Schmidt <fusselwurm@gmail.com>",
+    "version": "0.1.0",
+    "contributors": [{
+        "name": "Moritz Schmidt",
+        "email": "fusselwurm@gmail.com"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gruppe-adler/TvT_Where_is_the_Escape_from_Rat_Life.Stratis"
+    },
+    "bugs": {
+        "url": "https://github.com/gruppe-adler/TvT_Where_is_the_Escape_from_Rat_Life.Stratis/issues"
+    },
+    "keywords": [
+        "arma3",
+        "tvt"
+    ],
+    "dependencies": {
+        "grad-loadout": "^4.4.0"
+    }
+}

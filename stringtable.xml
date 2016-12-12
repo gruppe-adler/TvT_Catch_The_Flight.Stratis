@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="TvT_Where_is_the_Escape_from_Rat_Life">
+	<Package name="TvT_Where_is_the_Escape_from_Rat_Life_package">
+        <Container name="description">
+			<Key ID="str_GRAD_onLoadName">
+				<Original>Where is the Escape from Rat Life</Original>
+				<German>Where is the Escape from Rat Life</German>
+			</Key>
+			<Key ID="str_GRAD_onLoadMission">
+				<Original>The authorities are hunting a certain someone who needs to escape.</Original>
+				<German></German>
+			</Key>
+			<Key ID="str_GRAD_overviewText">
+				<Original>
+				</Original>
+				<German>
+				</German>
+			</Key>
+
+			<Key ID="str_GRAD_debugMode">
+				<Original>debug mode</Original>
+				<German>Debugmodus</German>
+			</Key>
+			<Key ID="str_GRAD_no">
+				<Original>no</Original>
+				<German>nein</German>
+			</Key>
+			<Key ID="str_GRAD_yes">
+				<Original>yes</Original>
+				<German>ja</German>
+			</Key>
+			<Key ID="str_GRAD_blu">
+				<Original>BLUFOR</Original>
+				<German>BLUFOR</German>
+			</Key>
+		</Container>
+	</Package>
+</Project>
