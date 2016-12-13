@@ -16,6 +16,7 @@ if (isServer) then {
 if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;
+    player addEventhandler ["HandleRating", {0}];
 };
 
 [] execVM "loadouts.sqf";
