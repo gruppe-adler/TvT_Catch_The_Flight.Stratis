@@ -19,3 +19,9 @@ if (hasInterface) then {
 };
 
 [] execVM "loadouts.sqf";
+
+
+1 enableChannel false;
+2 enableChannel false;
+3 enableChannel false;
+[1, 2, 3] call Mission_fnc_disableMarkerChannels;

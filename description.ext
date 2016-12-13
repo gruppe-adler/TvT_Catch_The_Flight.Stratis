@@ -42,6 +42,7 @@ class CfgFunctions {
         class Setup {
             PATHTO_FNC(setAllSidesFriendly);
             PATHTO_FNC(limitOffroadSpeed);
+            PATHTO_FNC(disableMarkerChannels);            
         };
     };
 };
