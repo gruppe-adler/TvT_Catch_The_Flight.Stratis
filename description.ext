@@ -41,6 +41,7 @@ class CfgFunctions {
     class Mission {
         class Setup {
             PATHTO_FNC(setAllSidesFriendly);
+            PATHTO_FNC(limitOffroadSpeed);
         };
     };
 };
