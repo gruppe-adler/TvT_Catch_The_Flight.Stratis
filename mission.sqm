@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=209;
+		nextID=211;
 	};
 	class Camera
 	{
@@ -32,13 +32,14 @@ addons[]=
 	"ace_zeus",
 	"A3_Armor_F_Gamma_MBT_01",
 	"ace_cookoff",
-	"ace_realisticnames"
+	"ace_realisticnames",
+	"ga_heli"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -115,6 +116,11 @@ class AddonsMetaData
 			name="ACE3 - Cook off";
 			author="ACE-Team";
 			url="http://ace3mod.com/";
+		};
+		class Item11
+		{
+			className="ga_heli";
+			name="ga_heli";
 		};
 	};
 };
@@ -213,7 +219,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=60;
+		items=61;
 		class Item0
 		{
 			dataType="Object";
@@ -382,8 +388,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2649.3484,62.692631,582.6369};
-						angles[]={6.0101771,0.69184852,0.012501417};
+						position[]={2643.1929,64.785973,631.48602};
+						angles[]={0.017500184,0.69184852,6.1909471};
 					};
 					side="Independent";
 					flags=6;
@@ -392,11 +398,11 @@ class Mission
 						rank="CAPTAIN";
 						name="unit_indep_c";
 						description="Platoon Leader";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=90;
 					type="I_officer_F";
-					atlOffset=3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -426,7 +432,6 @@ class Mission
 			{
 			};
 			id=89;
-			atlOffset=3.8146973e-006;
 		};
 		class Item6
 		{
@@ -1439,7 +1444,6 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						isPlayer=1;
 					};
 					id=160;
 					type="I_Survivor_F";
@@ -2236,7 +2240,6 @@ class Mission
 				sizeB=6000;
 				activationBy="GUER";
 				isRectangle=1;
-				isServerOnly=1;
 			};
 			id=198;
 			type="EmptyDetector";
@@ -2291,12 +2294,12 @@ class Mission
 			{
 				name="trigger_win_indep_escape_4";
 				text="trigger_win_indep_escape_2";
+				condition="this && isServer";
 				onActivation="[] call Mission_fnc_win_indep_escape;";
 				sizeA=2000;
 				sizeB=5000;
 				activationBy="GUER";
 				isRectangle=1;
-				isServerOnly=1;
 			};
 			id=201;
 			type="EmptyDetector";
@@ -2542,6 +2545,22 @@ class Mission
 			id=208;
 			type="B_MBT_01_cannon_F";
 			atlOffset=-0.020539284;
+		};
+		class Item60
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2646.9648,67.269936,603.04657};
+				angles[]={6.2083244,0,0.042475242};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=209;
+			type="AH6_Tropentarn";
 		};
 	};
 	class Connections

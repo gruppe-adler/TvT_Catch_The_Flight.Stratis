@@ -21,6 +21,7 @@ if (hasInterface) then {
 	enableSentences false;
     player addEventhandler ["HandleRating", {0}];
     player call Mission_fnc_preventOtherSidesFromStealing;
+    player call Mission_fnc_setup_tasks;
 };
 
 [] execVM "loadouts.sqf";

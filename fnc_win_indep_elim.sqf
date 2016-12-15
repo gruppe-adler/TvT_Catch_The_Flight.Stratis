@@ -1,3 +1,5 @@
+hint "elimination win for indep triggered";
+
 {
     [] call Mission_fnc_update_task_survive;
 
@@ -9,10 +11,13 @@
     };
 
     task_main_objective setTaskState _mainObjectiveState;
-} remoteExec ["BIS_fnc_call", [WEST, EAST, CIVILIAN, RESISTANCE], true];
 
-sleep 5;
+    [
+        {
+            ["end1", ('SUCCEEDED' == (taskState task_main_objective) )] call BIS_fnc_endMission;
+        },
+        [],
+        5
+    ]  call CBA_fnc_waitAndExecute;
 
-{
-	["end1", ('SUCCEEDED' == (taskState task_main_objective) )] call BIS_fnc_endMission
 } remoteExec ["BIS_fnc_call", [WEST, EAST, CIVILIAN, RESISTANCE], true];
