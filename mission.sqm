@@ -2240,6 +2240,7 @@ class Mission
 				sizeB=6000;
 				activationBy="GUER";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=198;
 			type="EmptyDetector";
@@ -2289,17 +2290,17 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={-961.94,10.747208,168.032};
-			angle=2.6179931;
+			angle=2.6179938;
 			class Attributes
 			{
 				name="trigger_win_indep_escape_4";
 				text="trigger_win_indep_escape_2";
-				condition="this && isServer";
 				onActivation="[] call Mission_fnc_win_indep_escape;";
 				sizeA=2000;
 				sizeB=5000;
 				activationBy="GUER";
 				isRectangle=1;
+				isServerOnly=1;
 			};
 			id=201;
 			type="EmptyDetector";
