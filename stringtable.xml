@@ -116,6 +116,14 @@
 				<Original>Stay alive</Original>
 				<German>Bleib am Leben</German>
 			</Key>
+            <Key ID="str_GRAD_task_kill_opfor_desc">
+                <Original>The military is getting on our nerves. Would be cool to just eliminate them.</Original>
+                <German>Das Militär nervt. Wär cool sie einfach um die ecke zu bringen.</German>
+            </Key>
+            <Key ID="str_GRAD_task_kill_opfor_title">
+                <Original>Neutralize the military</Original>
+                <German>Militär neutralisieren</German>
+            </Key>
 		</Container>
 		<Container name="scenario">
 			<Key ID="str_GRAD_scenario_subject">
