@@ -47,6 +47,7 @@ class CfgFunctions {
             PATHTO_FNC(setup_tasks);
         };
         class Triggers {
+            PATHTO_FNC(alert_opfor_katzenwache);
             PATHTO_FNC(win_opfor_elim);
             PATHTO_FNC(win_indep_elim);
             PATHTO_FNC(win_indep_escape);

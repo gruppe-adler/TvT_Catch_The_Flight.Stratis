@@ -14,6 +14,16 @@ switch (side player) do {
             _content = localize "str_GRAD_OPFOR_H_story";
             _condition = localize "str_GRAD_OPFOR_H_condition";
         };
+
+        {
+            [
+
+                "marker_opfor_katzenwache_" + (str _forEachIndex),
+                _x,
+                "ICON", [1, 1], "COLOR:", "ColorBrown", "TYPE:", "mil_warning", "TEXT:", "überwacht"
+            ] call CBA_fnc_createMarker;
+        } forEach [getPos trigger_opfor_katzenwache_1, getPos trigger_opfor_katzenwache_2, getPos trigger_opfor_katzenwache_3];
+
 	};
 	case resistance: {
 		_title = localize "str_GRAD_INDEP_H_title";
@@ -27,6 +37,12 @@ switch (side player) do {
             };
             _condition = localize "str_GRAD_INDEP_C_condition";
         };
+
+        [
+            "marker_indep_spawn_plane",
+            (getPos vehicle_flight_plane),
+            "ICON", [1, 1], "COLOR:", "ColorGreen", "TYPE:", "hd_pickup"
+        ] call CBA_fnc_createMarker;
 	};
 };
 
