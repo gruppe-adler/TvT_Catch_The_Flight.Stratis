@@ -43,7 +43,12 @@ class CfgFunctions {
             PATHTO_FNC(setAllSidesFriendly);
             PATHTO_FNC(limitOffroadSpeed);
             PATHTO_FNC(disableMarkerChannels);
-            PATHTO_FNC(preventOtherSidesFromStealing);   
+            PATHTO_FNC(preventOtherSidesFromStealing);
+        };
+        class Triggers {
+            PATHTO_FNC(win_opfor_elim);
+            PATHTO_FNC(win_indep_elim);
+            PATHTO_FNC(update_task_survive);
         };
     };
 };
