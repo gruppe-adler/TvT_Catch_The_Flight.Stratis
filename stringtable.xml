@@ -7,8 +7,8 @@
 				<German>Catch the Flight</German>
 			</Key>
 			<Key ID="str_GRAD_onLoadMission">
-				<Original>The authorities are hunting a certain someone who needs to escape.</Original>
-				<German></German>
+				<Original>The military wants to kill someone. They dont want to die.</Original>
+				<German>Das Militär will jemanden umbringen. Der will nicht sterben.</German>
 			</Key>
 			<Key ID="str_GRAD_overviewText">
 				<Original>
@@ -21,7 +21,6 @@
 					Glücklicherweise hat derjenige einige gute Freunde, ihm helfen wollen, von der Insel zu entkommen.
 				</German>
 			</Key>
-
 			<Key ID="str_GRAD_debugMode">
 				<Original>debug mode</Original>
 				<German>Debugmodus</German>
@@ -45,65 +44,95 @@
 				<German>Zielperson töten</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_A_story">
-				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
-				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+				<Original>There's someone we don't like. They must not escape. Need more be said? Search everyone, look
+					at their IDs. Avoid unnecessary violence, the population might overreact.
+				</Original>
+				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?
+					Filze jeden, kontrolliere Ausweise. Vermeide unnötige Gewalt, die Leute könnten überreagieren.
+				</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_A_condition">
 				<Original>Arrest or kill the target person.</Original>
 				<German>Nimm die Zielperson fest, oder töte sie.</German>
 			</Key>
-
-
 			<Key ID="str_GRAD_OPFOR_H_title">
-				<Original>Kill the target person.</Original>
-				<German>Zielperson töten</German>
+				<Original>Help arrest target person.</Original>
+				<German>Hilf, die Zielperson festzunehmen.</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_H_story">
-				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
-				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+				<Original>There's this guy who's nothing but trouble. Finally, the authorities are moving. But he has
+					lots of friends around here. Help to get him to justice!
+				</Original>
+				<German>Da gibt es diesen Kerl, der nur Ärger macht. Endlich tut die Regierung was. Allerdings hat er
+					'ne Menge Freunde in der Gegend. Hilf mit, ihn der Gerechtigkeit zuzuführen!
+				</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_H_condition">
-				<Original>Arrest or kill the target person.</Original>
-				<German>Nimm die Zielperson fest, oder töte sie.</German>
+				<Original>Help to get the target person arrested. You dont have any weapons, but information is a
+					welcome coin with the military.
+				</Original>
+				<German>Hilf mit, die Zielperson festzunehmen. Du hast keine Waffen, aber das Militär freut sich auch
+					über Informationen.
+				</German>
 			</Key>
-
 			<Key ID="str_GRAD_INDEP_C_title">
-				<Original>Kill the target person.</Original>
-				<German>Zielperson töten</German>
+				<Original>Escape from Stratis</Original>
+				<German>Flieh von Stratis</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_C_story">
-				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
-				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+				<Original>The military is moving against me. They will kill me. I need to get away. There should be a
+					plane on the airfield. Maybe I can catch it. I hope my friends will keep an eye out for trouble.
+				</Original>
+				<German>Das Militär kommt mich zu holen. Sie werden mich umbringen. Ich muß abhauen. Auf dem Flughafen
+					sollte ein Flugzeug stehen. Vielleicht kann ich das kriegen. Ich hoffe, meine Freunde halten ein
+					Auge offen.
+				</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_C_condition">
-				<Original>Arrest or kill the target person.</Original>
-				<German>Nimm die Zielperson fest, oder töte sie.</German>
+				<Original>Get away from the island, no matter how. There could be a plane at the airport.</Original>
+				<German>Entkomme von der Insel, egal wie. Am Flughafen könnte es ein Flugzeug geben.</German>
 			</Key>
-
 			<Key ID="str_GRAD_INDEP_H_title">
-				<Original>Kill the target person.</Original>
-				<German>Zielperson töten</German>
+				<Original>Help your friend escape!</Original>
+				<German>Hilf deinem Freund, zu fliehen!</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_H_story">
-				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
-				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+				<Original>Our buddy with the nice hat is in danger. He needs our help. Keep an eye out for the military,
+					distract them, warn him.
+				</Original>
+				<German>Unser Kumpel mit dem coolen Hut ist in Gefahr. Er braucht unsere Hilfe. Halt ein Auge auf das
+					Militär, lenk sie ab, warne ihn.
+				</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_H_condition">
-				<Original>Arrest or kill the target person.</Original>
-				<German>Nimm die Zielperson fest, oder töte sie.</German>
+				<Original>Get your friend from the island!</Original>
+				<German>Hilf deinem Freund von der Insel!</German>
 			</Key>
-
 			<Key ID="str_GRAD_task_dd_desc">
 				<Original>Nobody wants to die. You dont want to die. Survive this, and you will … live.</Original>
 				<German>Niemand will sterben. Du willst nicht sterben. Steh dies durch, und du wirst … leben.</German>
 			</Key>
-
 			<Key ID="str_GRAD_task_dd_title">
 				<Original>Stay alive</Original>
 				<German>Bleib am Leben</German>
 			</Key>
-
-
+		</Container>
+		<Container name="scenario">
+			<Key ID="str_GRAD_scenario_subject">
+				<Original>Scenario details</Original>
+			</Key>
+			<Key ID="str_GRAD_scenario_equipment_title">
+				<Original>Nearly nothing for civilian helpers of either side. Even the military is not very well equipped.</Original>
+			</Key>
+			<Key ID="str_GRAD_scenario_environment_title">
+				<Original>environment</Original>
+			</Key>
+			<Key ID="str_GRAD_scenario_story_title">
+				<Original>story</Original>
+			</Key>
+			<Key ID="str_GRAD_scenario_background_title">
+				<Original>background</Original>
+			</Key>
 		</Container>
 	</Package>
 </Project>
