@@ -49,6 +49,7 @@ class CfgFunctions {
             PATHTO_FNC(win_opfor_elim);
             PATHTO_FNC(win_indep_elim);
             PATHTO_FNC(update_task_survive);
+            PATHTO_FNC(spawn_boat);
         };
     };
 };
