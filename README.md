@@ -11,7 +11,6 @@ Zwischen all dem existieren natürlich auch Leute, die einfach in Ruhe gelassen 
 
 * ich überleg noch, alle Nametags abzuschalten … oder ein custom-Nametag zu setzen, das nicht zwischen Fraktionen unterscheidet? Evtl auch das Radar vom sthud deaktivieren?
 * u.U. Signalpistole für die opfor-Helfer
-* evtl Fahrzeuge abseits der Straßen nerfen (Treibstoffverbrauch erhöhen, Geschwindigkeit verringern)
 
 # Ziele
 
