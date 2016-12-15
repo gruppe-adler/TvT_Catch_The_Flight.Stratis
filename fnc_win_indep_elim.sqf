@@ -1,5 +1,3 @@
-hint "elimination win for indep triggered";
-
 {
     [] call Mission_fnc_update_task_survive;
 
