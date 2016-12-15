@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="TvT_Where_is_the_Escape_from_Rat_Life">
 	<Package name="TvT_Where_is_the_Escape_from_Rat_Life_package">
-        <Container name="description">
+		<Container name="description">
 			<Key ID="str_GRAD_onLoadName">
-				<Original>Where is the Escape from Rat Life</Original>
-				<German>Where is the Escape from Rat Life</German>
+				<Original>Catch the Flight</Original>
+				<German>Catch the Flight</German>
 			</Key>
 			<Key ID="str_GRAD_onLoadMission">
 				<Original>The authorities are hunting a certain someone who needs to escape.</Original>
@@ -12,8 +12,13 @@
 			</Key>
 			<Key ID="str_GRAD_overviewText">
 				<Original>
+					The military administration is moving to arrest someone they dont like.
+					Luckily, that person got warned. And he's got some good friends who will try to help him get away
+					from the island.
 				</Original>
 				<German>
+					Die Militärverwaltung rückt aus, um eine in Ungnade gefallene Person zu verhaften.
+					Glücklicherweise hat derjenige einige gute Freunde, ihm helfen wollen, von der Insel zu entkommen.
 				</German>
 			</Key>
 
@@ -33,6 +38,72 @@
 				<Original>BLUFOR</Original>
 				<German>BLUFOR</German>
 			</Key>
+		</Container>
+		<Container name="tasks">
+			<Key ID="str_GRAD_OPFOR_A_title">
+				<Original>Kill the target person.</Original>
+				<German>Zielperson töten</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_A_story">
+				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
+				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_A_condition">
+				<Original>Arrest or kill the target person.</Original>
+				<German>Nimm die Zielperson fest, oder töte sie.</German>
+			</Key>
+
+
+			<Key ID="str_GRAD_OPFOR_H_title">
+				<Original>Kill the target person.</Original>
+				<German>Zielperson töten</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_H_story">
+				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
+				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_H_condition">
+				<Original>Arrest or kill the target person.</Original>
+				<German>Nimm die Zielperson fest, oder töte sie.</German>
+			</Key>
+
+			<Key ID="str_GRAD_INDEP_C_title">
+				<Original>Kill the target person.</Original>
+				<German>Zielperson töten</German>
+			</Key>
+			<Key ID="str_GRAD_INDEP_C_story">
+				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
+				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+			</Key>
+			<Key ID="str_GRAD_INDEP_C_condition">
+				<Original>Arrest or kill the target person.</Original>
+				<German>Nimm die Zielperson fest, oder töte sie.</German>
+			</Key>
+
+			<Key ID="str_GRAD_INDEP_H_title">
+				<Original>Kill the target person.</Original>
+				<German>Zielperson töten</German>
+			</Key>
+			<Key ID="str_GRAD_INDEP_H_story">
+				<Original>There's someone we don't like. They must not escape. Need more be said?</Original>
+				<German>Da gibt es jemanden, den wir nicht mögen. Er darf nicht entkommen. Muß ich deutlicher werden?</German>
+			</Key>
+			<Key ID="str_GRAD_INDEP_H_condition">
+				<Original>Arrest or kill the target person.</Original>
+				<German>Nimm die Zielperson fest, oder töte sie.</German>
+			</Key>
+
+			<Key ID="str_GRAD_task_dd_desc">
+				<Original>Nobody wants to die. You dont want to die. Survive this, and you will … live.</Original>
+				<German>Niemand will sterben. Du willst nicht sterben. Steh dies durch, und du wirst … leben.</German>
+			</Key>
+
+			<Key ID="str_GRAD_task_dd_title">
+				<Original>Stay alive</Original>
+				<German>Bleib am Leben</German>
+			</Key>
+
+
 		</Container>
 	</Package>
 </Project>
