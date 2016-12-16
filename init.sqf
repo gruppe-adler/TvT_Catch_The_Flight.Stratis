@@ -24,6 +24,8 @@ if (hasInterface) then {
     player call Mission_fnc_setup_tasks;
 };
 
+{ _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
+
 [] execVM "loadouts.sqf";
 
 
