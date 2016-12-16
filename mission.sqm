@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2629.6523,301.60916,634.98749};
-		dir[]={-0.28777158,-0.51987511,0.80431962};
-		up[]={-0.17513858,0.85422754,0.48951158};
-		aside[]={0.94155782,3.5398989e-007,0.33687359};
+		pos[]={3299.8499,959.22119,6122.1973};
+		dir[]={0.5550856,0.092601776,-0.82674062};
+		up[]={-0.05157157,0.99570954,0.076811209};
+		aside[]={-0.83031374,6.515329e-007,-0.557486};
 	};
 };
 binarizationWanted=0;
@@ -132,6 +132,7 @@ randomSeed=6043597;
 class ScenarioData
 {
 	author="Fusselwurm";
+	saving=0;
 	respawn=1;
 	class Header
 	{
@@ -195,6 +196,30 @@ class CustomAttributes
 		};
 		nAttributes=1;
 	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
@@ -203,12 +228,16 @@ class Mission
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
 		startWeather=0;
-		startWind=0.1;
-		startWaves=0.1;
+		startFog=0.62726861;
+		startWind=0;
+		startWindDir=240;
+		startRain=0.21303177;
 		forecastWeather=0;
-		forecastWind=0.1;
-		forecastWaves=0.1;
-		forecastLightnings=0.1;
+		forecastFog=0.043492731;
+		forecastWind=0.14550981;
+		forecastWaves=0.49718651;
+		forecastGust=0.33400846;
+		forecastWindDir=280;
 		rainForced=1;
 		lightningsForced=1;
 		wavesForced=1;
@@ -218,8 +247,9 @@ class Mission
 		day=6;
 		hour=18;
 		minute=13;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
+		startFogBase=15;
+		startFogDecay=0.072687015;
+		forecastFogDecay=0.054703414;
 	};
 	class Entities
 	{
