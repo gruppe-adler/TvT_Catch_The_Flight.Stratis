@@ -45,6 +45,7 @@ class CfgFunctions {
             PATHTO_FNC(disableMarkerChannels);
             PATHTO_FNC(preventOtherSidesFromStealing);
             PATHTO_FNC(setup_tasks);
+            PATHTO_FNC(setupMurderWatch);
         };
         class Triggers {
             PATHTO_FNC(alert_opfor_katzenwache);

@@ -1,6 +1,5 @@
-hint "Möglicherweise Katzenwache am Flugfeld. INDEP C bekommt alternative Fluchtmöglichkeit! Siehe Map";
-
 {
+    hint "Möglicherweise Katzenwache am Flugfeld. INDEP C bekommt alternative Fluchtmöglichkeit! Siehe Map.";
     {
         [
             "marker_indep_spawn_boat_" + (str _forEachIndex),
@@ -10,3 +9,7 @@ hint "Möglicherweise Katzenwache am Flugfeld. INDEP C bekommt alternative Fluch
     } forEach [getPos trigger_indep_spawn_boat_1, getPos trigger_indep_spawn_boat_2];
 
 } remoteExec ["BIS_fnc_call", [CIVILIAN, RESISTANCE], true];
+
+{
+    hint "Unsere Leute am Flughafen wurden entdeckt. Verdächtige Aktivität im Nordteil der Insel gemeldet. Wir fürchten, die Zielperson könnte von dort per Boot flüchten.";
+} remoteExec ["BIS_fnc_call", [EAST], true];
