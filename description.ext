@@ -58,6 +58,9 @@ class CfgFunctions {
         class Upgrades {
             PATHTO_FNC(giveUpgradeToSide);
         };
+        class Misc {
+            PATHTO_FNC(showHint);
+        };
     };
 };
 

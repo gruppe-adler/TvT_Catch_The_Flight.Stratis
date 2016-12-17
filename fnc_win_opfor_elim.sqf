@@ -1,4 +1,4 @@
-hint "elimination win for opfor triggered";
+["elimination win for opfor triggered"] call Mission_fnc_showHint;
 
 {
     [] call Mission_fnc_update_task_survive;

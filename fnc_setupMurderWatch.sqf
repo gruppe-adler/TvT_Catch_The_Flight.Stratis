@@ -31,19 +31,19 @@ diag_log _daRealKiller;
 
         if (_sideDeceased == civilian) then {
             {
-                hint "Der war unbeteiligt. Das macht uns nicht beliebter.";
+                ["Der war unbeteiligt. Das macht uns nicht beliebter."] call Mission_fnc_showHint;
             } remoteExec ["BIS_fnc_call", [_sideKiller], true];
         } else {
             {
-                hint "Wir haben einen unserer Gegner erwischt. Das ist nicht weiter traurig, aber freundlicher werden die dadurch bestimmt nicht...";
+                ["Wir haben einen unserer Gegner erwischt. Das ist nicht weiter traurig, aber freundlicher werden die dadurch bestimmt nicht..."] call Mission_fnc_showHint;
             } remoteExec ["BIS_fnc_call", [_sideKiller], true];
 
             {
-                hint "Einer unserer Leute wurde ermordet! Dies wird Konsequenzen haben.";
+                ["Einer unserer Leute wurde ermordet! Dies wird Konsequenzen haben."] call Mission_fnc_showHint;
             } remoteExec ["BIS_fnc_call", _sideDeceased, true];
         };
     } else {
-        hint "teamkill";
+        ["teamkill"] call Mission_fnc_showHint;
     };
 
     [

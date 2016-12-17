@@ -152,6 +152,6 @@ diag_log ("units found that may be upgraded: " + (str count _eligibleUnits));
     _level = _x getVariable ["Mission_nextLevel", 0];
     _x call (_unitApplyUpgradeLevel select _level);
     diag_log format ["applying upgrade # %1 to unit %2 / %3", _level, _x, name _x];
-    { hint "Waffenupgrade für mich!"; } remoteExec ["BIS_fnc_call", _x, true];
+    { ["Waffenupgrade für mich!"] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _x, true];
 
 } forEach (_eligibleUnits select [0, 2]);
