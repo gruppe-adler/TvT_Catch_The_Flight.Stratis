@@ -22,6 +22,7 @@ if (hasInterface) then {
     player addEventhandler ["HandleRating", {0}];
     player call Mission_fnc_preventOtherSidesFromStealing;
     player call Mission_fnc_setup_tasks;
+    [player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);

@@ -46,6 +46,7 @@ class CfgFunctions {
             PATHTO_FNC(preventOtherSidesFromStealing);
             PATHTO_FNC(setup_tasks);
             PATHTO_FNC(setupMurderWatch);
+            PATHTO_FNC(limitSwimmingAbility);
         };
         class Triggers {
             PATHTO_FNC(alert_opfor_katzenwache);
