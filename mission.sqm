@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=218;
+		nextID=220;
 	};
 	class MarkerIDProvider
 	{
-		nextID=4;
+		nextID=6;
 	};
 	class Camera
 	{
-		pos[]={3299.8499,959.22119,6122.1973};
-		dir[]={0.74868363,-0.59129924,-0.30005875};
-		up[]={0.54886162,0.80644917,-0.21997322};
-		aside[]={-0.37205458,-4.1676685e-007,-0.92832631};
+		pos[]={2737.8337,921.07709,5232.2075};
+		dir[]={0.17293264,-0.88093406,0.44077438};
+		up[]={0.32172745,0.47333527,0.82002562};
+		aside[]={0.93103337,-1.5877304e-006,-0.36528063};
 	};
 };
 binarizationWanted=0;
@@ -36,13 +36,14 @@ addons[]=
 	"A3_Armor_F_Gamma_MBT_01",
 	"ace_cookoff",
 	"ace_realisticnames",
-	"ga_heli"
+	"ga_heli",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -117,6 +118,13 @@ class AddonsMetaData
 		{
 			className="ga_heli";
 			name="ga_heli";
+		};
+		class Item11
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
 		};
 	};
 };
@@ -245,7 +253,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=60;
+		items=62;
 		class Item0
 		{
 			dataType="Object";
@@ -263,6 +271,7 @@ class Mission
 			};
 			id=5;
 			type="RHS_Ural_Open_VV_01";
+			atlOffset=3.8146973e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3604,6 +3613,39 @@ class Mission
 				};
 				nAttributes=7;
 			};
+		};
+		class Item60
+		{
+			dataType="Marker";
+			position[]={3254.073,1.5257925e+029,5806.3091};
+			name="marker_opfor_a_spawn";
+			text="marker_opfor_a_spawn";
+			markerType="RECTANGLE";
+			type="rectangle";
+			colorName="ColorEAST";
+			alpha=0.52250713;
+			fillName="DiagGrid";
+			a=60;
+			b=43;
+			angle=36;
+			id=218;
+			atlOffset=1.5257925e+029;
+		};
+		class Item61
+		{
+			dataType="Marker";
+			position[]={2769.4143,28.893442,1343.6505};
+			name="marker_indep_c_spawn";
+			text="marker_indep_c_spawn";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			alpha=0.5;
+			fillName="DiagGrid";
+			a=383.319;
+			b=853.83099;
+			angle=19.999998;
+			id=219;
 		};
 	};
 	class Connections
