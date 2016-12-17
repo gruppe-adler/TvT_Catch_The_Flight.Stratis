@@ -18,6 +18,7 @@
     ],
     "dependencies": {
         "grad-loadout": "^4.4.0",
-        "engima-traffic": "~0.1.1"
+        "engima-traffic": "~0.1.1",
+        "grad-leaveNotes": "^1.0.0"
     }
 }

@@ -47,6 +47,7 @@ class CfgFunctions {
             PATHTO_FNC(setup_tasks);
             PATHTO_FNC(setupMurderWatch);
             PATHTO_FNC(limitSwimmingAbility);
+            PATHTO_FNC(setupIDCard);
         };
         class Triggers {
             PATHTO_FNC(alert_opfor_katzenwache);
@@ -67,3 +68,4 @@ class CfgFunctions {
 
 #include "aceOptions.h"
 #include "loadouts.h"
+#include "node_modules\grad-leaveNotes\UI\leaveNotes_dialog.hpp"

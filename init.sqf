@@ -26,12 +26,15 @@ if (isServer) then {
     };
 };
 
+[] execVM "node_modules\grad-leaveNotes\initLeaveNotes.sqf";
+
 if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;
     player addEventhandler ["HandleRating", {0}];
     player call Mission_fnc_preventOtherSidesFromStealing;
     player call Mission_fnc_setup_tasks;
+    [] call Mission_fnc_setupIDCard;
     [player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 };
 
