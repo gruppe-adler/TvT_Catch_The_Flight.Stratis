@@ -1,4 +1,3 @@
-#include "\x\cba\addons\main\script_macros_mission.hpp"
 #include "missionMacros.h"
 #define MODULES_DIRECTORY node_modules
 
@@ -40,28 +39,28 @@ class CfgFunctions {
 
     class Mission {
         class Setup {
-            PATHTO_FNC(setAllSidesFriendly);
-            PATHTO_FNC(limitOffroadSpeed);
-            PATHTO_FNC(disableMarkerChannels);
-            PATHTO_FNC(preventOtherSidesFromStealing);
-            PATHTO_FNC(setup_tasks);
-            PATHTO_FNC(setupMurderWatch);
-            PATHTO_FNC(limitSwimmingAbility);
-            PATHTO_FNC(setupIDCard);
+            class setAllSidesFriendly { file = "fnc_setAllSidesFriendly.sqf";};
+            class limitOffroadSpeed { file = "fnc_limitOffroadSpeed.sqf";};
+            class disableMarkerChannels { file = "fnc_disableMarkerChannels.sqf";};
+            class preventOtherSidesFromStealing { file = "fnc_preventOtherSidesFromStealing.sqf";};
+            class setup_tasks { file = "fnc_setup_tasks.sqf";};
+            class setupMurderWatch { file = "fnc_setupMurderWatch.sqf";};
+            class limitSwimmingAbility { file = "fnc_limitSwimmingAbility.sqf";};
+            class setupIDCard { file = "fnc_setupIDCard.sqf";};
         };
         class Triggers {
-            PATHTO_FNC(alert_opfor_katzenwache);
-            PATHTO_FNC(win_opfor_elim);
-            PATHTO_FNC(win_indep_elim);
-            PATHTO_FNC(win_indep_escape);
-            PATHTO_FNC(update_task_survive);
-            PATHTO_FNC(spawn_boat);
+            class alert_opfor_katzenwache { file = "fnc_alert_opfor_katzenwache.sqf";};
+            class win_opfor_elim { file = "fnc_win_opfor_elim.sqf";};
+            class win_indep_elim { file = "fnc_win_indep_elim.sqf";};
+            class win_indep_escape { file = "fnc_win_indep_escape.sqf";};
+            class update_task_survive { file = "fnc_update_task_survive.sqf";};
+            class spawn_boat { file = "fnc_spawn_boat.sqf";};
         };
         class Upgrades {
-            PATHTO_FNC(giveUpgradeToSide);
+            class giveUpgradeToSide { file = "fnc_giveUpgradeToSide.sqf";};
         };
         class Misc {
-            PATHTO_FNC(showHint);
+            class showHint { file = "fnc_showHint.sqf";};
         };
     };
 };
