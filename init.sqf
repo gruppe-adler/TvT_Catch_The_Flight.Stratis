@@ -16,6 +16,16 @@ if (isServer) then {
 	[] call Mission_fnc_setAllSidesFriendly;
 };
 
+[] spawn {
+    _handle = [] execVM "node_modules\engima-traffic\Init.sqf";
+    waitUntil {scriptDone _handle};
+    ENGIMA_TRAFFIC_spawnHandler pushBack {
+        params ["_unit"];
+        diag_log "setting up murder watch for civ";
+        _unit call Mission_fnc_setupMurderWatch;
+    };
+};
+
 if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;

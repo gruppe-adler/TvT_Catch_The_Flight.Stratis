@@ -2,13 +2,26 @@ _this setVariable ["Mission_side", side _this];
 _this setVariable ["Mission_faction", faction _this];
 
 _this addMPEventHandler ["MPKilled", {
+    _getSide = {
+        _side = sideUnknown;
+        if (alive _this) then {
+            _side = side _this;
+        } else {
+            _side = _this getVariable ["Mission_side", sideUnknown];
+        };
+
+        _side
+    };
+
     params ["_deceased", "_killer"];
 
 diag_log "official killer:";
 diag_log _killer;
 
-    _sideKiller = side _killer;
-    if (!(_sideKiller in [east, resistance])) then {
+    _sideKiller = sideUnknown;
+    if (alive _killer) then {
+        _sideKiller = _killer call _getSide;
+    } else {
         _daRealKiller = _deceased getVariable ["ace_medical_lastDamageSource", objNull];
 
 diag_log "ace last damage from:";
@@ -16,9 +29,10 @@ diag_log _daRealKiller;
 
         if (_daRealKiller != objNull) then {
             _killer = _daRealKiller;
-            _sideKiller = side _killer;
+            _sideKiller = _killer call _getSide;
         };
     };
+
     _sideDeceased = _deceased getVariable "Mission_side";
 
     if (_sideDeceased != _sideKiller) then {

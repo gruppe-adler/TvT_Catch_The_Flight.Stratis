@@ -17,6 +17,7 @@
         "tvt"
     ],
     "dependencies": {
-        "grad-loadout": "^4.4.0"
+        "grad-loadout": "^4.4.0",
+        "engima-traffic": "~0.1.1"
     }
 }

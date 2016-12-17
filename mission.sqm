@@ -1851,16 +1851,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2637.3149,65.146713,648.91296};
+						position[]={2823.4136,0.0014388561,603.96112};
 					};
 					side="Independent";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						isPlayer=1;
 					};
 					id=160;
 					type="I_Survivor_F";
+					atlOffset=7.9300084;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1890,6 +1891,7 @@ class Mission
 			{
 			};
 			id=159;
+			atlOffset=7.9300084;
 		};
 		class Item27
 		{
@@ -3644,7 +3646,7 @@ class Mission
 			fillName="DiagGrid";
 			a=383.319;
 			b=853.83099;
-			angle=19.999998;
+			angle=19.999992;
 			id=219;
 		};
 	};
