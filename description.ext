@@ -55,6 +55,9 @@ class CfgFunctions {
             PATHTO_FNC(update_task_survive);
             PATHTO_FNC(spawn_boat);
         };
+        class Upgrades {
+            PATHTO_FNC(giveUpgradeToSide);
+        };
     };
 };
 

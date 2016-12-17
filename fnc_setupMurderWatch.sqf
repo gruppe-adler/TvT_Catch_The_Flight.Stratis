@@ -4,11 +4,30 @@ _this setVariable ["Mission_faction", faction _this];
 _this addMPEventHandler ["MPKilled", {
     params ["_deceased", "_killer"];
 
+diag_log "official killer:";
+diag_log _killer;
+
     _sideKiller = side _killer;
+    if (!(_sideKiller in [east, resistance])) then {
+        _daRealKiller = _deceased getVariable ["ace_medical_lastDamageSource", objNull];
+
+diag_log "ace last damage from:";
+diag_log _daRealKiller;
+
+        if (_daRealKiller != objNull) then {
+            _killer = _daRealKiller;
+            _sideKiller = side _killer;
+        };
+    };
     _sideDeceased = _deceased getVariable "Mission_side";
 
     if (_sideDeceased != _sideKiller) then {
-        _sideDeceased call Mission_fnc_giveUpgradeToSide;
+
+        switch (side _killer) do {
+            case independent: {[opfor, _deceased, _killer] call Mission_fnc_giveUpgradeToSide};
+            case east:  {[independent, _deceased, _killer] call Mission_fnc_giveUpgradeToSide};
+            default { diag_log format ["murder where killer was not indep or east. murderer was %1 / %2", str _killer, name _killer]; };
+        };
 
         if (_sideDeceased == civilian) then {
             {
