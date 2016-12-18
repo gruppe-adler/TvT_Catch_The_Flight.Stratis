@@ -21,7 +21,18 @@ _getRifleClasses2 = {
     ]
 };
 
-_unitGiveMagazines = {
+_getVestClasses = {
+    [
+        "rhs_vest_commander",
+        "rhs_6sh46"
+    ]
+};
+
+/*
+lvl2: V_BandollierB_rgr
+*/
+
+Mission_fnc_giveUpgradToSide_unitGiveMagazines = {
     params ["_player", "_amount"];
 
     _giveMagazin = {
@@ -92,28 +103,41 @@ _unitGetNextUpgradeLevel = {
     _nextLevel
 };
 
+_addWeaponGlobal = {
+    params ["_unit", "_weapon"];
+    [
+        [_unit, _weapon],
+        {
+            params ["_unit", "_weapon"];
+            _unit addWeapon _weapon;
+        }
+    ] remoteExec ["BIS_fnc_call", _unit, true];
+};
+
 _unitApplyUpgradeLevel = [ // to be applied to units
 	{
-        _this addWeaponGlobal (selectRandom (_this call _getPistolclasses));
-		[_this, 2] call _unitGiveMagazines;
+        [_this, (selectRandom (_this call _getPistolclasses))] call _addWeaponGlobal;
+        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 2], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
-        _this addWeaponGlobal (selectRandom (_this call _getRifleClasses1));
-        [_this, 2] call _unitGiveMagazines;
+        _this addVest (selectRandom (this call _getVestClasses));
+        [_this, (selectRandom (_this call _getRifleClasses1))] call _addWeaponGlobal;
+        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 2], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
 		_this addItem _radioClass;
-        [_this, 1] call _unitGiveMagazines;
+        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
-        _this addWeaponGlobal (selectRandom (_this call _getRifleClasses2));
-		[_this, 2] call _unitGiveMagazines;
+        [_this, (selectRandom (_this call _getRifleClasses2))] call _addWeaponGlobal;
+		[Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
     },
     {
+        _this addVest "V_BandollierB_rgr";
 		_this addItem "ACE_Banana";
 		_this addItem "SmokeShell";
         // _this addBackpack "";
-        [_this, 1] call _unitGiveMagazines;
+        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
 	}
 ];
 
