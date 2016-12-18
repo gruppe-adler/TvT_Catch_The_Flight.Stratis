@@ -13,6 +13,7 @@ disableRemoteSensors true;
 [] call Mission_fnc_limitOffroadSpeed;
 
 if (isServer) then {
+    ["Initialize"] call BIS_fnc_dynamicGroups;
 	[] call Mission_fnc_setAllSidesFriendly;
 };
 
@@ -32,6 +33,7 @@ if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;
     player addEventhandler ["HandleRating", {0}];
+    ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
     player call Mission_fnc_preventOtherSidesFromStealing;
     player call Mission_fnc_setup_tasks;
     [] call Mission_fnc_setupIDCard;
