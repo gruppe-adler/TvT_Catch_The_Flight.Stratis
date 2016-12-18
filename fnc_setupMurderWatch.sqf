@@ -1,7 +1,7 @@
 _this setVariable ["Mission_side", side _this];
 _this setVariable ["Mission_faction", faction _this];
 
-_this addMPEventHandler ["MPKilled", {
+Mission_fnc_setupMurderWatch_killedHandler = {
     _getSide = {
         _side = sideUnknown;
         if (alive _this) then {
@@ -71,5 +71,11 @@ diag_log _daRealKiller;
             ] call CBA_fnc_createMarker;
         }
     ] remoteExec ["BIS_fnc_call", [west, east, independent, civilian], true];
+};
 
+
+_this addMPEventHandler ["MPKilled", {
+    if (isServer) then {
+        _this call Mission_fnc_setupMurderWatch_killedHandler;
+    };
 }];
