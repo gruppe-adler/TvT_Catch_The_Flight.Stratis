@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=266;
+		nextID=267;
 	};
 	class MarkerIDProvider
 	{
@@ -34,13 +34,14 @@ addons[]=
 	"ace_zeus",
 	"A3_Ui_F",
 	"ga_heli",
-	"rhsgref_c_a2port_armor"
+	"rhsgref_c_a2port_armor",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=10;
+		items=11;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -108,6 +109,13 @@ class AddonsMetaData
 			name="BRDM-2";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item10
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
 		};
 	};
 };
@@ -236,7 +244,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=55;
+		items=56;
 		class Item0
 		{
 			dataType="Object";
@@ -2588,6 +2596,7 @@ class Mission
 					};
 					id=225;
 					type="I_G_Soldier_F";
+					atlOffset=-7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2617,6 +2626,7 @@ class Mission
 			{
 			};
 			id=224;
+			atlOffset=-7.6293945e-006;
 		};
 		class Item31
 		{
@@ -3228,6 +3238,7 @@ class Mission
 					};
 					id=253;
 					type="O_G_Soldier_F";
+					atlOffset=5.2452087e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3257,6 +3268,7 @@ class Mission
 			{
 			};
 			id=252;
+			atlOffset=5.2452087e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3521,6 +3533,7 @@ class Mission
 			};
 			id=260;
 			type="RDS_Lada_Civ_05";
+			atlOffset=-0.00082397461;
 		};
 		class Item50
 		{
@@ -3537,6 +3550,7 @@ class Mission
 			};
 			id=261;
 			type="RDS_JAWA353_Civ_01";
+			atlOffset=4.7683716e-007;
 		};
 		class Item51
 		{
@@ -3553,6 +3567,7 @@ class Mission
 			};
 			id=262;
 			type="RDS_MMT_Civ_01";
+			atlOffset=-0.00010681152;
 		};
 		class Item52
 		{
@@ -3587,7 +3602,7 @@ class Mission
 			};
 			id=264;
 			type="rhsgref_BRDM2_ins";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-0.041334152;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3685,6 +3700,7 @@ class Mission
 			};
 			id=265;
 			type="rhsgref_ins_ural_Zu23";
+			atlOffset=-9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3802,6 +3818,116 @@ class Mission
 					};
 				};
 				nAttributes=6;
+			};
+		};
+		class Item55
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={3539.937,-0.00037384033,926.04199};
+			};
+			id=266;
+			type="ModuleCurator_F";
+			atlOffset=29.733;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="#adminLogged";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleInfo";
+					expression="false";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=3;
+						};
+					};
+				};
+				nAttributes=5;
 			};
 		};
 	};
