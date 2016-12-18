@@ -31,7 +31,7 @@ if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
                 _markerName = ("marker_last_spotted_" + _name);
                 diag_log ("creating 'spotted' marker local... " + _markerName);
 
-                deleteMarker _markerName;
+                deleteMarkerLocal _markerName;
                 [
                     _markerName,
                     _pos,
@@ -91,10 +91,10 @@ diag_log _daRealKiller;
             };
 
             if ((_deceased getVariable "Mission_faction") == "OPF_F") then {
-                if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 0) then {
+                if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 60) then {
                     Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = Mission_fnc_setupMurderWatch_var_unit_indep_c_radius - 50;
                 };
-                diag_log format ["Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased];
+                diag_log format ["Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius];
 
                 [{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_setupMurderWatch_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
             };
