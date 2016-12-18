@@ -19,7 +19,7 @@ if (isServer) then {
 [] spawn {
     _handle = [] execVM "node_modules\engima-traffic\Init.sqf";
     waitUntil {scriptDone _handle};
-    ENGIMA_TRAFFIC_spawnHandler pushBack {
+    ENGIMA_TRAFFIC_spawnHandler pushBack { //TODO: only on server, I guess? but then... its being called only on server anyway, because thats the one who spawns
         params ["_unit"];
         diag_log "setting up murder watch for civ";
         _unit call Mission_fnc_setupMurderWatch;
