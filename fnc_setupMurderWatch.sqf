@@ -5,41 +5,46 @@ if (isNil "Mission_fnc_setupMurderWatch_var_unit_indep_c_radius") then {
     Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = 500;
 };
 
-Mission_fnc_setupMurderWatch_createSpottedMarker = {
-    params ["_unit", "_radius", "_target"];
-    _pos = getPos _unit;
-    _name = name _unit;
+if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
+    Mission_fnc_setupMurderWatch_createSpottedMarker = {
+        params ["_unit", "_radius", "_target"];
+        _pos = getPos _unit;
+        _name = name _unit;
 
-    _x = (_pos select 0) - _radius + random _radius;
-    _y = (_pos select 1) - _radius + random _radius;
+        diag_log "creating 'spotted' marker: exec remote...";
 
-    [
-        [_name, [_x, _y], _radius * 2],
-        {
-            _formattedTime = {
-                _hour = floor daytime;
-                _minute = floor ((daytime - _hour) * 60);
-                _second = floor (((((daytime) - (_hour))*60) - _minute)*60);
+        _x = (_pos select 0) - _radius + random _radius;
+        _y = (_pos select 1) - _radius + random _radius;
 
-                format ["%1:%2:%3", _hour, _minute, _second];
-            };
-            params ["_name", "_pos", "_radius"];
+        [
+            [_name, [_x, _y], _radius * 2],
+            {
+                _formattedTime = {
+                    _hour = floor daytime;
+                    _minute = floor ((daytime - _hour) * 60);
+                    _second = floor (((((daytime) - (_hour))*60) - _minute)*60);
 
-            _markerName = ("marker_last_spotted_" + _name);
+                    format ["%1:%2:%3", _hour, _minute, _second];
+                };
+                params ["_name", "_pos", "_radius"];
 
-            deleteMarker _markerName;
-            [
-                _markerName,
-                _pos,
-                "ELLIPSE",
-                [_radius, _radius],
-                "COLOR:", "ColorRed",
-                "TEXT:", (format ["%1 %2", _name, ([] call _formattedTime)])
-            ] call CBA_fnc_createMarker;
-            _markerName setMarkerAlphaLocal 0.5;
-            [(format ["%1 wurde gesichtet.", _name])] call Mission_fnc_showHint;
-        }
-    ] remoteExec ["BIS_fnc_call", _target, true];
+                _markerName = ("marker_last_spotted_" + _name);
+                diag_log ("creating 'spotted' marker local... " + _markerName);
+
+                deleteMarker _markerName;
+                [
+                    _markerName,
+                    _pos,
+                    "ELLIPSE",
+                    [_radius, _radius],
+                    "COLOR:", "ColorRed",
+                    "TEXT:", (format ["%1 %2", _name, ([] call _formattedTime)])
+                ] call CBA_fnc_createMarker;
+                _markerName setMarkerAlphaLocal 0.5;
+                [(format ["%1 wurde gesichtet.", _name])] call Mission_fnc_showHint;
+            }
+        ] remoteExec ["BIS_fnc_call", _target, true];
+    };
 };
 
 Mission_fnc_setupMurderWatch_killedHandler = {
@@ -89,6 +94,7 @@ diag_log _daRealKiller;
                 if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 0) then {
                     Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = Mission_fnc_setupMurderWatch_var_unit_indep_c_radius - 50;
                 };
+                diag_log format ["Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased];
 
                 [{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_setupMurderWatch_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
             };
