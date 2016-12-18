@@ -20,7 +20,7 @@ if (isServer) then {
 [] spawn {
     _handle = [] execVM "node_modules\engima-traffic\Init.sqf";
     waitUntil {scriptDone _handle};
-    ENGIMA_TRAFFIC_spawnHandler pushBack { //TODO: only on server, I guess? but then... its being called only on server anyway, because thats the one who spawns
+    ENGIMA_TRAFFIC_spawnHandler pushBack {
         params ["_unit"];
         diag_log "setting up murder watch for civ";
         _unit call Mission_fnc_setupMurderWatch;
@@ -48,4 +48,4 @@ if (hasInterface) then {
 1 enableChannel false;
 2 enableChannel false;
 3 enableChannel false;
-[1, 2, 3] call Mission_fnc_disableMarkerChannels;
+[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually

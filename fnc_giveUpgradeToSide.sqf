@@ -1,4 +1,4 @@
-params ["_targetSide", "_deceased", "_killer"];
+params ["_targetSide", "_deceased"];
 
 _minDistance = 200;
 _radioClass = "tf_fadak";
