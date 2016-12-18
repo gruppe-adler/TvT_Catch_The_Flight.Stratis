@@ -82,7 +82,12 @@ _unitGetNextUpgradeLevel = {
             (primaryWeapon _this) in (_this call _getRifleClasses1)
         },
         {
-            (([assignedItems _this, _radioClass] call _isRadioInItems) || ([items _this, _radioClass] call _isRadioInItems))
+            _hasRadioUpgrade = true;
+            if (isPlayer _this) then {
+                _hasRadioUpgrade = ([assignedItems _this, _radioClass] call _isRadioInItems) || ([items _this, _radioClass] call _isRadioInItems);
+            };
+
+            _hasRadioUpgrade
         },
         {
             ((primaryWeapon _this) in (_this call _getRifleClasses2))
@@ -114,18 +119,26 @@ _addWeaponGlobal = {
     ] remoteExec ["BIS_fnc_call", _unit, true];
 };
 
+_addRadioDelayed = {
+    {
+        _msg = format ["%1: Gegebenenfalls Platz in der Jacke freimachen, gleich gibts ein Funkgerät!", name player];
+        [_msg] call Mission_fnc_showHint;
+        [{player addItem "tf_fadak";}, [], 30] call CBA_fnc_waitAndExecute;
+    } remoteExec ["BIS_fnc_call", _this, true];
+};
+
 _unitApplyUpgradeLevel = [ // to be applied to units
 	{
         [_this, (selectRandom (_this call _getPistolclasses))] call _addWeaponGlobal;
         [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 2], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
-        _this addVest (selectRandom (this call _getVestClasses));
+        _this addVest (selectRandom (_this call _getVestClasses));
         [_this, (selectRandom (_this call _getRifleClasses1))] call _addWeaponGlobal;
         [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 2], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
-		_this addItem _radioClass;
+        _this call _addRadioDelayed;
         [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
 	},
 	{
@@ -133,11 +146,11 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 		[Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
     },
     {
-        _this addVest "V_BandollierB_rgr";
+        // _this addVest "V_BandollierB_rgr";
 		_this addItem "ACE_Banana";
-		_this addItem "SmokeShell";
+		// _this addItem "SmokeShell";
         // _this addBackpack "";
-        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 1], 5] call CBA_fnc_waitAndExecute;
+        [Mission_fnc_giveUpgradToSide_unitGiveMagazines, [_this, 2], 5] call CBA_fnc_waitAndExecute;
 	}
 ];
 
