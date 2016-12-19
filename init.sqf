@@ -42,6 +42,7 @@ if (hasInterface) then {
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
 
+[] execVM "fnc_vehicle_damagen_petzen.sqf";
 [] execVM "loadouts.sqf";
 
 

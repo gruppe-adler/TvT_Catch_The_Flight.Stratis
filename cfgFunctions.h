@@ -11,6 +11,7 @@ class CfgFunctions {
             class setupMurderWatch { file = "fnc_setupMurderWatch.sqf";};
             class limitSwimmingAbility { file = "fnc_limitSwimmingAbility.sqf";};
             class setupIDCard { file = "fnc_setupIDCard.sqf";};
+            class vehicle_damage_server_listener { file = "fnc_vehicle_damage_server_listener.sqf";};
         };
         class Triggers {
             class alert_opfor_katzenwache { file = "fnc_alert_opfor_katzenwache.sqf";};
