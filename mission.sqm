@@ -1,4 +1,4 @@
-version=52;
+version=53;
 class EditorData
 {
 	moveGridStep=1;
@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=281;
+		nextID=283;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3350.8479,1385.1521,5107.355};
-		dir[]={0.54861987,-0.79802626,-0.24984059};
-		up[]={0.72626764,0.60258865,-0.33074197};
-		aside[]={-0.41449729,-2.0773732e-006,-0.91018403};
+		pos[]={3751.8467,99.019447,6460.542};
+		dir[]={-0.082976058,-0.80481249,-0.58772486};
+		up[]={-0.11251414,0.59347397,-0.79694664};
+		aside[]={-0.99019176,-1.686567e-007,0.13979752};
 	};
 };
 binarizationWanted=0;
@@ -35,7 +35,6 @@ addons[]=
 	"A3_Ui_F",
 	"rhsgref_c_a2port_armor",
 	"A3_Modules_F_Curator_Curator",
-	"po_factions_me",
 	"A3_Boat_F_Exp_Boat_Transport_02",
 	"rds_a2port_cman"
 };
@@ -98,7 +97,7 @@ class AddonsMetaData
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
-			url="http://www.arma3.com";
+			url="https://www.arma3.com";
 		};
 		class Item8
 		{
@@ -4095,7 +4094,7 @@ class Mission
 			{
 			};
 			id=268;
-			type="LOP_TAK_Civ_Ural_open";
+			type="RHS_Ural_Open_Civ_01";
 			atlOffset=-0.016494751;
 		};
 		class Item57
@@ -4191,23 +4190,23 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3753.7822,92.542366,6449.7227};
-				angles[]={0.10708838,0,0.14154659};
+				position[]={3750.2681,92.82975,6450.3677};
+				angles[]={0.1070934,0,0.11449359};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				textures="Camo4";
+				textures="Camo6";
 			};
-			id=280;
-			type="LOP_TAK_Civ_UAZ_Open";
+			id=282;
+			type="RHS_Ural_Open_Civ_01";
 			class CustomAttributes
 			{
 				class Attribute0
 				{
-					property="rhs_hideLightCover";
-					expression="_this animate ['light_hide',_value,true]";
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
 					class Value
 					{
 						class data
@@ -4216,10 +4215,10 @@ class Mission
 							{
 								type[]=
 								{
-									"SCALAR"
+									"STRING"
 								};
 							};
-							value=1;
+							value="Army";
 						};
 					};
 				};
@@ -4244,63 +4243,6 @@ class Mission
 				};
 				class Attribute2
 				{
-					property="rhs_decalPlatoon_type";
-					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ammoBox";
-					expression="[_this,_value] call bis_fnc_initAmmoBox;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],true]";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="rhs_decalArmy_type";
-					expression="_this setVariable ['rhs_decalArmy_type', _value];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Army";
-						};
-					};
-				};
-				class Attribute5
-				{
 					property="rhs_decalArmy";
 					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
 					class Value
@@ -4318,7 +4260,26 @@ class Mission
 						};
 					};
 				};
-				class Attribute6
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
 				{
 					property="rhs_decalPlatoon";
 					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
@@ -4337,7 +4298,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=7;
+				class Attribute5
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 	};
