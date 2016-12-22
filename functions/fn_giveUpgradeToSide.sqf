@@ -1,4 +1,10 @@
-params ["_targetSide", "_deceased"];
+#define PREFIX mission
+#define COMPONENT fn
+#define DEBUG_MODE_FULL
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
+_targetSide = param [0, sideUnknown];
+_deceased = param [1, objNull]; // optional
 
 _minDistance = 200;
 _radioClass = "tf_fadak";
@@ -158,8 +164,14 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 _isNotArmy = { faction _this != "OPF_F" };
 _isAlive = {alive _this};
 _isTargetSide = { side _this == _targetSide };
-_isNotTooClose = { (_this distance2D _deceased) >= _minDistance };
+_isNotTooClose = { (_this distance2D _deceasedPos) >= _minDistance };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
+
+
+_deceasedPos = [0, 0, 0];
+if (_deceased != objNull) then {
+    _deceasedPos = getPos _deceased;
+};
 
 _eligibleUnits = allUnits;
 {
@@ -169,7 +181,7 @@ _eligibleUnits = allUnits;
 _eligibleUnits = [
     _eligibleUnits,
     [],
-    {_x distance2D _deceased},
+    {_x distance2D _deceasedPos},
     "DESCEND"
 ] call BIS_fnc_sortBy;
 
@@ -182,13 +194,12 @@ _eligibleUnits = [
 // now we've got eligible units sorted by their next upgrade level. splendid!
 // pick the first ones and apply:
 
-diag_log _eligibleUnits;
-diag_log ("units found that may be upgraded: " + (str count _eligibleUnits));
+TRACE_1("%1 units may be upgraded", count _eligibleUnits);
 
 {
     _level = _x getVariable ["Mission_nextLevel", 0];
     _x call (_unitApplyUpgradeLevel select _level);
-    diag_log format ["applying upgrade # %1 to unit %2 / %3", _level, _x, name _x];
+    INFO_3("applying upgrade # %1 to unit %2 / %3", _level, _x, name _x);
     { ["Waffenupgrade für mich!"] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _x, true];
 
 } forEach (_eligibleUnits select [0, 2]);

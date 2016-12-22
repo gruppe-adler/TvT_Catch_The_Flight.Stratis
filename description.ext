@@ -34,7 +34,7 @@ class Params
 	};
 };
 
-#include "cfgFunctions.h"
+#include "cfgFunctions.hpp"
 #include "ace_settings.h"
 #include "loadouts.h"
 #include "node_modules\grad-leaveNotes\UI\leaveNotes_dialog.hpp"

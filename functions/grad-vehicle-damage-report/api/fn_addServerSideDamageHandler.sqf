@@ -6,11 +6,11 @@
  **/
 
 #define PREFIX grad
-#define COMPONENT vehicle-damage-report
+#define COMPONENT vehicleDamageReport
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _groups = param [0, []];
 _callback = param [1, {nil}];
 
 
-[GVAR(serverSideHandlers), _groups, _callback] call CBA_fnc_hashSet;
+GVAR(serverSideHandlers) pushBack [_groups, _callback];

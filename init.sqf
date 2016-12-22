@@ -22,8 +22,10 @@ if (isServer) then {
     waitUntil {scriptDone _handle};
     ENGIMA_TRAFFIC_spawnHandler pushBack {
         params ["_unit"];
-        diag_log "setting up murder watch for civ";
         _unit call Mission_fnc_setupMurderWatch;
+    };
+    ENGIMA_TRAFFIC_vehicleSpawnHandler pushBack {
+        _this call GRAD_vehicleDamageReport_fnc_registerVehicle;
     };
 };
 
@@ -42,7 +44,7 @@ if (hasInterface) then {
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
 
-[] execVM "fnc_vehicle_damagen_petzen.sqf";
+[] execVM "setup_vehicle_damagen_petzen.sqf";
 [] execVM "loadouts.sqf";
 
 
