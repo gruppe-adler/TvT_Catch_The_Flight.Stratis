@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=351;
+		nextID=354;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3266.9526,31.901651,5782.1592};
-		dir[]={0.0036042531,-0.86838591,0.49595797};
-		up[]={0.0063111838,0.49585924,0.86837733};
-		aside[]={1.0000175,-1.6576265e-006,-0.0072663398};
+		pos[]={2955.0134,307.80811,6208.627};
+		dir[]={0.17660756,-0.43072927,-0.88508511};
+		up[]={0.08429978,0.90244079,-0.42247996};
+		aside[]={-0.9807176,-9.1908805e-007,-0.19569023};
 	};
 };
 binarizationWanted=0;
@@ -260,7 +260,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=64;
 		class Item0
 		{
 			dataType="Object";
@@ -2041,6 +2041,7 @@ class Mission
 					};
 					id=223;
 					type="C_man_1";
+					atlOffset=3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2070,6 +2071,7 @@ class Mission
 			{
 			};
 			id=222;
+			atlOffset=3.8146973e-006;
 		};
 		class Item25
 		{
@@ -3695,6 +3697,7 @@ class Mission
 					};
 					id=294;
 					type="C_man_1";
+					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3724,6 +3727,7 @@ class Mission
 			{
 			};
 			id=293;
+			atlOffset=-4.7683716e-007;
 		};
 		class Item55
 		{
@@ -3829,7 +3833,6 @@ class Mission
 					{
 						rank="SERGEANT";
 						description="Squad Leader (Alpha)";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=300;
@@ -4803,6 +4806,104 @@ class Mission
 			};
 			id=350;
 			type="EmptyDetectorAreaR250";
+		};
+		class Item62
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3110.22,4.6549711,6037.8789};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						description="Just a random dude";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=352;
+					type="C_man_1";
+					atlOffset=4.7683716e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=351;
+			atlOffset=4.7683716e-007;
+		};
+		class Item63
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3105.3354,6.4028449,6032.1714};
+				angles[]={6.2507048,4.6943598,6.2806716};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="UNLOCKED";
+				textures="standard";
+			};
+			id=353;
+			type="RDS_Ikarus_Civ_02";
+			atlOffset=-0.00018167496;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rds_lock_cargo";
+					expression="_this setVariable ['rds_lock_cargo', _value,true];_this lockCargo _value";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
