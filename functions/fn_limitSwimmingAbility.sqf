@@ -1,3 +1,8 @@
+#define PREFIX mission
+#define COMPONENT fn
+#define DEBUG_MODE_FULL
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 params [
     "_unit",
     "_drowningTimeout"
@@ -20,7 +25,6 @@ _drownLoop = {
          );
     };
 
-diag_log "checking swimming";
     params ["_params"];
     _unit = _params select 0;
     _drowningTimeout = _params select 1;

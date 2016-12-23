@@ -1,3 +1,8 @@
+#define PREFIX mission
+#define COMPONENT fn
+#define DEBUG_MODE_FULL
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+
 _this setVariable ["Mission_side", side _this];
 _this setVariable ["Mission_faction", faction _this];
 
@@ -11,7 +16,7 @@ if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
         _pos = getPos _unit;
         _name = name _unit;
 
-        diag_log "creating 'spotted' marker: exec remote...";
+        TRACE_1("creating 'spotted' marker for %1", _unit);
 
         _x = (_pos select 0) - _radius + random _radius;
         _y = (_pos select 1) - _radius + random _radius;
@@ -29,7 +34,7 @@ if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
                 params ["_name", "_pos", "_radius"];
 
                 _markerName = ("marker_last_spotted_" + _name);
-                diag_log ("creating 'spotted' marker local... " + _markerName);
+                TRACE_1("creating 'spotted' marker %1 local... ", _markerName);
 
                 deleteMarkerLocal _markerName;
                 [
@@ -61,8 +66,7 @@ Mission_fnc_setupMurderWatch_killedHandler = {
 
     params ["_deceased", "_killer"];
 
-diag_log "official killer:";
-diag_log _killer;
+    TRACE_1("official killer %1", _killer);
 
     _sideKiller = sideUnknown;
     if (alive _killer) then {
@@ -70,8 +74,7 @@ diag_log _killer;
     } else {
         _daRealKiller = _deceased getVariable ["ace_medical_lastDamageSource", objNull];
 
-diag_log "ace last damage from:";
-diag_log _daRealKiller;
+        TRACE_1("ace last damage from:", _daRealKiller);
 
         if (_daRealKiller != objNull) then {
             _killer = _daRealKiller;
@@ -87,28 +90,28 @@ diag_log _daRealKiller;
             switch (side _killer) do {
                 case independent: {[opfor, _deceased] call Mission_fnc_giveUpgradeToSide};
                 case east:  {[independent, _deceased] call Mission_fnc_giveUpgradeToSide};
-                default { diag_log format ["murder where killer was not indep or east. murderer was %1 / %2", str _killer, name _killer]; };
+                default { TRACE_2("murder where killer was not indep or east. murderer was %1 / %2", str _killer, name _killer); };
             };
 
             if ((_deceased getVariable "Mission_faction") == "OPF_F") then {
                 if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 60) then {
                     Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = Mission_fnc_setupMurderWatch_var_unit_indep_c_radius - 50;
                 };
-                diag_log format ["Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius];
+                TRACE_3("Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius);
 
                 [{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_setupMurderWatch_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
             };
 
             if (_sideDeceased == civilian) then {
-                diag_log format ["Unbeteiligtenkill %1 => %2", _killer, _deceased];
+                TRACE_2("Unbeteiligtenkill %1 => %2", _killer, _deceased);
                 // { ["Der war unbeteiligt. Das macht uns nicht beliebter."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _killer, true];
             } else {
-                diag_log format ["Kill: %1 => %2", _killer, _deceased];
+                TRACE_2("Kill: %1 => %2", _killer, _deceased);
                 // { ["Ich habe einen unserer Gegner erwischt. Das ist nicht weiter traurig, aber freundlicher werden die dadurch bestimmt nicht..."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _killer, true];
                 //{ ["Einer unserer Leute wurde ermordet! Dies wird Konsequenzen haben."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _sideDeceased, true];
             };
         } else {
-            diag_log format ["Teamkill %1 => %2", _killer, _deceased];
+            TRACE_2("Teamkill %1 => %2", _killer, _deceased);
         };
 
         [

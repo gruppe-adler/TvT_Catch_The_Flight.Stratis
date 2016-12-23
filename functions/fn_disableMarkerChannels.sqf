@@ -37,7 +37,7 @@ _clearIllegalMarkers = {
     } forEach [_isUserMarker, _isInBadChannel];
 
     {
-        diag_log format ["WARN deleting bad marker %1", _x];
+        INFO_1("WARN deleting bad marker %1", _x);
         deleteMarker _x;
     } forEach _markers;
 };
