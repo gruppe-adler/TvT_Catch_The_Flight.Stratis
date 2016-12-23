@@ -1,10 +1,10 @@
 # Szenario
 
 Es war einmal eine schöne Insel, auf der eine … Interessensgruppe (INDEP) in Konflikt mit der Militärverwaltung (OPFOR) geriet.
-Der Chef dieser Interessengruppe (INDEP C) vermutet, daß sein Leben nicht mehr für viel gilt, und möchte sich absetzen.
+Der Chef dieser Interessengruppe (INDEP) vermutet, daß sein Leben nicht mehr für viel gilt, und möchte sich absetzen.
 Das Militär will ihn dementsprechend tatsächlich dingfest machen; und im Zweifelsfall ist ihnen "tot" auch recht.
 
-Die Bevölkerung ist gespalten – außer den Freunden des Chefs (INDEP H) gibt es auch gesetzestreue Bürger (OPFOR H), die die Sichtweise des Militärs (OPFOR A) teilen – und als deren Informanten dienen.
+Die Bevölkerung ist gespalten – außer den Freunden des Chefs (75% der CIV) gibt es auch gesetzestreue Bürger (25% der CIV), die die Sichtweise des Militärs (OPFOR) teilen – und als deren Informanten dienen.
 Zwischen all dem existieren natürlich auch Leute, die einfach in Ruhe gelassen werden wollen, und denen Politik egal ist (CIV, AI).
 
 # offene Fragen/Überlegungen:
@@ -24,27 +24,22 @@ Zwischen all dem existieren natürlich auch Leute, die einfach in Ruhe gelassen 
 
 * alle Parteien befreundet, um Erkennbarkeit/Einsteigen bei anderen zu ermöglichen
 * Insel: Stratis
-* Uhrzeit: abends (1h vor Dämmerung, 2h vor Nacht)
+* Uhrzeit: morgens
 * Chat: nur lokal & global (hoffe das gilt auch für Marker!)
 * ein technischer Zeus um Probleme zu lösen
-* bluforce-tracking ist abgeschaltet
+* bluforce-tracking ist eingeschaltet für die Armee
 
 ## Slots & Loadout:
 
-* INDEP
-    * INDEP C: Zivilklamotten, Chefmütze, Kompass, Bandagen, Pistole (einsteckbar), Funkgerät, ein ziviles Auto
-    * INDEP H: Zivilklamotten, Karte, Kompass, Bandagen. Auf je zwei Personen ein Auto
-         * bis auf die ersten drei Leute: auf der ganzen Insel verstreuter Spawn
+* INDEP: Zivilklamotten, Chefmütze, Kompass, Bandagen, Pistole (einsteckbar), Funkgerät, ein ziviles Auto
+* CIV: Zivilklamotten, Karte, Kompass, Bandagen. Etwa auf je zwei Personen ein Auto
 * OPFOR
-    * OPFOR A: militärische Ausrüstung, Typ RHS-Russen. Keine Pistolen!    
-    * OPFOR H: Zivilklamotten, Karte, Kompass, Bandagen, Signalpistole
-        * auf der ganzen Insel verstreuter Spawn
-    * ein BRDM, ungepanzerte Fahrzeuge GAZ
+    * OPFOR A: militärische Ausrüstung, Typ RHS-Russen. Keine Pistolen! Ein BRDM, ungepanzerte Fahrzeuge GAZ etc
 
 ### vermutetes Balancing für verschiedene Spielerzahlen
 
-* 14 => 1 INDEP C + 4 INDEP H + 7 OPFOR + 2 OPFOR H
-* 22 => 1 INDEP C + 6 INDEP H + 11 OPFOR + 4 OPFOR H
+* 14 => 1 INDEP + 6 CIV +  7 OPFOR
+* 23 => 1 INDEP + 7 CIV + 15 OPFOR
 
 ### Spawn
 

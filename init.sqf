@@ -15,6 +15,17 @@ disableRemoteSensors true;
 if (isServer) then {
     ["Initialize"] call BIS_fnc_dynamicGroups;
 	[] call Mission_fnc_setAllSidesFriendly;
+
+    addMissionEventHandler ["PlayerConnected", {
+        diag_log "PlayerConnected";
+        params ["_dPlayId", "_uid", "_name", "_isJIP", "_owner"];
+        if (_uid find "HC" ==-1) then {
+            // its a player
+        } else {
+            // it's a HC
+        };
+    }];
+
 };
 
 [] spawn {
@@ -40,15 +51,18 @@ if (hasInterface) then {
     player call Mission_fnc_setup_tasks;
     [] call Mission_fnc_setupIDCard;
     [player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
+
+
+    if (side player != opfor) then {
+        1 enableChannel false;
+        2 enableChannel false;
+        3 enableChannel false;
+        [1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
+    };
+
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
 
 [] execVM "setup_vehicle_damagen_petzen.sqf";
 [] execVM "loadouts.sqf";
-
-
-1 enableChannel false;
-2 enableChannel false;
-3 enableChannel false;
-[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually

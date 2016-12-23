@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=354;
+		nextID=365;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2955.0134,307.80811,6208.627};
-		dir[]={0.17660756,-0.43072927,-0.88508511};
-		up[]={0.08429978,0.90244079,-0.42247996};
-		aside[]={-0.9807176,-9.1908805e-007,-0.19569023};
+		pos[]={2704.3945,414.48218,5393.5137};
+		dir[]={0.40155783,-0.62013829,0.67406422};
+		up[]={0.31743899,0.78439629,0.53286076};
+		aside[]={0.85918695,-8.4590283e-007,-0.51183903};
 	};
 };
 binarizationWanted=0;
@@ -260,7 +260,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=64;
+		items=68;
 		class Item0
 		{
 			dataType="Object";
@@ -702,8 +702,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2618.2869,64.153236,629.59546};
-						angles[]={0.027492445,0.51375324,0.014998405};
+						position[]={2618.2871,64.153259,629.59497};
+						angles[]={0.027488936,0.51375514,0.014992379};
 					};
 					side="Independent";
 					flags=6;
@@ -716,7 +716,6 @@ class Mission
 					};
 					id=90;
 					type="I_officer_F";
-					atlOffset=-7.6293945e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -746,7 +745,29 @@ class Mission
 			{
 			};
 			id=89;
-			atlOffset=-7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Boss";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item4
 		{
@@ -3533,6 +3554,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=288;
@@ -4093,6 +4115,29 @@ class Mission
 			};
 			id=299;
 			atlOffset=-0.00036144257;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Alpha";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item58
 		{
@@ -4376,6 +4421,29 @@ class Mission
 			};
 			id=314;
 			atlOffset=-0.0052480698;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Bravo";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item59
 		{
@@ -4659,6 +4727,29 @@ class Mission
 			};
 			id=329;
 			atlOffset=-0.010624886;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Charlie";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item60
 		{
@@ -4672,7 +4763,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3273.7559,5.3414392,5771.6226};
+						position[]={3273.7561,5.3414392,5771.623};
 						angles[]={0,0.69184852,0};
 					};
 					side="East";
@@ -4685,6 +4776,29 @@ class Mission
 					};
 					id=345;
 					type="O_officer_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -4789,6 +4903,29 @@ class Mission
 			{
 			};
 			id=344;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Cmd";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item61
 		{
@@ -4826,7 +4963,6 @@ class Mission
 					class Attributes
 					{
 						description="Just a random dude";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=352;
@@ -4904,6 +5040,126 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item64
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3312.8064,4.7352567,5775.4839};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=355;
+					type="C_man_1";
+					atlOffset=-1.9073486e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=354;
+			atlOffset=-1.9073486e-006;
+		};
+		class Item65
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3313.6606,4.7277646,5772.8267};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=357;
+					type="C_man_1";
+					atlOffset=-1.2874603e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=356;
+			atlOffset=-1.2874603e-005;
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3310.4868,4.7065325,5773.1143};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=359;
+					type="C_man_1";
+					atlOffset=-1.4305115e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=358;
+			atlOffset=-1.4305115e-006;
+		};
+		class Item67
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3309.7717,4.7090726,5774.9258};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=361;
+					type="C_man_1";
+					atlOffset=-3.3855438e-005;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=360;
+			atlOffset=-3.3855438e-005;
 		};
 	};
 	class Connections
