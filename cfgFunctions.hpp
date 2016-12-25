@@ -9,29 +9,32 @@ class CfgFunctions {
 	};
 	class Mission {
 		file = functions;
-		class Setup {
-			class setAllSidesFriendly {};
-			class limitOffroadSpeed {};
-			class disableMarkerChannels {};
-			class preventOtherSidesFromStealing {};
-			class setup_tasks {};
-			class setupMurderWatch {};
-			class limitSwimmingAbility {};
-			class setupIDCard {};
-		};
-		class Triggers {
+		class Shit {
 			class alert_opfor_katzenwache {};
-			class win_opfor_elim {};
+			class createTasks {};
+			class disableMarkerChannels {};
+			class giveUpgradeToSide {};
+			class limitOffroadSpeed {};
+			class limitSwimmingAbility {};
+			class preventOtherSidesFromStealing {};
+			class setAllSidesFriendly {};
+			class setupIDCard {};
+			class setupMurderWatch {};
+			class setup_tasks {};
+			class showHint {};
+			class spawn_boat {};
+			class update_task_survive {};
 			class win_indep_elim {};
 			class win_indep_escape {};
-			class update_task_survive {};
-			class spawn_boat {};
+			class win_opfor_elim {};
 		};
-		class Upgrades {
-			class giveUpgradeToSide {};
+		class Client {
+			file = "functions\client"
+			class getMyAllegianceCallback {};
 		};
-		class Misc {
-			class showHint {};
+		class Server {
+			file = "functions\server";
+			class getMyAllegiance {};
 		};
 	};
 };
