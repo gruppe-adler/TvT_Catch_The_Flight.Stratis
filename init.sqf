@@ -35,7 +35,7 @@ if (isServer) then {
 if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;
-	player addEventhandler ["HandleRating", {0}];
+	player addEventHandler ["HandleRating", {0}];
 	["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 	player call Mission_fnc_preventOtherSidesFromStealing;
 	player call Mission_fnc_setup_tasks;
@@ -48,9 +48,6 @@ if (hasInterface) then {
 		2 enableChannel false;
 		3 enableChannel false;
 		[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
-	};
-	if (side player == civilian) {
-		[player] remoteExecCall ["Mission_fnc_getMyAllegiance", 2];
 	};
 
 };

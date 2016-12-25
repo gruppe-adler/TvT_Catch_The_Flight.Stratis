@@ -20,6 +20,10 @@ class Loadouts {
 		class CIV_F {
 			class AllUnits {
 				uniform = "rds_uniform_Woodlander1";
+				addItemsToUniform[] = {
+					LIST_1("ACE_SpraypaintRed"),
+					"SmokeShell"
+				};
 			};
 		};
 
@@ -32,32 +36,6 @@ class Loadouts {
 				addItemsToUniform[] = {
 					LIST_1("ACE_epinephrine"),
 					LIST_1("ACE_morphine")
-				};
-			};
-		};
-
-		class OPF_G_F {
-			class AllUnits  {
-				uniform = "rds_uniform_Woodlander1";
-				addItemsToUniform[] = {
-					LIST_1("ACE_SpraypaintRed"),
-					"SmokeShell"
-				};
-			};
-		};
-
-		class IND_F {
-			class AllUnits {
-				uniform = "rds_uniform_Woodlander1";
-			};
-		};
-
-		class IND_G_F {
-			class AllUnits  {
-				uniform = "rds_uniform_Woodlander1";
-				addItemsToUniform[] = {
-					LIST_1("ACE_SpraypaintRed"),
-					"SmokeShell"
 				};
 			};
 		};
@@ -107,13 +85,13 @@ class Loadouts {
 				LIST_10("ACE_morphine")
 			};
 		};
-		class O_Soldier_AAR_F: O_Soldier_F {
+		class O_Soldier_A_F: O_Soldier_F {
 			backpack = "rhs_assault_umbts";
 			addItemsToBackpack[] = {
 				LIST_3("rhs_100Rnd_762x54mmR_green")
 			};
 		};
-		class O_Soldier_LAT_F: O_Soldier_F {
+		class O_Soldier_AT_F: O_Soldier_F {
 			secondaryWeapon = "launch_RPG7_F";
 			backpack = "rhs_rpg_empty";
 			addItemsToBackpack[] = {
@@ -122,6 +100,7 @@ class Loadouts {
 		};
 
 		class I_Officer_F {
+			uniform = "rds_uniform_Woodlander1";
 			handgunWeapon = "rhs_weap_makarov_pm";
 			binoculars = "Binocular";
 			addItemsToUniform[] = {
