@@ -18,11 +18,13 @@ _getAllegianceRatio = {
 		};
 	}] call CBA_fnc_hashEachPair;
 
-    if (_east == 0) then {
+    if (_indep == 0) then {
+        0;
+    } else {if (_east == 0) then {
         1000000;
     } else {
         _indep / _east;
-    }
+    }};
 };
 
 _allegiances = GVAR(civPlayerAllegiances);
