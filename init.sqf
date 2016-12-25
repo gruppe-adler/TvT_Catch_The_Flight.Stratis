@@ -45,8 +45,8 @@ if (hasInterface) then {
 	player call Mission_fnc_preventOtherSidesFromStealing;
 	player call Mission_fnc_setupTasks;
 	[] call Mission_fnc_setupIDCard;
+    [] call Mission_fnc_setupActionBackgroundCheck;
 	[player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
-
 
 	if (side player != opfor) then {
 		1 enableChannel false;

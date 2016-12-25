@@ -10,7 +10,8 @@ class CfgFunctions {
 	class Mission {
 		file = functions;
 		class Shit {
-    			class alert_opfor_katzenwache {};
+                class setupActionBackgroundCheck {};
+                class alert_opfor_katzenwache {};
                 class createTaskCivKill {};
                 class createTaskCivProtect {};
                 class createTaskOpfor {};
