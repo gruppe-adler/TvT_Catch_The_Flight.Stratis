@@ -169,7 +169,7 @@ _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
 
 _deceasedPos = [0, 0, 0];
-if (_deceased != objNull) then {
+if (!(isNull _deceased)) then {
 	_deceasedPos = getPos _deceased;
 };
 

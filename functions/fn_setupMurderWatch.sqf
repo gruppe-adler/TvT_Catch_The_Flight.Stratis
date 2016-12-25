@@ -76,7 +76,7 @@ Mission_fnc_setupMurderWatch_killedHandler = {
 
 		TRACE_1("ace last damage from:", _daRealKiller);
 
-		if (_daRealKiller != objNull) then {
+		if (!(isNull _daRealKiller)) then {
 			_killer = _daRealKiller;
 			_sideKiller = _killer call _getSide;
 		};
