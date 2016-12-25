@@ -11,7 +11,7 @@ class ace_settings {
     };
 
     class ace_map_BFT_Enabled {
-        value = 0;
+        value = 1;
         typeName = "BOOL";
         force = 1;
     };
