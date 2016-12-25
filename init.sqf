@@ -14,18 +14,8 @@ disableRemoteSensors true;
 
 if (isServer) then {
     ["Initialize"] call BIS_fnc_dynamicGroups;
+    GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
 	[] call Mission_fnc_setAllSidesFriendly;
-
-    addMissionEventHandler ["PlayerConnected", {
-        diag_log "PlayerConnected";
-        params ["_dPlayId", "_uid", "_name", "_isJIP", "_owner"];
-        if (_uid find "HC" ==-1) then {
-            // its a player
-        } else {
-            // it's a HC
-        };
-    }];
-
 };
 
 [] spawn {
@@ -58,6 +48,9 @@ if (hasInterface) then {
         2 enableChannel false;
         3 enableChannel false;
         [1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
+    };
+    if (side player == civilian) {
+        [player] remoteExecCall ["Mission_fnc_getMyAllegiance", 2];
     };
 
 };
