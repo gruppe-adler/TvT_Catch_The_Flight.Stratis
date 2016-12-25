@@ -8,20 +8,20 @@
 _unit = _this;
 
 _unit addEventHandler ["InventoryOpened", {
-    params ["_unit", "_container", "_secondaryContainer"];
+	params ["_unit", "_container", "_secondaryContainer"];
 
-    _militarySides = [Blufor, Opfor, Resistance];
+	_militarySides = [Blufor, Opfor, Resistance];
 
-    _vehicle = vehicle player;
-    _preventOpening = false;
+	_vehicle = vehicle player;
+	_preventOpening = false;
 
-    {
-        if ((_x in _militarySides) && (_x != side player)) then {
-            _preventOpening = true;
-            hint format ["Can't access %1, I'm being watched here", _container];
-        };
-    } forEach [side _vehicle, side _container, side _secondaryContainer];
+	{
+		if ((_x in _militarySides) && (_x != side player)) then {
+			_preventOpening = true;
+			hint format ["Can't access %1, I'm being watched here", _container];
+		};
+	} forEach [side _vehicle, side _container, side _secondaryContainer];
 
-    _preventOpening
+	_preventOpening
 
 }];

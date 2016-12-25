@@ -7,8 +7,8 @@
 				<German>Catch the Flight</German>
 			</Key>
 			<Key ID="str_GRAD_onLoadMission">
-				<Original>The military wants to kill someone. They dont want to die.</Original>
-				<German>Das Militär will jemanden umbringen. Der will nicht sterben.</German>
+				<Original>The military wants to kill someone who doesnt want to die.</Original>
+				<German>Das Militär will jemanden umbringen, der nicht sterben möchte.</German>
 			</Key>
 			<Key ID="str_GRAD_overviewText">
 				<Original>
@@ -116,21 +116,23 @@
 				<Original>Stay alive</Original>
 				<German>Bleib am Leben</German>
 			</Key>
-            <Key ID="str_GRAD_task_kill_opfor_desc">
-                <Original>The military is getting on our nerves. Would be cool to just eliminate them.</Original>
-                <German>Das Militär nervt. Wär cool sie einfach um die ecke zu bringen.</German>
-            </Key>
-            <Key ID="str_GRAD_task_kill_opfor_title">
-                <Original>Neutralize the military</Original>
-                <German>Militär neutralisieren</German>
-            </Key>
+			<Key ID="str_GRAD_task_kill_opfor_desc">
+				<Original>The military is getting on our nerves. Would be cool to just eliminate them.</Original>
+				<German>Das Militär nervt. Wär cool sie einfach um die ecke zu bringen.</German>
+			</Key>
+			<Key ID="str_GRAD_task_kill_opfor_title">
+				<Original>Neutralize the military</Original>
+				<German>Militär neutralisieren</German>
+			</Key>
 		</Container>
 		<Container name="scenario">
 			<Key ID="str_GRAD_scenario_subject">
 				<Original>Scenario details</Original>
 			</Key>
 			<Key ID="str_GRAD_scenario_equipment_title">
-				<Original>Nearly nothing for civilian helpers of either side. Even the military is not very well equipped.</Original>
+				<Original>Nearly nothing for civilian helpers of either side. Even the military is not very well
+					equipped.
+				</Original>
 			</Key>
 			<Key ID="str_GRAD_scenario_environment_title">
 				<Original>environment</Original>

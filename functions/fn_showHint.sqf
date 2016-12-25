@@ -1,7 +1,7 @@
 params ["_message", "_type"];
 
 if (isNil "_type") then {
-    _type = "";
+	_type = "";
 };
 
 systemChat format ["mission: %1", _message];
