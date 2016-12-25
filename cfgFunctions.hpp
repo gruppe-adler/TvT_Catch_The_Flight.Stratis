@@ -1,6 +1,12 @@
 class CfgFunctions {
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
 	#include "functions\grad-vehicle-damage-report\cfgFunctions.hpp"
+	class Config {
+		file = config
+		class General {
+			class civilianUniforms { file = "config\fn_civilianUniforms.json"; };
+		};
+	};
 	class Mission {
 		file = functions;
 		class Setup {
