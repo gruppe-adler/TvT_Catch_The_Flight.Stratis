@@ -23,15 +23,12 @@ _getAllegianceRatio = {
 
 _allegiances = GVAR(civPlayerAllegiances);
 
-if (!([_allegiances, _this] call CBA_fnc_hashHasKey)) then {
+if (!([_allegiances, _player] call CBA_fnc_hashHasKey)) then {
 	_newAllegiance = independent;
 	if ((nil call _getAllegianceRatio) > 4) then {
 		_newAllegiance = opfor;
 	};
-	[_allegiances, _this, _newAllegiance] call CBA_fnc_hashSet;
+	[_allegiances, _player, _newAllegiance] call CBA_fnc_hashSet;
 };
-_allegiance = [_allegiances, _this] call CBA_fnc_hashGet;
-[
-	[_allegiance],
-	{setplayerallegiance}
-] remoteExec["bis_fnc_call", _player];
+_allegiance = [_allegiances, _player] call CBA_fnc_hashGet;
+[_allegiance] remoteExec["Mission_fnc_getMyAllegianceCallback", _player];

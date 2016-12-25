@@ -1,8 +1,3 @@
-_title = "";
-_content = "";
-_condition = "";
-_title = "";
-
 switch (side player) do {
 	case east: {
 		_title = localize "str_GRAD_OPFOR_A_title";
@@ -18,9 +13,10 @@ switch (side player) do {
 			] call CBA_fnc_createMarker;
 		} forEach [getPos trigger_opfor_katzenwache_1, getPos trigger_opfor_katzenwache_2, getPos trigger_opfor_katzenwache_3];
 
+		[_title, _content, _condition] call Mission_fnc_create_tasks;
+
 	};
 	case resistance: {
-
 
 		_title = localize "str_GRAD_INDEP_C_title";
 		_content = localize "str_GRAD_INDEP_C_story";
@@ -31,21 +27,11 @@ switch (side player) do {
 			(getPos vehicle_flight_plane),
 			"ICON", [1, 1], "COLOR:", "ColorGreen", "TYPE:", "hd_pickup"
 		] call CBA_fnc_createMarker;
+
+		[_title, _content, _condition] call Mission_fnc_create_tasks;
+	};
+	case civilian: {
+		[player] remoteExecCall ["Mission_fnc_getMyAllegiance", 2];
 	};
 };
 
-player createDiaryRecord ["Diary", [_title, _content]];
-
-task_main_objective = player createSimpleTask [_title];
-task_main_objective setSimpleTaskDescription [_condition, _title, _title];
-player setCurrentTask task_main_objective;
-
-task_survive = player createSimpleTask ['dont_die'];
-task_survive setSimpleTaskDescription [localize "str_GRAD_task_dd_desc", localize "str_GRAD_task_dd_title", localize "str_GRAD_task_dd_title"];
-
-player createDiarySubject ["scenario", localize "str_GRAD_scenario_subject"];
-
-player createDiaryRecord ["scenario", [localize "str_GRAD_scenario_equipment_title", localize "str_GRAD_scenario_equipment"]];
-player createDiaryRecord ["scenario", [localize "str_GRAD_scenario_environment_title", localize "str_GRAD_scenario_environment"]];
-player createDiaryRecord ["scenario", [localize "str_GRAD_scenario_story_title", localize "str_GRAD_scenario_story"]];
-player createDiaryRecord ["scenario", [localize "str_GRAD_scenario_background_title", localize "str_GRAD_scenario_background"]];
