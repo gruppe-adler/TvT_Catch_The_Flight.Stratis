@@ -10,7 +10,7 @@ if (side _player != civilian) exitWith {WARNING_1("non civ player tried to get a
 _getAllegianceRatio = {
 	_east = 0;
 	_indep = 0;
-	[GVAR(registeredCivPlayers), {
+	[GVAR(civPlayerAllegiances), {
 		switch (_value) do {
 			case opfor: {INC(_east);};
 			case independent: {INC(_indep);};
@@ -18,17 +18,25 @@ _getAllegianceRatio = {
 		};
 	}] call CBA_fnc_hashEachPair;
 
-	_indep / _east;
+    if (_east == 0) then {
+        1000000;
+    } else {
+        _indep / _east;
+    }
 };
 
 _allegiances = GVAR(civPlayerAllegiances);
 
 if (!([_allegiances, _player] call CBA_fnc_hashHasKey)) then {
+    TRACE_1("creating allegiance for %1", _player);
 	_newAllegiance = independent;
-	if ((nil call _getAllegianceRatio) > 4) then {
+	if (([] call _getAllegianceRatio) > 4) then {
+        TRACE_1("allegiance for %1 will be opfor!", _player);
 		_newAllegiance = opfor;
 	};
 	[_allegiances, _player, _newAllegiance] call CBA_fnc_hashSet;
 };
 _allegiance = [_allegiances, _player] call CBA_fnc_hashGet;
 [_allegiance] remoteExec["Mission_fnc_getMyAllegianceCallback", _player];
+
+_allegiance
