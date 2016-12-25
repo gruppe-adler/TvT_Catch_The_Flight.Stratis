@@ -5,20 +5,20 @@
 
 _player = param [0];
 
-if (side _player != civilian) exitWith {WARN_1("non civ player tried to get allegiance", _player); false};
+if (side _player != civilian) exitWith {WARNING_1("non civ player tried to get allegiance", _player); false};
 
 _getAllegianceRatio = {
 	_east = 0;
 	_indep = 0;
 	[GVAR(registeredCivPlayers), {
 		switch (_value) do {
-			case opfor: {INCR(_east);};
-			case independent: {INCR(_indep);};
-			default {WARN_2("civ player %1 registered with neither opfor nor ind allegiance, but  %2", _key, _value);};
+			case opfor: {INC(_east);};
+			case independent: {INC(_indep);};
+			default {WARNING_2("civ player %1 registered with neither opfor nor ind allegiance, but  %2", _key, _value);};
 		};
-	}] CBA_fnc_eachPair;
+	}] call CBA_fnc_hashEachPair;
 
-	_indep / _east
+	_indep / _east;
 };
 
 _allegiances = GVAR(civPlayerAllegiances);

@@ -1,3 +1,7 @@
+#define PREFIX mission
+#define COMPONENT fn
+#define DEBUG_MODE_FULL
+#include "\x\cba\addons\main\script_macros_mission.hpp"
 #include "missionMacros.h"
 
 DEBUG_MODE = ("DebugMode" call BIS_fnc_getParamValue) == 1;
@@ -48,6 +52,8 @@ if (hasInterface) then {
 		2 enableChannel false;
 		3 enableChannel false;
 		[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
+
+        ace_map_BFT_Enabled = false;
 	};
 
 };

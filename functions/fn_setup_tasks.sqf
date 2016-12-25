@@ -13,7 +13,7 @@ switch (side player) do {
 			] call CBA_fnc_createMarker;
 		} forEach [getPos trigger_opfor_katzenwache_1, getPos trigger_opfor_katzenwache_2, getPos trigger_opfor_katzenwache_3];
 
-		[_title, _content, _condition] call Mission_fnc_create_tasks;
+		[_title, _content, _condition] call Mission_fnc_createTasks;
 
 	};
 	case resistance: {
@@ -28,10 +28,9 @@ switch (side player) do {
 			"ICON", [1, 1], "COLOR:", "ColorGreen", "TYPE:", "hd_pickup"
 		] call CBA_fnc_createMarker;
 
-		[_title, _content, _condition] call Mission_fnc_create_tasks;
+		[_title, _content, _condition] call Mission_fnc_createTasks;
 	};
 	case civilian: {
 		[player] remoteExecCall ["Mission_fnc_getMyAllegiance", 2];
 	};
 };
-
