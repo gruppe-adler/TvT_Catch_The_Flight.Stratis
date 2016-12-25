@@ -5,18 +5,18 @@
 
 _allegiance = param [0, sideUnknown];
 
+if (!(isNil "task_main_objective")) then {
+    player removeSimpleTask task_main_objective;
+};
+
 switch (_allegiance) do {
 	case resistance: {
-		_title = localize "str_GRAD_INDEP_H_title";
-		_content = localize "str_GRAD_INDEP_H_story";
-		_condition = localize "str_GRAD_INDEP_H_condition";
-		[_title, _content, _condition] call Mission_fnc_createTasks;
+        task_main_objective = [_allegiance] call Mission_fnc_createTaskCivProtect;
+        player setCurrentTask task_main_objective;
 	};
 	case opfor: {
-		_title = localize "str_GRAD_OPFOR_H_title";
-		_content = localize "str_GRAD_OPFOR_H_story";
-		_condition = localize "str_GRAD_OPFOR_H_condition";
-		[_title, _content, _condition] call Mission_fnc_createTasks;
+        task_main_objective = [_allegiance] call Mission_fnc_createTaskCivKill;
+        player setCurrentTask task_main_objective;
 	};
 	default {
 		WARNING_1("bad allegiance %1 from server", _allegiance);

@@ -55,9 +55,26 @@
 				<Original>Arrest or kill the target person.</Original>
 				<German>Nimm die Zielperson fest, oder töte sie.</German>
 			</Key>
+
+            <Key ID="str_GRAD_OPFOR_A_avoid_title">
+				<Original>Avoid area</Original>
+				<German>Gebiet vermeiden</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_A_avoid_story">
+				<Original>Unusual military activity around the airfield will raise suspicion. We'd like our target person to be unaware of our operation as long as possible.
+				</Original>
+				<German>Ungewöhnliche militärische Aktivitäten um den Flughaften werden die Zielperson Verdacht schöpfen lassen. Wir möchten das so lang als möglich vermeiden.
+				</German>
+			</Key>
+			<Key ID="str_GRAD_OPFOR_A_avoid_condition">
+				<Original>Avoid the marked area to avoid warning the target person</Original>
+				<German>Vermeiden Sie das markierte Gebiet, um die Zielperson nicht zu warnen.</German>
+			</Key>
+
+
 			<Key ID="str_GRAD_OPFOR_H_title">
-				<Original>Help arrest target person.</Original>
-				<German>Hilf, die Zielperson festzunehmen.</German>
+				<Original>Meet with the military leaders and help to neutralize target person.</Original>
+				<German>Triff die Militärführung und hilf, die Zielperson zu neutralisieren.</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_H_story">
 				<Original>There's this guy who's nothing but trouble. Finally, the authorities are moving. But he has
@@ -68,10 +85,10 @@
 				</German>
 			</Key>
 			<Key ID="str_GRAD_OPFOR_H_condition">
-				<Original>Help to get the target person arrested. You dont have any weapons, but information is a
+				<Original>Help to get the target person neutralized. You dont have any weapons, but information is a
 					welcome coin with the military.
 				</Original>
-				<German>Hilf mit, die Zielperson festzunehmen. Du hast keine Waffen, aber das Militär freut sich auch
+				<German>Hilf mit, die Zielperson unschädlich zu machen. Du hast keine Waffen, aber das Militär freut sich auch
 					über Informationen.
 				</German>
 			</Key>
@@ -89,8 +106,8 @@
 				</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_C_condition">
-				<Original>Get away from the island, no matter how. There could be a plane at the airport.</Original>
-				<German>Entkomme von der Insel, egal wie. Am Flughafen könnte es ein Flugzeug geben.</German>
+				<Original>Get away from the island, no matter how.</Original>
+				<German>Entkomme von der Insel, egal wie.</German>
 			</Key>
 			<Key ID="str_GRAD_INDEP_H_title">
 				<Original>Help your friend escape!</Original>

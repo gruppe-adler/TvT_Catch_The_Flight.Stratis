@@ -1,17 +1,7 @@
-params ["_title", "_content", "_condition"];
-
-player createDiaryRecord ["Diary", [_title, _content]];
-
-if (!(isNil "task_main_objective")) then {
-    player removeSimpleTask task_main_objective;
-};
-task_main_objective = player createSimpleTask [_title];
-task_main_objective setSimpleTaskDescription [_condition, _title, _title];
-player setCurrentTask task_main_objective;
-
 if (isNil "task_survive") then {
     task_survive = player createSimpleTask ['dont_die'];
     task_survive setSimpleTaskDescription [localize "str_GRAD_task_dd_desc", localize "str_GRAD_task_dd_title", localize "str_GRAD_task_dd_title"];
+    task_survive setSimpleTaskType "heal";
 
     player createDiarySubject ["scenario", localize "str_GRAD_scenario_subject"];
 

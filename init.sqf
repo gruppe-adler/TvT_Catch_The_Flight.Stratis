@@ -18,6 +18,7 @@ mission_state_boat_spawned = false;
 
 if (isServer) then {
 	["Initialize"] call BIS_fnc_dynamicGroups;
+
 	GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
 	[] call Mission_fnc_setAllSidesFriendly;
 };
@@ -42,7 +43,7 @@ if (hasInterface) then {
 	player addEventHandler ["HandleRating", {0}];
 	["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
 	player call Mission_fnc_preventOtherSidesFromStealing;
-	player call Mission_fnc_setup_tasks;
+	player call Mission_fnc_setupTasks;
 	[] call Mission_fnc_setupIDCard;
 	[player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 

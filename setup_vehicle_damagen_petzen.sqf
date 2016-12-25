@@ -27,7 +27,6 @@ if (isServer) then {
 		GVAR(collected_guer_damage) = GVAR(collected_guer_damage) mod 4;
 
 		LOG_1("triggering %1 upgrades for guer", _numUpgrades);
-		systemChat ("triggering upgrade for guer " + (str _damage));
 
 		for "_i" from 1 to _numUpgrades do {
 			[independent, objNull] call Mission_fnc_giveUpgradeToSide;
