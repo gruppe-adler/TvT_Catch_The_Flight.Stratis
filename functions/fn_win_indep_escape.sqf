@@ -2,7 +2,13 @@
 	[] call Mission_fnc_update_task_survive;
 
 	_mainObjectiveState = 'CANCELED';
-	switch (side player) do {
+
+    _allegiance = side player;
+    if (_allegiance == civilian) then {
+        _allegiance = player getVariable ["mission_allegiance", _allegiance];
+    };
+
+	switch (_allegiance) do {
 		case east: {_mainObjectiveState = 'FAILED'};
 		case independent: {_mainObjectiveState = 'SUCCEEDED'};
 		default { };
