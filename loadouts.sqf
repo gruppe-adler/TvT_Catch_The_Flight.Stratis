@@ -2,7 +2,7 @@
 	{
 		params ["_value", "_unit"];
 		if (_value == "rds_uniform_Woodlander1") then {
-			_value = selectRandom ([] call Mission_fnc_civilianUniforms);
+			_value = selectRandom ([] call Config_fnc_civilianUniforms);
 		};
 		_value
 	},
