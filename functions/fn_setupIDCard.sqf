@@ -34,12 +34,19 @@ GRAD_IdCard_demandAction = {
         TRACE_2("getting background data; varname %1, val %2 ",_varname, _bgData);
 
         if (!([_allegiances] call CBA_fnc_isHash)) exitWith { "" };
-        if ((_fromSide != side player) && ([_allegiances, "isPublic", false] call CBA_fnc_hashGet)) exitWith {""};
+        _isPublic = [_allegiances, "isPublic", false] call CBA_fnc_hashGet;
+        if ((_fromSide != side player) && (!_isPublic)) exitWith {""};
 
-        format ["%1 think he feels %2 towards the army, and %3 to the INDEP C.",
+        private _publicInfo = "This is NOT public information.";
+        if (_isPublic) then {
+            _publicInfo = "This is public information.";
+        };
+
+        format ["%1 think he feels %2 towards the army, and %3 to the INDEP C. %4",
             _fromSide,
             (([_allegiances, opfor, 0] call CBA_fnc_hashGet) call _intToDescription),
-            (([_allegiances, independent, 0] call CBA_fnc_hashGet) call _intToDescription)
+            (([_allegiances, independent, 0] call CBA_fnc_hashGet) call _intToDescription),
+            _publicInfo
         ];
     };
 
