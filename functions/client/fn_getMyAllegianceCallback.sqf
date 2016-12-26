@@ -9,6 +9,8 @@ if (!(isNil "task_main_objective")) then {
     player removeSimpleTask task_main_objective;
 };
 
+player setVariable ["mission_allegiance", _allegiance, true];
+
 switch (_allegiance) do {
 	case resistance: {
         task_main_objective = [_allegiance] call Mission_fnc_createTaskCivProtect;

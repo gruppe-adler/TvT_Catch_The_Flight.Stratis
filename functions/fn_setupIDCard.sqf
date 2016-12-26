@@ -22,8 +22,10 @@ GRAD_IdCard_showAction = {
 GRAD_IdCard_demandAction = {
 
     _intToDescription = {
-        _descriptions = ["hostile", "neutral", "friendly"];
-        (_descriptions select (_this + 1));
+        TRACE_1("_intToDescription param", _this);
+        private _descriptions = ["hostile", "neutral", "friendly"];
+        private _idx = _this + 1;
+        (_descriptions select _idx);
     };
 
     _allegianceDataString = {
