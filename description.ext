@@ -37,4 +37,9 @@ class Params
 #include "cfgFunctions.hpp"
 #include "ace_settings.h"
 #include "loadouts.h"
-#include "node_modules\grad-leaveNotes\UI\leaveNotes_dialog.hpp"
+#include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
+
+class CfgSounds {
+	sounds[] = {};
+    #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
+};
