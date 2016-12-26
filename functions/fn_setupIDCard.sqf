@@ -8,15 +8,15 @@ _action = ["GRAD_IdCard_showAction", "Show ID Card", "", {[] spawn GRAD_IdCard_s
 
 GRAD_IdCard_showAction = {
 	_closePeople = player nearEntities ["Man", 5];
-	_closePeople = [_closePeople, {isPlayer _this}] call CBA_fnc_select;
+	_closePeople = [_closePeople, {(isPlayer _this) && (player != _this)}] call CBA_fnc_select;
 	[
-		[(name player), count _closePeople, (side player)],
+		[(name player), count _closePeople],
 		{
-			params ["_name", "_count", "_side"];
-			_msg = format ["%1 zeigt seinen Ausweis %2 Leuten.", _name, _count - 1];
+			params ["_name", "_count"];
+			_msg = format ["%1 zeigt seinen Ausweis %2 Leuten.", _name, _count];
 			[_msg] call Mission_fnc_showHint;
 		}
-	] remoteExec ["BIS_fnc_call", _closePeople, true];
+	] remoteExec ["BIS_fnc_call", _closePeople + [player], true];
 };
 
 GRAD_IdCard_demandAction = {
