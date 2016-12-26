@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=366;
+		nextID=383;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3279.9878,43.857796,5778.5562};
-		dir[]={0.64392155,-0.7328319,-0.21987113};
-		up[]={0.6935553,0.68036491,-0.23681693};
-		aside[]={-0.32313985,4.505273e-007,-0.94635981};
+		pos[]={2546.9607,115.78364,612.5368};
+		dir[]={0.8662191,-0.49851167,0.034439757};
+		up[]={0.49812523,0.86687493,0.01980594};
+		aside[]={0.039729021,1.0602853e-006,-0.9992283};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,16 @@ addons[]=
 	"rhsgref_c_a2port_armor",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Boat_F_Exp_Boat_Transport_02",
-	"rds_a2port_cman"
+	"rds_a2port_cman",
+	"ga_heli",
+	"A3_Air_F_Heli_Light_01",
+	"ace_realisticnames"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=13;
+		items=15;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -134,6 +137,18 @@ class AddonsMetaData
 			name="RDS Civilian Pack Characters";
 			author="reyhard";
 			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
+		};
+		class Item13
+		{
+			className="ga_heli";
+			name="ga_heli";
+		};
+		class Item14
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircrafts";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
 		};
 	};
 };
@@ -260,7 +275,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=65;
+		items=70;
 		class Item0
 		{
 			dataType="Object";
@@ -5188,6 +5203,147 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item65
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2630.623,64.463997,599.3515};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						description="temporary slots";
+						isPlayable=1;
+					};
+					id=375;
+					type="C_man_1";
+					atlOffset=-7.6293945e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=374;
+			atlOffset=-7.6293945e-006;
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2630.7861,64.272774,595.46429};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						description="temporary slots";
+						isPlayable=1;
+					};
+					id=377;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=376;
+		};
+		class Item67
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2626.9976,64.401237,601.38812};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						description="temporary slots";
+						isPlayable=1;
+					};
+					id=379;
+					type="C_man_1";
+					atlOffset=-7.6293945e-006;
+				};
+			};
+			class Attributes
+			{
+			};
+			id=378;
+			atlOffset=-7.6293945e-006;
+		};
+		class Item68
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2627.1606,64.130463,597.50092};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						description="temporary slots";
+						isPlayable=1;
+					};
+					id=381;
+					type="C_man_1";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=380;
+		};
+		class Item69
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2630.3857,66.987129,629.16968};
+				angles[]={6.2432065,0,0.07734675};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=382;
+			type="B_Heli_Light_01_F";
+			atlOffset=-0.00012207031;
 		};
 	};
 	class Connections
