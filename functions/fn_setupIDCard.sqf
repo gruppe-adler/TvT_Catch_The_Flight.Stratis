@@ -3,7 +3,7 @@
 #define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-_action = ["GRAD_IdCard_showAction", "Show ID Card", "node_modules\grad-leaveNotes\UI\pic\note.paa", {[] spawn GRAD_IdCard_showAction}, {true}] call ace_interact_menu_fnc_createAction;
+_action = ["GRAD_IdCard_showAction", "Show ID Card", "", {[] spawn GRAD_IdCard_showAction}, {true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 GRAD_IdCard_showAction = {
@@ -61,5 +61,5 @@ GRAD_IdCard_demandAction = {
 	[_msg] call Mission_fnc_showHint;
 };
 
-_action = ["GRAD_IdCard_demandAction", "See ID Card", "node_modules\grad-leaveNotes\UI\pic\note.paa", GRAD_IdCard_demandAction, {true}] call ace_interact_menu_fnc_createAction;
+_action = ["GRAD_IdCard_demandAction", "See ID Card", "", GRAD_IdCard_demandAction, {true}] call ace_interact_menu_fnc_createAction;
 ["Man", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;

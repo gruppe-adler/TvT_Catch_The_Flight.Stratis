@@ -35,8 +35,6 @@ if (isServer) then {
 	};
 };
 
-[] execVM "node_modules\grad-leaveNotes\initLeaveNotes.sqf";
-
 if (hasInterface) then {
 	waitUntil {!isNull player};
 	enableSentences false;
