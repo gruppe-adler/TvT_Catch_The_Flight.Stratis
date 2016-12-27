@@ -1,6 +1,6 @@
+
 #define PREFIX mission
 #define COMPONENT fn
-#define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _this setVariable ["Mission_side", side _this];
@@ -34,7 +34,7 @@ if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
 				params ["_name", "_pos", "_radius"];
 
 				_markerName = ("marker_last_spotted_" + _name);
-				TRACE_1("creating 'spotted' marker %1 local... ", _markerName);
+				INFO_1("creating 'spotted' marker %1 local... ", _markerName);
 
 				deleteMarkerLocal _markerName;
 				[
@@ -87,31 +87,31 @@ Mission_fnc_setupMurderWatch_killedHandler = {
 	if (_sideKiller != civilian) then {
 		if (_sideDeceased != _sideKiller) then {
 
-			switch (side _killer) do {
+			switch (_sideKiller) do {
 				case independent: {[opfor, _deceased] call Mission_fnc_giveUpgradeToSide};
 				case east:  {[independent, _deceased] call Mission_fnc_giveUpgradeToSide};
-				default { TRACE_2("murder where killer was not indep or east. murderer was %1 / %2", str _killer, name _killer); };
+				default { TRACE_2("murder where killer was not aligned with indep or east. murderer was %1 / %2", str _killer, name _killer); };
 			};
 
 			if ((_deceased getVariable "Mission_faction") == "OPF_F") then {
 				if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 60) then {
 					Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = Mission_fnc_setupMurderWatch_var_unit_indep_c_radius - 50;
 				};
-				TRACE_3("Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius);
+				INFO_3("Setting spotted-trigger %1 => %2 with radius %3 ...", _killer, _deceased, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius);
 
 				[{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_setupMurderWatch_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
 			};
 
 			if (_sideDeceased == civilian) then {
-				TRACE_2("Unbeteiligtenkill %1 => %2", _killer, _deceased);
+				INFO_2("Unbeteiligtenkill %1 => %2", _killer, _deceased);
 				// { ["Der war unbeteiligt. Das macht uns nicht beliebter."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _killer, true];
 			} else {
-				TRACE_2("Kill: %1 => %2", _killer, _deceased);
+				INFO_2("Kill: %1 => %2", _killer, _deceased);
 				// { ["Ich habe einen unserer Gegner erwischt. Das ist nicht weiter traurig, aber freundlicher werden die dadurch bestimmt nicht..."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _killer, true];
 				//{ ["Einer unserer Leute wurde ermordet! Dies wird Konsequenzen haben."] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _sideDeceased, true];
 			};
 		} else {
-			TRACE_2("Teamkill %1 => %2", _killer, _deceased);
+			INFO_2("Teamkill %1 => %2", _killer, _deceased);
 		};
 
 		[

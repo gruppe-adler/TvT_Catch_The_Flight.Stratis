@@ -1,6 +1,6 @@
+
 #define PREFIX mission
 #define COMPONENT fn
-#define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _action = ["GRAD_IdCard_showAction", "Show ID Card", "", {[] spawn GRAD_IdCard_showAction}, {true}] call ace_interact_menu_fnc_createAction;

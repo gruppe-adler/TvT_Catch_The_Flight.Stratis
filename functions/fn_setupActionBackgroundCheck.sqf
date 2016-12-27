@@ -1,6 +1,6 @@
+
 #define PREFIX mission
 #define COMPONENT fn
-#define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 GVAR(rankCompare_gte) = {
@@ -24,9 +24,9 @@ GRAD_IdCard_backgroundCheck_getAllegiance = {
     _random = random 1;
 
     if (_realAllegiance == _checkedSide && _random < 0.1) exitWith {-1};
-    if (_realAllegiance == _checkedSide && _random < 0.6) exitWith {1};
+    if (_realAllegiance == _checkedSide && _random < 0.8) exitWith {1};
     if (_realAllegiance != _checkedSide && _random < 0.1) exitWith {1};
-    if (_realAllegiance != _checkedSide && _random < 0.6) exitWith {-1};
+    if (_realAllegiance != _checkedSide && _random < 0.8) exitWith {-1};
 
     0
 };

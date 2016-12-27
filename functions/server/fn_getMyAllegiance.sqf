@@ -1,6 +1,6 @@
+
 #define PREFIX mission
 #define COMPONENT fn
-#define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _player = param [0];
@@ -33,9 +33,11 @@ if (!([_allegiances, _player] call CBA_fnc_hashHasKey)) then {
     TRACE_1("creating allegiance for %1", _player);
 	_newAllegiance = independent;
 	if (([] call _getAllegianceRatio) > 4) then {
-        TRACE_1("allegiance for %1 will be opfor!", _player);
+        INFO_1("allegiance for %1 will be opfor!", _player);
 		_newAllegiance = opfor;
-	};
+	} else {
+        INFO_1("allegiance for %1 will be independent!", _player);
+    };
 	[_allegiances, _player, _newAllegiance] call CBA_fnc_hashSet;
 };
 _allegiance = [_allegiances, _player] call CBA_fnc_hashGet;

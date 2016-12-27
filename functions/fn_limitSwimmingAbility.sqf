@@ -1,6 +1,6 @@
+
 #define PREFIX mission
 #define COMPONENT fn
-#define DEBUG_MODE_FULL
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 params [
@@ -49,6 +49,7 @@ _drownLoop = {
 
    if ((_swimmingStartTime + _drowningTimeout) < time) then {
 	   ["Du ersäufst. Dein letzter haßerfüllter Gedanke gilt dem Missionsbauer."] call Mission_fnc_showHint;
+       INFO_1("Spieler %1 ertrinkt", _unit);
 		_unit setUnconscious true;
 		[{_this setDamage 1;}, _unit, 5] call CBA_fnc_waitAndExecute;
 
