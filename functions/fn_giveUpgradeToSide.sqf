@@ -1,10 +1,12 @@
-
+#define DEBUG_MODE_FULL
 #define PREFIX mission
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _targetSide = param [0, sideUnknown];
 _deceased = param [1, objNull]; // optional
+
+TRACE_1("starting upgrade for side %1", _targetSide);
 
 _minDistance = 200;
 _radioClass = "tf_fadak";
@@ -160,10 +162,8 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 	}
 ];
 
-
-_isNotArmy = { faction _this != "OPF_F" };
 _isAlive = {alive _this};
-_isTargetSide = { side _this == _targetSide };
+_isTargetSide = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
 _isNotTooClose = { (_this distance2D _deceasedPos) >= _minDistance };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
@@ -176,7 +176,7 @@ if (!(isNull _deceased)) then {
 _eligibleUnits = allUnits;
 {
 	_eligibleUnits = [_eligibleUnits, _x] call CBA_fnc_select;
-} forEach [_isTargetSide, _isAlive, _isNotArmy, _isNotTooClose,_isNotTheIndependentBoss];
+} forEach [_isTargetAllegiance, _isAlive, _isNotTooClose, _isNotTheIndependentBoss];
 
 _eligibleUnits = [
 	_eligibleUnits,
