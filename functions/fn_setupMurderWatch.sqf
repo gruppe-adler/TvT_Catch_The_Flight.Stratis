@@ -3,8 +3,8 @@
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-_this setVariable ["Mission_side", side _this];
-_this setVariable ["Mission_faction", faction _this];
+_this setVariable ["mission_side", side _this];
+_this setVariable ["mission_faction", faction _this];
 
 if (isNil "Mission_fnc_setupMurderWatch_var_unit_indep_c_radius") then {
 	Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = 500;
@@ -54,15 +54,20 @@ if (isNil "Mission_fnc_setupMurderWatch_createSpottedMarker") then {
 
 Mission_fnc_setupMurderWatch_killedHandler = {
 	_getSide = {
-		_side = sideUnknown;
+		_side = _this getVariable ["mission_side", sideUnknown];
+        if (_side != sideUnknown) exitWith {_side};
 		if (alive _this) then {
 			_side = side _this;
 		} else {
-			_side = _this getVariable ["Mission_side", sideUnknown];
+            _side = side (group _this);
 		};
 
 		_side
 	};
+
+    _getAllegiance = {
+        _this getVariable ["mission_allegiance", sideUnknown];
+    };
 
 	params ["_deceased", "_killer"];
 
@@ -82,7 +87,7 @@ Mission_fnc_setupMurderWatch_killedHandler = {
 		};
 	};
 
-	_sideDeceased = _deceased getVariable "Mission_side";
+	_sideDeceased = _deceased getVariable "mission_side";
 
 	if (_sideKiller != civilian) then {
 		if (_sideDeceased != _sideKiller) then {
@@ -93,7 +98,7 @@ Mission_fnc_setupMurderWatch_killedHandler = {
 				default { TRACE_2("murder where killer was not aligned with indep or east. murderer was %1 / %2", str _killer, name _killer); };
 			};
 
-			if ((_deceased getVariable "Mission_faction") == "OPF_F") then {
+			if ((_deceased getVariable "mission_faction") == "OPF_F") then {
 				if (Mission_fnc_setupMurderWatch_var_unit_indep_c_radius > 60) then {
 					Mission_fnc_setupMurderWatch_var_unit_indep_c_radius = Mission_fnc_setupMurderWatch_var_unit_indep_c_radius - 50;
 				};

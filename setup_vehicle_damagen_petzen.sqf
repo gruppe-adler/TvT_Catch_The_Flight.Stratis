@@ -37,7 +37,7 @@ if (isServer) then {
 		ADD(GVAR(collected_guer_damage), _damage);
 		TRACE_1("damage by guer", _damage);
 		if (GVAR(collected_guer_damage) > 4) then {
-			LOG("triggering upgrade for east");
+			INFO("triggering upgrade for east");
 			systemChat "triggering upgrade for east";
 			[{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_setupMurderWatch_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
 			GVAR(collected_guer_damage) = 0;
