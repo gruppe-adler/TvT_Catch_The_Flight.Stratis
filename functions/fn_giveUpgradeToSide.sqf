@@ -163,7 +163,7 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 ];
 
 _isAlive = {alive _this};
-_isTargetSide = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
+_isTargetAllegiance = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
 _isNotTooClose = { (_this distance2D _deceasedPos) >= _minDistance };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
