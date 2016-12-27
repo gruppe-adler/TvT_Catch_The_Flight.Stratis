@@ -23,6 +23,9 @@ if (isServer) then {
 	[] call Mission_fnc_setAllSidesFriendly;
 };
 
+[] execVM "setup_vehicle_damagen_petzen.sqf";
+[] execVM "loadouts.sqf";
+
 [] spawn {
 	_handle = [] execVM "node_modules\engima-traffic\Init.sqf";
 	waitUntil {scriptDone _handle};
@@ -58,6 +61,3 @@ if (hasInterface) then {
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
-
-[] execVM "setup_vehicle_damagen_petzen.sqf";
-[] execVM "loadouts.sqf";
