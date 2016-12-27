@@ -42,5 +42,13 @@ class CfgFunctions {
 			file = "functions\server";
 			class getMyAllegiance {};
 		};
+        class MurderWatch {
+            file ="functions\murderWatch";
+            class createSpottedMarker {};
+            class killedHandler {};
+            class getRealKiller {};
+            class getAllegiance {};
+            class triggerKIAMarker {};
+        };
 	};
 };
