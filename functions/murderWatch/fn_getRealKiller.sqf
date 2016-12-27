@@ -10,6 +10,11 @@ _officialKiller = param [1, objNull];
 _killer = _officialKiller;
 if (_deceased == _officialKiller) then  { // probably no suicide but...
     _killer = _deceased getVariable ["ace_medical_lastDamageSource", objNull];
+} else {
+    _cookoffInstigator = _officialKiller getVariable ["grad_vehicleDamageReport_cookoff_instigator", objNull];
+    if (!(isNull _cookoffInstigator)) then {
+        _killer = _cookoffInstigator;
+    };
 };
 
 if (isNull _killer) then {

@@ -61,3 +61,16 @@ if (hasInterface) then {
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
+
+#ifdef DEBUG_MODE_FULL
+// FOR LOCAL TESTING
+    {
+        if (_forEachIndex mod 4 == 0) then {
+            _x setVariable ["mission_allegiance", opfor, true];
+        } else {
+            _x setVariable ["mission_allegiance", independent, true];
+        };
+
+    } forEach ([playableUnits + switchableUnits, {local _this}] call CBA_fnc_select);
+
+#endif
