@@ -35,6 +35,7 @@ if (isServer) then {
 	};
 	ENGIMA_TRAFFIC_vehicleSpawnHandler pushBack {
 		_this call GRAD_vehicleDamageReport_fnc_registerVehicle;
+        _this call Mission_fnc_setupVehicleTheftWatch;
 	};
 };
 
@@ -47,6 +48,7 @@ if (hasInterface) then {
 	player call Mission_fnc_setupTasks;
 	[] call Mission_fnc_setupIDCard;
     [] call Mission_fnc_setupActionBackgroundCheck;
+    [] call Mission_fnc_setupACEInteractVehicleRelease;
 	[player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 
 	if (side player != opfor) then {
@@ -61,6 +63,8 @@ if (hasInterface) then {
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
+{ _x call Mission_fnc_setupVehicleTheftWatch; } forEach ([vehicles, {(local _this) && (_this isKindOf "Car") }] call CBA_fnc_select);
+
 
 #ifdef DEBUG_MODE_FULL
 // FOR LOCAL TESTING

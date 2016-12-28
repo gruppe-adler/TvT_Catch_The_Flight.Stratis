@@ -5,6 +5,7 @@
 
 _targetSide = param [0, sideUnknown];
 _deceased = param [1, objNull]; // optional
+_upgradeCount = param  [2, 1];
 
 TRACE_1("starting upgrade for side %1", _targetSide);
 
@@ -202,4 +203,4 @@ TRACE_1("%1 units may be upgraded", count _eligibleUnits);
 	INFO_3("applying upgrade # %1 to unit %2 / %3", _level, _x, name _x);
 	{ ["Waffenupgrade für mich!"] call Mission_fnc_showHint; } remoteExec ["BIS_fnc_call", _x, true];
 
-} forEach (_eligibleUnits select [0, 2]);
+} forEach (_eligibleUnits select [0, _upgradeCount]);

@@ -1,3 +1,4 @@
+
 #define PREFIX grad
 #define COMPONENT vehicleDamageReport
 #include "\x\cba\addons\main\script_macros_mission.hpp"

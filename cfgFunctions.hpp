@@ -25,13 +25,16 @@ class CfgFunctions {
             class limitSwimmingAbility {};
             class preventOtherSidesFromStealing {};
             class setAllSidesFriendly {};
+            class setupACEInteractVehicleRelease {};
             class setupIDCard {};
             class setupMurderWatch {};
+            class setupVehicleTheftWatch {};
             class setupTasks {};
             class showHint {};
             class spawn_boat {};
             class update_task_survive {};
             class vehicleFlightPlaneDamageHandler {};
+            class vehicleTheftHandler {};
             class win_indep_elim {};
             class win_indep_escape {};
             class win_opfor_elim {};
