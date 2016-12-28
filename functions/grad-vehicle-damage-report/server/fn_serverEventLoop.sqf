@@ -23,6 +23,7 @@ _interval = 10;
 				};
 			} forEach GVAR(serverSideHandlers);
 		}] call CBA_fnc_hashEachPair;
+        GVAR(serverSideDamageList) = [[], 0] call CBA_fnc_hashCreate;
 	},
 	_interval,
 	[]
