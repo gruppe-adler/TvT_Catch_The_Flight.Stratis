@@ -12,6 +12,7 @@ class CfgFunctions {
 		class Shit {
             class setupActionBackgroundCheck {};
             class alert_opfor_katzenwache {};
+            class alert_plane_damaged {};
             class createTaskCivKill {};
             class createTaskCivProtect {};
             class createTaskOpfor {};
@@ -30,6 +31,7 @@ class CfgFunctions {
             class showHint {};
             class spawn_boat {};
             class update_task_survive {};
+            class vehicleFlightPlaneDamageHandler {};
             class win_indep_elim {};
             class win_indep_escape {};
             class win_opfor_elim {};
