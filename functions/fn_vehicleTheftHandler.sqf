@@ -8,7 +8,7 @@ _newDriver = param [1, objNull];
 
 _ownerSide = _vehicle getVariable ["mission_owner_side", sideUnknown];
 _newDriversAllegiance = _newDriver call Mission_fnc_getAllegiance;
-_vehicle setVariable ["mission_owner_side", _newDriversAllegiance];
+_vehicle setVariable ["mission_owner_side", _newDriversAllegiance, true];
 
 if (_ownerSide == sideUnknown) exitWith {
     INFO_2("vehicle ownership transfer %1 => %2 (empty vehicle)", _ownerSide, _newDriversAllegiance);
