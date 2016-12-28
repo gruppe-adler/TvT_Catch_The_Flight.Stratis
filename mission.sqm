@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3293.3977,9.5754414,5790.1543};
-		dir[]={0.55892265,-0.36372063,0.74536979};
-		up[]={0.21830046,0.93142867,0.29112163};
-		aside[]={0.80014682,6.0381717e-007,-0.60000134};
+		pos[]={3283.7273,9.5754414,5764.3052};
+		dir[]={-0.92529303,-0.28398499,-0.25189009};
+		up[]={-0.27418226,0.95875835,-0.074639611};
+		aside[]={-0.26269662,4.3504406e-007,0.96500051};
 	};
 };
 binarizationWanted=0;
@@ -5056,13 +5056,14 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3272.04,6.4761791,5755.7939};
-				angles[]={0,0.61325634,6.2756844};
+				angles[]={0,0.61325634,6.2756805};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				lock="UNLOCKED";
+				init="this setVariable [""tf_hasRadio"", true, true];";
 				name="unit_opfor_uaz_cmd_2";
 			};
 			id=366;
@@ -5347,18 +5348,20 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3275.5176,6.4535708,5760.8203};
-				angles[]={0.0049914722,0.6691941,6.2806959};
+				position[]={3275.5176,6.4535704,5760.8203};
+				angles[]={0.0049916417,0.6691941,6.2806892};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
 				lock="UNLOCKED";
+				init="this setVariable [""tf_hasRadio"", true, true];";
 				name="unit_opfor_uaz_cmd_1";
 			};
 			id=370;
 			type="rhsgref_ins_g_uaz_open";
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0

@@ -20,9 +20,7 @@ if (isServer) then {
 	["Initialize"] call BIS_fnc_dynamicGroups;
 
 	GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
-	[] call Mission_fnc_setAllSidesFriendly;
-    vehicle_opfor_uaz_cmd_1 setVariable ["tf_hasRadio", true, true];
-    vehicle_opfor_uaz_cmd_2 setVariable ["tf_hasRadio", true, true];
+	[] call Mission_fnc_setAllSidesFriendly
 };
 
 [] execVM "setup_vehicle_damagen_petzen.sqf";
