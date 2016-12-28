@@ -16,7 +16,7 @@ _interval = 10;
 			{
 				_handlerGroup = _x param [0, []];
 				_handlerCallback = _x param [1, {}];
-				TRACE_1("handler htoup %1", _handlerGroup);
+				TRACE_1("handler group %1", _handlerGroup);
 				if (_handlerGroup isEqualTo _group) then {
 					TRACE_1("calling handler", true);
 					[_damage] call _handlerCallback;

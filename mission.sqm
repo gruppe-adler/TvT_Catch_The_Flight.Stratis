@@ -622,6 +622,7 @@ class Mission
 			side="Empty";
 			class Attributes
 			{
+				init="this call Mission_fnc_addFlightPlaneDamageHandler;" \n "";
 				name="vehicle_flight_plane";
 				textures="aeroschrot";
 			};
