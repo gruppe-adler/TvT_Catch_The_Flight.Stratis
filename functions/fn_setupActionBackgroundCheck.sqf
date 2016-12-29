@@ -15,8 +15,7 @@ GRAD_IdCard_backgroundCheck_getAllegiance = {
     _unit = param [0, objNull];
     _checkedSide = param [1, sideUnknown];
 
-    _realAllegiance = _unit getVariable ["mission_allegiance", sideUnknown];
-
+    _realAllegiance = _unit call Mission_fnc_getAllegiance;
     if (_realAllegiance == sideUnknown) then {
         WARNING_1("player %1 doesnt seem to have allegiance", _unit);
     };
