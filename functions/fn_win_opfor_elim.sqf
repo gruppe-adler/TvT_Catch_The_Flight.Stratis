@@ -3,11 +3,7 @@
 
 	_mainObjectiveState = 'CANCELED';
 
-    _allegiance = side player;
-    if (_allegiance == civilian) then {
-        _allegiance = player getVariable ["mission_allegiance", _allegiance];
-    };
-
+    _allegiance = player call Mission_fnc_getAllegiance;
 	switch (_allegiance) do {
 		case east: {_mainObjectiveState = 'SUCCEEDED'};
 		case independent: {_mainObjectiveState = 'FAILED'};

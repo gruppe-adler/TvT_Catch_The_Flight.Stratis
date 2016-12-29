@@ -20,6 +20,7 @@ class CfgFunctions {
             class createTaskIndepFlight {};
             class createTaskSurvival {};
             class disableMarkerChannels {};
+            class getAllegiance {};
             class giveUpgradeToSide {};
             class limitOffroadSpeed {};
             class limitSwimmingAbility {};
@@ -52,7 +53,6 @@ class CfgFunctions {
             class createSpottedMarker {};
             class killedHandler {};
             class getRealKiller {};
-            class getAllegiance {};
             class triggerKIAMarker {};
         };
 	};
