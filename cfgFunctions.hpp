@@ -13,6 +13,7 @@ class CfgFunctions {
             class setupActionBackgroundCheck {};
             class alert_opfor_katzenwache {};
             class alert_plane_damaged {};
+            class alert_indep_at_airport {};
             class createTaskCivKill {};
             class createTaskCivProtect {};
             class createTaskOpfor {};

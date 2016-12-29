@@ -25,13 +25,20 @@ class Header
 
 class Params
 {
+    /*
 	class DebugMode
 	{
 		title = $STR_GRAD_debugMode;
 		values[] = {0,1};
 		texts[] = {$STR_GRAD_no, $STR_GRAD_yes};
 		default = 0;
-	};
+	};*/
+    class BackgroundCheckDuration
+    {
+        title = $STR_GRAD_backgroundCheckDurationInSeconds;
+        values[] = {1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
+        default = 2;
+    };
 };
 
 #include "cfgFunctions.hpp"

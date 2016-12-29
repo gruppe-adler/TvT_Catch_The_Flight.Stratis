@@ -1,4 +1,4 @@
-
+#define DEBUG_MODE_FULL
 #define PREFIX mission
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
@@ -31,27 +31,29 @@ GRAD_IdCard_backgroundCheck_getAllegiance = {
 };
 
 GRAD_IdCard_doBackgroundCheck = {
-    _varname = format ["mission_allegiance_%1", toLower str side player];
+    private _varname = format ["mission_allegiance_%1", toLower str side player];
 
-    _background = _target getVariable _varname;
+    private _background = _target getVariable _varname;
     if ([_background] call CBA_fnc_isHash) exitWith {
         ["background check already been done"] call Mission_fnc_showHint;
     };
 
+    private _duration = "BackgroundCheckDuration" call BIS_fnc_getParamValue;
+
     [
-        2,
+        _duration,
         [_target, _varname],
         {
-            _args = param [0, []];
-            _target = _args param [0, objNull];
-            _varname = _args param [1, ""];
+            private _args = param [0, []];
+            private _target = _args param [0, objNull];
+            private _varname = _args param [1, ""];
 
-            _allegiances = [] call CBA_fnc_hashCreate;
+            private _allegiances = [] call CBA_fnc_hashCreate;
             [_allegiances, opfor, ([_target, opfor] call GRAD_IdCard_backgroundCheck_getAllegiance)] call CBA_fnc_hashSet;
             [_allegiances, independent, ([_target, independent] call GRAD_IdCard_backgroundCheck_getAllegiance)] call CBA_fnc_hashSet;
             [_allegiances, "isPublic", false] call CBA_fnc_hashSet;
 
-            TRACE_2("setting  background data to %1; varname %2, val %3 ", _target, _varname, _allegiances);
+            TRACE_3("setting  background data to %1; varname %2, val %3 ", _target, _varname, _allegiances);
             _target setVariable [_varname, _allegiances, true];
 
             _addPublishNode = {
@@ -60,7 +62,7 @@ GRAD_IdCard_doBackgroundCheck = {
                 TRACE_2("debug var passing", _unit, _varname);
                 _action = [
                     "GRAD_IdCard_publish",
-                    ("Publish information on " + (name _unit)),
+                    (name _unit),
                     "",
                     {
                         TRACE_1("debug var passing2", _this);
@@ -102,13 +104,13 @@ GRAD_IdCard_doBackgroundCheck = {
     ] call ace_common_fnc_progressBar;
 };
 
-_action = [
+private _action = [
     "GRAD_IdCard_doBackgroundCheck",
     "Perform background check",
     "",
     GRAD_IdCard_doBackgroundCheck,
     {
-        _varname = format ["mission_allegiance_%1", toLower str side player];
+        private _varname = format ["mission_allegiance_%1", toLower str side player];
         _hasBeenChecked = [(_target getVariable [_varname, []])]  call CBA_fnc_isHash;
         ([rank player, "CAPTAIN"] call GVAR(rankCompare_gte)) && !(_hasBeenChecked)
     }

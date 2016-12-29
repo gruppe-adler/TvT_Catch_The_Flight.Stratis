@@ -25,6 +25,11 @@
 				<Original>debug mode</Original>
 				<German>Debugmodus</German>
 			</Key>
+            <Key ID="str_GRAD_backgroundCheckDurationInSeconds">
+				<Original>Background check duration in seconds</Original>
+				<German>Dauer der Hintergrundüberprüfung in Sekunden</German>
+			</Key>
+
 			<Key ID="str_GRAD_no">
 				<Original>no</Original>
 				<German>nein</German>

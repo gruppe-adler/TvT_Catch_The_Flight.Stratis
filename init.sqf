@@ -4,8 +4,6 @@
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 #include "missionMacros.h"
 
-DEBUG_MODE = ("DebugMode" call BIS_fnc_getParamValue) == 1;
-
 disableRemoteSensors true;
 
 tf_no_auto_long_range_radio = true;

@@ -4849,8 +4849,10 @@ class Mission
 			class Attributes
 			{
 				name="trigger_indep_airport";
-				sizeA=400;
-				sizeB=800;
+				onActivation="[] call Mission_fnc_alert_indep_at_airport;";
+				sizeA=140;
+				sizeB=140;
+				interuptable=1;
 				activationBy="GUER";
 				isRectangle=1;
 				isServerOnly=1;
