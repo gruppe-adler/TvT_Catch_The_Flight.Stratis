@@ -3,7 +3,7 @@
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-_action = ["GRAD_IdCard_showAction", "Show ID Card", "", {[] spawn GRAD_IdCard_showAction}, {true}] call ace_interact_menu_fnc_createAction;
+private _action = ["GRAD_IdCard_showAction", "Show ID Card", "", {[] spawn GRAD_IdCard_showAction}, {true}] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 GRAD_IdCard_showAction = {
@@ -29,10 +29,10 @@ GRAD_IdCard_demandAction = {
     };
 
     _allegianceDataString = {
-        _fromSide = _this;
-        _varname = format ["mission_allegiance_%1", toLower str _fromSide];
+        private _fromSide = _this;
+        private _varname = format ["mission_allegiance_%1", toLower str _fromSide];
 
-        _allegiances = _target getVariable [_varname, []];
+        private _allegiances = _target getVariable [_varname, []];
         TRACE_2("getting background data; varname %1, val %2 ",_varname, _bgData);
 
         if (!([_allegiances] call CBA_fnc_isHash)) exitWith { "" };
@@ -52,9 +52,9 @@ GRAD_IdCard_demandAction = {
         ];
     };
 
-    _allegiances = [[independent, opfor], {_x call _allegianceDataString}] call CBA_fnc_filter;
+    private _allegiances = [[independent, opfor], {_x call _allegianceDataString}] call CBA_fnc_filter;
 
-	_msg = format ["Die Person heißt %1. %2",
+	private _msg = format ["Die Person heißt %1. %2",
         name _target,
         (_allegiances joinString " ")
     ];
