@@ -9,13 +9,11 @@ class ace_settings {
         typeName = "BOOL";
         force = 1;
     };
-
     class ace_map_BFT_Enabled {
         value = 1;
         typeName = "BOOL";
         force = 1;
     };
-
     class ace_spectator_filterUnits {
         value = 3;
         typeName = "SCALAR";
