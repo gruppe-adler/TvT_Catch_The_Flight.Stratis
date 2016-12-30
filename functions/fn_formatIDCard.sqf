@@ -27,3 +27,13 @@ Příjmení: %1 <br/>
     _name,
     _allegianceText
 ];
+
+onIDCardLoad = {
+    private _display = param [0];
+    private _ctrl = _display displayCtrl 11;
+    _ctrl ctrlSetText "Jason Miles";
+    _ctrl ctrlCommit 10;
+};
+
+cutRsc ["IDCard","PLAIN"];
+cutText ["", "PLAIN"];

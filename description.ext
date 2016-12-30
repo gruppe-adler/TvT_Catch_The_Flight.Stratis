@@ -50,3 +50,77 @@ class CfgSounds {
 	sounds[] = {};
     #include "node_modules\grad-leaveNotes\cfgSounds.hpp"
 };
+
+class RscTitles
+{
+	class IDCard
+	{
+		idd = -1;
+		duration = 60; //1 min
+		onLoad = "_this call onIDCardLoad"; //UI event handler
+		class controls
+		{
+			class TheTitle
+			{
+				idc = 1; //control reference
+				type = 0;
+				style = ST_CENTER;
+				x = 0;
+				y = 0;
+				w = 1;
+				h = 0.2;
+				font = "EtelkaMonospacePro";
+				sizeEx = 0.1;
+				colorBackground[] = {0.9, 0.9, 0.9, 0.9};
+				colorText[] = {0.1, 0.1, 0.1,1};
+				text = "Občanský průkaz";
+			};
+            class UnitNameLabel
+            {
+                idc = 10; //control reference
+                type = 0;
+                style = ST_LEFT;
+                x = 0;
+                y = 0.2;
+                w = 0.5;
+                h = 0.1;
+                font = "EtelkaMonospacePro";
+                sizeEx = 0.1;
+                colorBackground[] = {0.9, 0.9, 0.9, 0.9};
+				colorText[] = {0.1, 0.1, 0.1,1};
+                text = "ze name is:";
+            };
+            class UnitNameValue
+            {
+                idc = 11; //control reference
+                type = 0;
+                style = ST_LEFT;
+                x = 0.5;
+                y = 0.2;
+                w = 0.5;
+                h = 0.1;
+                font = "EtelkaMonospacePro";
+                sizeEx = 0.1;
+                colorBackground[] = {0.9, 0.9, 0.9, 0.9};
+				colorText[] = {0.1, 0.1, 0.1,1};
+                text = "Foo von Bar";
+            };
+            class AllegianceDescription
+            {
+                idc = 20; //control reference
+                type = 0;
+                style = ST_LEFT;
+                x = 0.5;
+                y = 0.3;
+                w = 1;
+                h = 0.7;
+                font = "EtelkaMonospacePro";
+                sizeEx = 0.1;
+                colorBackground[] = {0.9, 0.9, 0.9, 0.9};
+				colorText[] = {0.1, 0.1, 0.1,1};
+                text = "foo hier kommt desc text";
+            };
+
+		};
+	};
+};
