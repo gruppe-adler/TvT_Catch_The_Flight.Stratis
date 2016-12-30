@@ -36,5 +36,9 @@ class ace_settings {
         typeName = "SCALAR";
         force = 1;
     };
-    
+    class ace_weather_useACEWeather { // ACE weather just fucks up my fog weather change
+        value = 0;
+        typeName = "BOOL";
+        force = 1;
+    };
 };
