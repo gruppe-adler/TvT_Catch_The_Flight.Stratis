@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3102.4075,1036.3568,5136.2861};
-		dir[]={0.57466936,-0.61518031,0.53994781};
-		up[]={0.44846758,0.78823143,0.42136836};
-		aside[]={0.68482715,-6.1860192e-007,-0.72886318};
+		pos[]={2867.2046,1042.9777,5069.4082};
+		dir[]={0.040232766,-0.72275025,0.69010818};
+		up[]={0.042074207,0.69095129,0.72166377};
+		aside[]={0.99841768,-7.7210098e-007,-0.058205314};
 	};
 };
 binarizationWanted=0;
@@ -182,7 +182,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="EndMission";
+								value="ace_spectator";
 							};
 						};
 						class Item1
@@ -196,7 +196,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="Spectator";
+								value="EndMission";
 							};
 						};
 					};
@@ -234,6 +234,7 @@ class Mission
 {
 	class Intel
 	{
+		overviewText="highly asymmetric escape scenario";
 		resistanceEast=1;
 		startWeather=0;
 		startFog=0.70196962;
