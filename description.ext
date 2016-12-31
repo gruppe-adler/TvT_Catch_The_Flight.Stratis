@@ -90,7 +90,7 @@ class RscTitles
                 sizeEx = 0.1;
                 colorBackground[] = {0.9, 0.9, 0.9, 0.9};
 				colorText[] = {0.1, 0.1, 0.1,1};
-                text = "ze name is:";
+                text = "JMÉNO/PŘÍJMENÍ :";
             };
             class UnitNameValue
             {
@@ -105,7 +105,7 @@ class RscTitles
                 sizeEx = 0.1;
                 colorBackground[] = {0.9, 0.9, 0.9, 0.9};
 				colorText[] = {0.1, 0.1, 0.1,1};
-                text = "Foo von Bar";
+                text = "<INSERT NAME HERE>";
             };
 
 		};

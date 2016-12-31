@@ -6,19 +6,18 @@
 private _unit = _this;
 private _name = name _unit;
 
-_indepAllegiance = _unit getVariable "mission_allegiance_guer";
-_opforAllegiance = _unit getVariable "mission_allegiance_opfor";
-
-_name = "Jason Miles";
-
-_indepAllegiance = [] call CBA_fnc_hashCreate;
-[_indepAllegiance, independent, 1] call CBA_fnc_hashSet;
-[_indepAllegiance, opfor, -1] call CBA_fnc_hashSet;
-[_indepAllegiance, "isPublic", true] call CBA_fnc_hashSet;
-
 _allegiances = [] call CBA_fnc_hashCreate;
-[_allegiances, independent, _indepAllegiance] call CBA_fnc_hashSet;
-[_allegiances, opfor, _indepAllegiance] call CBA_fnc_hashSet;
+
+private _tmp;
+_tmp = _unit getVariable ["mission_allegiance_guer", false];
+if ([_tmp] call CBA_fnc_isHash) then {
+    [_allegiances, independent, _tmp] call CBA_fnc_hashSet;
+};
+
+_tmp = _unit getVariable ["mission_allegiance_east", false];
+if ([_tmp] call CBA_fnc_isHash) then {
+    [_allegiances, opfor, _tmp] call CBA_fnc_hashSet;
+};
 
 onIDCardLoadParameters = [
     _name,
@@ -29,7 +28,7 @@ onIDCardLoad = {
     private _display = param [0];
 
     private _top = 0.3;
-    private _height = 0.1;
+    private _height = 0.2;
     private _nextControlID = 21;
 
     TRACE_1("this is id card load event handler for %1", _display);
@@ -63,16 +62,16 @@ onIDCardLoad = {
         private _ctrl = _display ctrlCreate ["RscStructuredText", _nextControlID];
         INC(_nextControlID);
 
-        private _publicInfo = "<br />(This is NOT public information)";
+        private _publicInfo = "(This is NOT public information)";
         if (_isPublic) then {
-            _publicInfo = "<br />(This is public information)";
+            _publicInfo = "(This is public information)";
         };
 
         _ctrl ctrlSetPosition [0, _top, 1, _height];
-        ADD(_height, 0.1);
+        ADD(_top, _height);
 
         _ctrl ctrlSetStructuredText parseText format [
-            "<t font='EtelkaMonospacePro' align='left'>The %1 performed a background check, and it said:<br /> %2 is probably %3 toward the army, and %4 toward the INDEP</t>",
+            "<t font='RobotoCondensedLight' align='left'>The <t font='RobotoCondensedBold'> %1 performed a background check</t>, and it said:<br /> %2 is probably <t underline='1'>%3</t> toward the army, and <t underline='1'>%4</t> toward the INDEP. <br /> %5</t>",
             _side call _sideToBoss,
             _name,
             (([_backgroundCheck, opfor, 0] call CBA_fnc_hashGet) call _intToDescription),
