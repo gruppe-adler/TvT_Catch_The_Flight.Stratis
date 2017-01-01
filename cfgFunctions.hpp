@@ -1,6 +1,7 @@
 class CfgFunctions {
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
+    #include "node_modules\grad-makeFire\cfgFunctions.hpp"
 	#include "functions\grad-vehicle-damage-report\cfgFunctions.hpp"
 	class Config {
 		class General {
