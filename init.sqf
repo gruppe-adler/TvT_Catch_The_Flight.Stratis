@@ -18,7 +18,8 @@ if (isServer) then {
 	["Initialize"] call BIS_fnc_dynamicGroups;
 
 	GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
-	[] call Mission_fnc_setAllSidesFriendly
+	[] call Mission_fnc_setAllSidesFriendly;
+    [] spawn Mission_fnc_doTheWeather;
 };
 
 [] execVM "setup_vehicle_damagen_petzen.sqf";

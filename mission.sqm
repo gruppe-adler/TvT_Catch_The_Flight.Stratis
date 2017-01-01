@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2867.2046,1042.9777,5069.4082};
-		dir[]={0.040232766,-0.72275025,0.69010818};
-		up[]={0.042074207,0.69095129,0.72166377};
-		aside[]={0.99841768,-7.7210098e-007,-0.058205314};
+		pos[]={3193.7769,261.47946,5700.7842};
+		dir[]={0.36178923,-0.83065301,0.42351213};
+		up[]={0.53958499,0.55665076,0.63163847};
+		aside[]={0.76042432,-9.8400051e-007,-0.64959985};
 	};
 };
 binarizationWanted=0;
@@ -237,7 +237,6 @@ class Mission
 		overviewText="highly asymmetric escape scenario";
 		resistanceEast=1;
 		startWeather=0;
-		startFog=0.70196962;
 		startWind=0;
 		startWindDir=240;
 		startRain=0.21303177;
@@ -253,8 +252,7 @@ class Mission
 		day=6;
 		hour=6;
 		minute=0;
-		startFogBase=-1;
-		startFogDecay=0.1;
+		startFogDecay=0;
 		forecastFogDecay=0;
 	};
 	class Entities

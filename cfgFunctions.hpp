@@ -21,6 +21,7 @@ class CfgFunctions {
             class createTaskIndepFlight {};
             class createTaskSurvival {};
             class disableMarkerChannels {};
+            class doTheWeather {};
             class formatIDCard {};
             class getAllegiance {};
             class giveUpgradeToSide {};
