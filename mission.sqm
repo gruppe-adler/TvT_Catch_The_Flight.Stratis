@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2415.647,1865.5988,1138.1384};
-		dir[]={0.063860275,-0.93537641,0.34819973};
-		up[]={0.16873781,0.35360682,0.92002767};
-		aside[]={0.98369938,1.0809599e-006,-0.18042003};
+		pos[]={2400.0005,1888.0907,1121.4873};
+		dir[]={0.19219503,-0.80255026,0.56478512};
+		up[]={0.25855693,0.59653956,0.7597962};
+		aside[]={0.94669199,-9.5460564e-009,-0.32215697};
 	};
 };
 binarizationWanted=0;
@@ -35,14 +35,13 @@ addons[]=
 	"A3_Ui_F",
 	"A3_Characters_F_Exp_Civil",
 	"rhsgref_c_a2port_armor",
-	"A3_Modules_F_Curator_Curator",
-	"rds_a2port_cman"
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -119,13 +118,6 @@ class AddonsMetaData
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
-		};
-		class Item11
-		{
-			className="rds_a2port_cman";
-			name="RDS Civilian Pack Characters";
-			author="reyhard";
-			url="https://forums.bistudio.com/topic/170165-rds-a2-civilian-pack/";
 		};
 	};
 };
@@ -249,7 +241,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=67;
+		items=66;
 		class Item0
 		{
 			dataType="Object";
@@ -1902,7 +1894,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2609.0471,62.567989,688.26825};
+						position[]={2609.0471,62.568001,688.26801};
 					};
 					side="Civilian";
 					flags=7;
@@ -1913,7 +1905,6 @@ class Mission
 					};
 					id=223;
 					type="C_man_1";
-					atlOffset=3.8146973e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1943,7 +1934,6 @@ class Mission
 			{
 			};
 			id=222;
-			atlOffset=3.8146973e-006;
 		};
 		class Item24
 		{
@@ -1957,7 +1947,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5326.145,95.32296,4199.3242};
+						position[]={5326.145,95.322876,4199.3237};
 					};
 					side="Civilian";
 					flags=7;
@@ -2172,7 +2162,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2440.2603,2.9883766,1154.0959};
+						position[]={2440.26,2.9883785,1154.0961};
 					};
 					side="Civilian";
 					flags=7;
@@ -2183,7 +2173,6 @@ class Mission
 					};
 					id=237;
 					type="C_man_1";
-					atlOffset=-7.1525574e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2213,7 +2202,6 @@ class Mission
 			{
 			};
 			id=236;
-			atlOffset=-7.1525574e-007;
 		};
 		class Item29
 		{
@@ -2280,13 +2268,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3529.0208,200.91592,4907.584};
+						position[]={3529.021,200.91592,4907.584};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
-						description="Just a random dude1";
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=241;
@@ -3214,59 +3202,6 @@ class Mission
 		};
 		class Item46
 		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3749.032,90.574806,6452.8936};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						name="civ_doktor";
-						isPlayable=1;
-					};
-					id=278;
-					type="RDS_Doctor";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.03;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=277;
-		};
-		class Item47
-		{
 			dataType="Object";
 			class PositionInfo
 			{
@@ -3401,7 +3336,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item48
+		class Item47
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3419,6 +3354,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=286;
@@ -3455,7 +3391,7 @@ class Mission
 			id=285;
 			atlOffset=0.00045776367;
 		};
-		class Item49
+		class Item48
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3473,6 +3409,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=290;
@@ -3507,7 +3444,7 @@ class Mission
 			};
 			id=289;
 		};
-		class Item50
+		class Item49
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3525,6 +3462,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=292;
@@ -3561,7 +3499,7 @@ class Mission
 			id=291;
 			atlOffset=0.16900635;
 		};
-		class Item51
+		class Item50
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3573,17 +3511,17 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4271.064,4.911026,2696.0803};
+						position[]={4271.064,4.9110122,2696.0801};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=294;
 					type="C_man_1";
-					atlOffset=-4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3613,9 +3551,8 @@ class Mission
 			{
 			};
 			id=293;
-			atlOffset=-4.7683716e-007;
 		};
-		class Item52
+		class Item51
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3627,16 +3564,40 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4791.4863,193.5475,4385.9189};
+						position[]={4791.4858,193.54747,4385.9189};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=296;
 					type="C_man_1";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -3644,7 +3605,7 @@ class Mission
 			};
 			id=295;
 		};
-		class Item53
+		class Item52
 		{
 			dataType="Group";
 			side="Civilian";
@@ -3662,6 +3623,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayable=1;
 					};
 					id=298;
@@ -3697,6 +3659,182 @@ class Mission
 			};
 			id=297;
 			atlOffset=1.5258789e-005;
+		};
+		class Item53
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=4;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3273.7561,5.3414392,5771.623};
+						angles[]={0,0.69184852,0};
+					};
+					side="East";
+					flags=6;
+					class Attributes
+					{
+						rank="CAPTAIN";
+						description="Platoon Leader";
+						isPlayable=1;
+					};
+					id=345;
+					type="O_officer_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3273.968,5.3414392,5774.7134};
+						angles[]={0,6.0767651,0};
+					};
+					side="East";
+					flags=4;
+					class Attributes
+					{
+						rank="LIEUTENANT";
+						description="Assistant Commander";
+						isPlayable=1;
+					};
+					id=346;
+					type="O_Soldier_SL_F";
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3269.3721,5.3414392,5771.7427};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						rank="CORPORAL";
+						isPlayable=1;
+					};
+					id=347;
+					type="O_medic_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={3277.928,5.3414392,5772.4497};
+					};
+					side="East";
+					flags=5;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=348;
+					type="O_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=344;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Cmd";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item54
 		{
@@ -4640,182 +4778,6 @@ class Mission
 		};
 		class Item57
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3273.7561,5.3414392,5771.623};
-						angles[]={0,0.69184852,0};
-					};
-					side="East";
-					flags=6;
-					class Attributes
-					{
-						rank="CAPTAIN";
-						description="Platoon Leader";
-						isPlayable=1;
-					};
-					id=345;
-					type="O_officer_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.99000001;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3273.968,5.3414392,5774.7134};
-						angles[]={0,6.0767651,0};
-					};
-					side="East";
-					flags=4;
-					class Attributes
-					{
-						rank="LIEUTENANT";
-						description="Assistant Commander";
-						isPlayable=1;
-					};
-					id=346;
-					type="O_Soldier_SL_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3269.3721,5.3414392,5771.7427};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						rank="CORPORAL";
-						isPlayable=1;
-					};
-					id=347;
-					type="O_medic_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.05;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={3277.928,5.3414392,5772.4497};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						isPlayable=1;
-					};
-					id=348;
-					type="O_Soldier_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=344;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="groupID";
-					expression="[_this, _value] call CBA_fnc_setCallsign";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="Cmd";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item58
-		{
 			dataType="Trigger";
 			position[]={1708.6416,5.5,5565.8135};
 			angle=0.20943952;
@@ -4833,7 +4795,7 @@ class Mission
 			id=350;
 			type="EmptyDetectorAreaR250";
 		};
-		class Item59
+		class Item58
 		{
 			dataType="Group";
 			side="Civilian";
@@ -4845,7 +4807,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3110.22,4.6549711,6037.8789};
+						position[]={3110.22,4.6549706,6037.8789};
 					};
 					side="Civilian";
 					flags=7;
@@ -4856,7 +4818,6 @@ class Mission
 					};
 					id=352;
 					type="C_man_1";
-					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4886,9 +4847,8 @@ class Mission
 			{
 			};
 			id=351;
-			atlOffset=4.7683716e-007;
 		};
-		class Item60
+		class Item59
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4930,7 +4890,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item61
+		class Item60
 		{
 			dataType="Object";
 			class PositionInfo
@@ -4971,7 +4931,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item62
+		class Item61
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5127,7 +5087,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item63
+		class Item62
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5264,7 +5224,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item64
+		class Item63
 		{
 			dataType="Object";
 			class PositionInfo
@@ -5402,7 +5362,7 @@ class Mission
 				nAttributes=6;
 			};
 		};
-		class Item65
+		class Item64
 		{
 			dataType="Trigger";
 			position[]={1781.486,5.5,5516.1851};
@@ -5422,7 +5382,7 @@ class Mission
 			id=375;
 			type="EmptyDetector";
 		};
-		class Item66
+		class Item65
 		{
 			dataType="Group";
 			side="Civilian";
@@ -5434,17 +5394,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2691.2825,2.5860574,5794.1338};
+						position[]={2691.282,2.5860534,5794.1338};
 					};
 					side="Civilian";
 					flags=7;
 					class Attributes
 					{
+						description="Just a random dude";
 						isPlayer=1;
 						isPlayable=1;
 					};
 					id=288;
 					type="C_man_1";
+					atlOffset=-2.3841858e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5474,6 +5436,7 @@ class Mission
 			{
 			};
 			id=287;
+			atlOffset=-2.3841858e-007;
 		};
 	};
 	class Connections
