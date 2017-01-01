@@ -2,7 +2,7 @@
 #define PREFIX mission
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
-#include "missionMacros.h"
+#include "missionDefines.hpp"
 
 disableRemoteSensors true;
 

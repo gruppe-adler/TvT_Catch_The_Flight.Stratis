@@ -1,11 +1,32 @@
+
+#define PREFIX mission
+#define COMPONENT fn
+#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\missionDefines.hpp"
+
 [] spawn {
-    0 setFog [0.7, 0.1, 10]; // initial fog. wait a bit, then transition to zero_fog
+    INFO("setting initial fog values...");
+
+    private _fogSettings = "FogSettings" call BIS_fnc_getParamValue;
+    if (_fogSettings == FOG_NOFOG) exitWith {
+        INFO("clearing all fog.");
+        0 setFog [0, 0, 0];
+    };
+
+    0 setFog [0.6, 0.2, 10];
+
+    if (_fogSettings == FOG_PERMAFOG) exitWith {
+        INFO("permafog it is.");
+        true
+    };
 
     [
     {
-        10 setFog [0.0, 0.0, 0];
+        private _fogLiftDelay = param [0];
+        INFO_1("starting fog easing over %1 seconds...",  _fogLiftDelay);
+        _fogLiftDelay setFog [0.0, 0.0, 0];
     },
-    [],
+    [_fogSettings],
     5
     ] call CBA_fnc_waitAndExecute;
 };

@@ -29,7 +29,6 @@
 				<Original>Background check duration in seconds</Original>
 				<German>Dauer der Hintergrundüberprüfung in Sekunden</German>
 			</Key>
-
 			<Key ID="str_GRAD_no">
 				<Original>no</Original>
 				<German>nein</German>
@@ -38,10 +37,30 @@
 				<Original>yes</Original>
 				<German>ja</German>
 			</Key>
-			<Key ID="str_GRAD_blu">
-				<Original>BLUFOR</Original>
-				<German>BLUFOR</German>
+            <Key ID="str_GRAD_fogSettings">
+                <Original>fog settings</Original>
+                <German></German>
+            </Key>
+			<Key ID="str_GRAD_FOG_NOFOG">
+				<Original>no fog</Original>
+				<German></German>
 			</Key>
+            <Key ID="str_GRAD_FOG_FOG_900">
+                <Original>initial ground fog that lifts within 15 minutes</Original>
+                <German></German>
+            </Key>
+            <Key ID="str_GRAD_FOG_FOG_1800">
+                <Original>initial ground fog that lifts within half an hour</Original>
+                <German></German>
+            </Key>
+            <Key ID="str_GRAD_FOG_FOG_3600">
+                <Original>initial ground fog that lifts within 1 hour</Original>
+                <German></German>
+            </Key>
+            <Key ID="str_GRAD_FOG_PERMAFOG">
+                <Original>ground fog that does not lift</Original>
+                <German></German>
+            </Key>
 		</Container>
 		<Container name="tasks">
 			<Key ID="str_GRAD_OPFOR_A_title">

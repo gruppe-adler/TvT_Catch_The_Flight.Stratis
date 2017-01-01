@@ -18,3 +18,9 @@
 #define LIST_18(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
 #define LIST_19(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
 #define LIST_20(var1) var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1,var1
+
+#define FOG_NOFOG 1
+#define FOG_FOG_900 900
+#define FOG_FOG_1800 1800
+#define FOG_FOG_3600 3600
+#define FOG_PERMAFOG 999999

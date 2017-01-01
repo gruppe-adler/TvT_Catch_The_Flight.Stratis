@@ -1,4 +1,4 @@
-#include "missionMacros.h"
+#include "missionDefines.hpp"
 #define MODULES_DIRECTORY node_modules
 
 author = "Fusselwurm";
@@ -39,6 +39,13 @@ class Params
         values[] = {1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
         default = 2;
     };
+    class FogSettings
+    {
+        title = $STR_GRAD_fogSettings;
+        values[] = {FOG_NOFOG, FOG_FOG_900, FOG_FOG_1800, FOG_FOG_3600, FOG_PERMAFOG};
+		texts[] = {$STR_GRAD_FOG_NOFOG, $STR_GRAD_FOG_FOG_900, $STR_GRAD_FOG_FOG_1800, $STR_GRAD_FOG_FOG_3600, $STR_GRAD_FOG_PERMAFOG};
+        default = FOG_FOG_1800;
+    };
 };
 
 #include "cfgFunctions.hpp"
@@ -53,61 +60,5 @@ class CfgSounds {
 
 class RscTitles
 {
-	class IDCard
-	{
-		idd = -1;
-		duration = 30; //1 min
-        fadeOut = 5;
-		onLoad = "_this call onIDCardLoad;  onIDCardLoadEventHandler = (findDisplay 46) displayAddEventHandler [""KeyDown"", ""cutText ["""""""", """"PLAIN""""];""];";
-        onUnload = "(findDisplay 46) displayRemoveEventHandler [""KeyDown"",  onIDCardLoadEventHandler];";
-		class controls
-		{
-			class TheTitle
-			{
-				idc = 1; //control reference
-				type = 0;
-				style = ST_CENTER;
-				x = 0;
-				y = 0;
-				w = 1;
-				h = 0.2;
-				font = "EtelkaMonospacePro";
-				sizeEx = 0.1;
-				colorBackground[] = {0.9, 0.9, 0.9, 0.9};
-				colorText[] = {0.1, 0.1, 0.1,1};
-				text = "Občanský průkaz";
-			};
-            class UnitNameLabel
-            {
-                idc = 10; //control reference
-                type = 0;
-                style = ST_LEFT;
-                x = 0;
-                y = 0.2;
-                w = 0.5;
-                h = 0.1;
-                font = "EtelkaMonospacePro";
-                sizeEx = 0.1;
-                colorBackground[] = {0.9, 0.9, 0.9, 0.9};
-				colorText[] = {0.1, 0.1, 0.1,1};
-                text = "JMÉNO/PŘÍJMENÍ :";
-            };
-            class UnitNameValue
-            {
-                idc = 11; //control reference
-                type = 0;
-                style = ST_LEFT;
-                x = 0.5;
-                y = 0.2;
-                w = 0.5;
-                h = 0.1;
-                font = "EtelkaMonospacePro";
-                sizeEx = 0.1;
-                colorBackground[] = {0.9, 0.9, 0.9, 0.9};
-				colorText[] = {0.1, 0.1, 0.1,1};
-                text = "<INSERT NAME HERE>";
-            };
-
-		};
-	};
+    #include "IdCard.hpp"
 };
