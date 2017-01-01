@@ -48,6 +48,10 @@ class Params
     };
 };
 
+class EngimaTraffic {
+    vehicleSets[] = {"RDS_CIV", "RHS_GREF"};
+};
+
 #include "cfgFunctions.hpp"
 #include "ace_settings.h"
 #include "loadouts.h"
