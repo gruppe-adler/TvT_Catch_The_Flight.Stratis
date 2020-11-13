@@ -1,8 +1,10 @@
 class CfgFunctions {
+    #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
 	#include "functions\grad-vehicle-damage-report\cfgFunctions.hpp"
+    
 	class Config {
 		class General {
 			class civilianUniforms { file = "config\fn_civilianUniforms.json"; };
@@ -15,6 +17,7 @@ class CfgFunctions {
             class alert_opfor_katzenwache {};
             class alert_plane_damaged {};
             class alert_indep_at_airport {};
+            class alert_indep_at_beach {};
             class createTaskCivKill {};
             class createTaskCivProtect {};
             class createTaskOpfor {};
@@ -26,6 +29,7 @@ class CfgFunctions {
             class formatIDCard {};
             class getAllegiance {};
             class giveUpgradeToSide {};
+            class handleWinConditionFulfilled {};
             class limitOffroadSpeed {};
             class limitSwimmingAbility {};
             class preventOtherSidesFromStealing {};
@@ -39,10 +43,7 @@ class CfgFunctions {
             class spawn_boat {};
             class update_task_survive {};
             class vehicleFlightPlaneDamageHandler {};
-            class vehicleTheftHandler {};
-            class win_indep_elim {};
-            class win_indep_escape {};
-            class win_opfor_elim {};
+            class vehicleTheftHandler {};            
 		};
 		class Client {
 			file = "functions\client";

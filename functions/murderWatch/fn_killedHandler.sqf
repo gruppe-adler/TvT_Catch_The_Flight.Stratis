@@ -12,14 +12,23 @@ _triggerIndepCMarkerForOpfor = {
     [{ [unit_indep_c, Mission_fnc_setupMurderWatch_var_unit_indep_c_radius, opfor] call Mission_fnc_createSpottedMarker; }, [], (random [15, 35, 90])]  call CBA_fnc_waitAndExecute;
 };
 
-params ["_deceased", "_killer"];
+params [
+    ["_deceased", objNull, [objNull, sideUnknown]], 
+    ["_killer", objNull, [objNull]]
+];
 
 _killer = _this call Mission_fnc_getRealKiller;
 
 TRACE_1("killer for %1 is %2", _deceased, _killer);
 
+private _deceasedAllegiance = sideUnknown;
 _killerAllegiance = _killer call Mission_fnc_getAllegiance;
-_deceasedAllegiance = _deceased call Mission_fnc_getAllegiance;
+if (_deceased isEqualTo civilian) then {
+    _deceasedAllegiance = civilian;
+} else {
+    _deceasedAllegiance = _deceased call Mission_fnc_getAllegiance;
+};
+
 
 switch (_killerAllegiance) do {
     case independent: {

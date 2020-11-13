@@ -48,13 +48,12 @@ class Params
     };
 };
 
-class EngimaTraffic {
-    vehicleSets[] = {"RDS_CIV", "RHS_GREF"};
-};
-
 #include "cfgFunctions.hpp"
-#include "ace_settings.h"
 #include "loadouts.h"
+
+#include "node_modules\@gruppe-adler\replay\ui\defines.hpp"
+#include "node_modules\@gruppe-adler\replay\ui\dialog.hpp"
+
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
 class CfgSounds {

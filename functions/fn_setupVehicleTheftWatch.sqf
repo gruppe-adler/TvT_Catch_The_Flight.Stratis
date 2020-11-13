@@ -4,7 +4,6 @@
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _vehicle =  param [0, objNull];
-_ownerSide = param [0, sideUnknown];
 
 _vehicle addEventHandler [
     "GetIn",

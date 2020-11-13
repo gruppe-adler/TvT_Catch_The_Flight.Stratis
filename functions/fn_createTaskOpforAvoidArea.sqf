@@ -3,7 +3,11 @@
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
 
-_destination = param [0];
+params [
+	["_trigger", objNull, [objNull]]
+];
+ 
+_destination = getPos _trigger;
 
 _title = localize "str_GRAD_OPFOR_A_avoid_title";
 _content = localize "str_GRAD_OPFOR_A_avoid_story";
@@ -16,6 +20,6 @@ _task setSimpleTaskDescription [_condition, _title, _title];
 _task setSimpleTaskType "map";
 _task setSimpleTaskDestination _destination;
 
-task_opfor_katzenwache pushBack _task;
+task_opfor_katzenwache pushBack [_trigger, _task];
 
 _task

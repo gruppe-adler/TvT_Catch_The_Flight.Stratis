@@ -18,7 +18,7 @@ switch (_allegiance) do {
 	};
 	case opfor: {
         task_main_objective = [_allegiance] call Mission_fnc_createTaskCivKill;
-        { [_x] call Mission_fnc_createTaskOpforAvoidArea; } forEach [getPos trigger_civ_katzenwache];
+        { [_x] call Mission_fnc_createTaskOpforAvoidArea; } forEach [trigger_civ_katzenwache];
         player setCurrentTask task_main_objective;
 	};
 	default {

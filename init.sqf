@@ -25,18 +25,29 @@ if (isServer) then {
 [] execVM "setup_vehicle_damagen_petzen.sqf";
 [] execVM "loadouts.sqf";
 
-[] spawn {
-	_handle = [] execVM "node_modules\engima-traffic\Init.sqf";
-	waitUntil {scriptDone _handle};
-	ENGIMA_TRAFFIC_spawnHandler pushBack {
-		params ["_unit"];
-		_unit call Mission_fnc_setupMurderWatch;
+[] call GRAD_replay_fnc_init;
+
+["grad_civs_civKilled", { 
+	params ["_deathPos", "_killer"]; 
+	[civilian, _killer] call Mission_fnc_killedHandler;
+}] call CBA_fnc_addEventHandler;
+["grad_civs_vehicleTheft", {
+	params ["_vehicle", "_thief"];
+	if (isNull _thief) exitWith {};
+	switch (_thief call Mission_fnc_getAllegiance) do {
+		case independent: { [opfor, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };
+		case opfor: { [independent, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };		
 	};
-	ENGIMA_TRAFFIC_vehicleSpawnHandler pushBack {
-		_this call GRAD_vehicleDamageReport_fnc_registerVehicle;
-        _this call Mission_fnc_setupVehicleTheftWatch;
-	};
-};
+	_vehicle call GRAD_vehicleDamageReport_fnc_registerVehicle;
+}] call CBA_fnc_addEventHandler;
+
+mission_winConditionFulfilledHandle = [
+	"mission_winConditionFulfilled", 
+	{
+		["mission_winConditionFulfilled", mission_winConditionFulfilledHandle] call CBA_fnc_removeEventHandler;
+		_this call Mission_fnc_handleWinConditionFulfilled;
+	}
+] call CBA_fnc_addEventHandler;
 
 if (hasInterface) then {
 	waitUntil {!isNull player};
@@ -74,6 +85,6 @@ if (hasInterface) then {
             _x setVariable ["mission_allegiance", independent, true];
         };
 
-    } forEach ([playableUnits + switchableUnits, {local _this}] call CBA_fnc_select);
+    } forEach ([playableUnits + switchableUnits - [player], {local _this}] call CBA_fnc_select);
 
 #endif
