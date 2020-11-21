@@ -67,7 +67,7 @@ if (hasInterface) then {
 		3 enableChannel false;
 		[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
 
-        ace_map_BFT_Enabled = false;
+		player setVariable ["ace_map_hideBlueForceMarker", true, true];
 	};
 
 };
