@@ -84,6 +84,9 @@ if (hasInterface) then {
         } else {
             _x setVariable ["mission_allegiance", independent, true];
         };
+		if (side _x != east) then {
+			_x setVariable ["ace_map_hideBlueForceMarker", true, true];
+		};
 
     } forEach ([playableUnits + switchableUnits - [player], {local _this}] call CBA_fnc_select);
 
