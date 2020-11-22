@@ -32,6 +32,8 @@ class CfgFunctions {
             class handleWinConditionFulfilled {};
             class limitOffroadSpeed {};
             class limitSwimmingAbility {};
+            class onPlayerKilled {};
+            class onPlayerRespawn {};
             class preventOtherSidesFromStealing {};
             class setAllSidesFriendly {};
             class setupACEInteractVehicleRelease {};

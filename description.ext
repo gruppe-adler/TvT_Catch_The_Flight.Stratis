@@ -13,8 +13,18 @@ disabledAI = 0;
 enableDebugConsole = 1;
 
 respawn = 3;
-respawnDelay = 9999999;
-respawnTemplates[] = {"ace_spectator"};
+respawnDelay = 999999;
+respawnTemplates[] = {"grad_permaChoice"};
+
+class CfgRespawnTemplates {
+    class grad_permaChoice {
+        displayName = "choose your fate";
+        onPlayerKilled = "Mission_fnc_onPlayerKilled";
+        onPlayerRespawn = "Mission_fnc_onPlayerRespawn";
+        respawnTypes[] = {1,2,3,4,5};
+        respawnOnStart = 0;
+    };
+};
 
 class Header
 {

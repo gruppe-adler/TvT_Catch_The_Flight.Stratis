@@ -69,7 +69,6 @@ if (hasInterface) then {
 
 		player setVariable ["ace_map_hideBlueForceMarker", true, true];
 	};
-
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
