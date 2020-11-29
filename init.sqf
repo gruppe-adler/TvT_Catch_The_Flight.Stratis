@@ -14,29 +14,6 @@ mission_state_boat_spawned = false;
 
 [] call Mission_fnc_limitOffroadSpeed;
 
-if (isServer) then {
-	["Initialize"] call BIS_fnc_dynamicGroups;
-
-	GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
-	[] call Mission_fnc_setAllSidesFriendly;
-    [] spawn Mission_fnc_doTheWeather;
-
-	// AI for testing
-	{
-		if (_forEachIndex mod 4 == 0) then {
-			_x setVariable ["mission_allegiance", opfor, true];
-		} else {
-			_x setVariable ["mission_allegiance", independent, true];
-		};
-		if (side _x != east) then {
-			_x setVariable ["ace_map_hideBlueForceMarker", true, true];
-		};
-
-	} forEach ([allUnits - [player], {local _this && (side _this) isEqualTo civilian && !(isPlayer _this)}] call CBA_fnc_select);
-
-
-};
-
 [] execVM "setup_vehicle_damagen_petzen.sqf";
 [] execVM "loadouts.sqf";
 
@@ -46,6 +23,7 @@ if (isServer) then {
 	params ["_deathPos", "_killer"]; 
 	[civilian, _killer] call Mission_fnc_killedHandler;
 }] call CBA_fnc_addEventHandler;
+
 ["grad_civs_vehicleTheft", {
 	params ["_vehicle", "_thief"];
 	if (isNull _thief) exitWith {};
@@ -76,17 +54,16 @@ if (hasInterface) then {
     [] call Mission_fnc_setupACEInteractVehicleRelease;
 	[player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 
-	if (side player != opfor) then {
-		1 enableChannel false;
-		2 enableChannel false;
-		3 enableChannel false;
-		[1, 2, 3] call Mission_fnc_disableMarkerChannels; // TODO: Is this necessary? in MP, blocking the channels should work, actually
-
-		player setVariable ["ace_map_hideBlueForceMarker", true, true];
-	};
+	[
+		{
+			if (side player == east) then {
+				["ace_map_bft_enabled", true, 1, "mission"] call CBA_settings_fnc_set
+			};
+		}, 
+		[], 
+		5
+	] call CBA_fnc_waitAndExecute;
 };
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
 { _x call Mission_fnc_setupVehicleTheftWatch; } forEach ([vehicles, {(local _this) && (_this isKindOf "Car") }] call CBA_fnc_select);
-
-

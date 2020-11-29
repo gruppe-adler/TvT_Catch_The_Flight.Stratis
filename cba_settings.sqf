@@ -2,7 +2,7 @@
 force ace_winddeflection_enabled = false;
 force ace_winddeflection_vehicleEnabled = false;
 
-force ace_map_BFT_Enabled = true;
+force ace_map_BFT_Enabled = false;
 
 force ace_spectator_enableAI = false;
 force ace_spectator_maxFollowDistance = 20;
