@@ -20,6 +20,21 @@ if (isServer) then {
 	GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
 	[] call Mission_fnc_setAllSidesFriendly;
     [] spawn Mission_fnc_doTheWeather;
+
+	// AI for testing
+	{
+		if (_forEachIndex mod 4 == 0) then {
+			_x setVariable ["mission_allegiance", opfor, true];
+		} else {
+			_x setVariable ["mission_allegiance", independent, true];
+		};
+		if (side _x != east) then {
+			_x setVariable ["ace_map_hideBlueForceMarker", true, true];
+		};
+
+	} forEach ([allUnits - [player], {local _this && (side _this) isEqualTo civilian && !(isPlayer _this)}] call CBA_fnc_select);
+
+
 };
 
 [] execVM "setup_vehicle_damagen_petzen.sqf";
@@ -75,18 +90,3 @@ if (hasInterface) then {
 { _x call Mission_fnc_setupVehicleTheftWatch; } forEach ([vehicles, {(local _this) && (_this isKindOf "Car") }] call CBA_fnc_select);
 
 
-#ifdef DEBUG_MODE_FULL
-// FOR LOCAL TESTING
-    {
-        if (_forEachIndex mod 4 == 0) then {
-            _x setVariable ["mission_allegiance", opfor, true];
-        } else {
-            _x setVariable ["mission_allegiance", independent, true];
-        };
-		if (side _x != east) then {
-			_x setVariable ["ace_map_hideBlueForceMarker", true, true];
-		};
-
-    } forEach ([playableUnits + switchableUnits - [player], {local _this}] call CBA_fnc_select);
-
-#endif
