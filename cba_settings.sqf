@@ -1,3 +1,4 @@
+#include "node_modules\grad-tvtsettings\cba_settings.sqf"
 
 force ace_winddeflection_enabled = false;
 force ace_winddeflection_vehicleEnabled = false;
@@ -44,3 +45,4 @@ force grad_civs_residents_meetNeighborCooldown = 180;
 force grad_civs_residents_spawnDistancesResidents = "[400,  800]";
 force grad_civs_voyage_maxCivsInVehicles = 6;
 force grad_civs_voyage_spawnDistancesInVehicles = "[1500, 3000]";
+

@@ -20,8 +20,9 @@
     ],
     "dependencies": {
         "@gruppe-adler/replay": "1",
-        "grad-loadout": "^4.4.0",
         "grad-leaveNotes": "^2.0.0",
-        "grad-makeFire": "^2.0.0"
+        "grad-loadout": "^4.4.0",
+        "grad-makeFire": "^2.0.0",
+        "grad-tvtsettings": "0.0.3"
     }
 }
