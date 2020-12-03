@@ -1308,7 +1308,7 @@ class Mission
 				name="trigger_win_opfor_elim";
 				text="trigger_win_opfor_elim";
 				condition="!(alive unit_indep_c)";
-				onActivation="[""mission_winConditionFulfilled"", [""opfor_elim""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""opfor_elim""] call mission_fnc_winConditionTriggered";
 				sizeA=250;
 				sizeB=250;
 				isRectangle=1;
@@ -1327,7 +1327,7 @@ class Mission
 				name="trigger_win_indep_elim";
 				text="trigger_win_indep_elim";
 				condition="count ([allUnits, {(alive _this && (side _this) == Opfor)}] call CBA_fnc_select) == 0";
-				onActivation="[""mission_winConditionFulfilled"", [""indep_elim""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_elim""] call mission_fnc_winConditionTriggered";
 				sizeA=250;
 				sizeB=250;
 				activationType="NOT PRESENT";
@@ -1348,7 +1348,7 @@ class Mission
 				name="trigger_win_indep_escape_1";
 				text="trigger_win_indep_escape_1";
 				condition="call{this}";
-				onActivation="[""mission_winConditionFulfilled"", [""indep_escape""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_escape""] call mission_fnc_winConditionTriggered";
 				sizeA=2000;
 				sizeB=6000;
 				activationBy="GUER";
@@ -1368,7 +1368,7 @@ class Mission
 			{
 				name="trigger_win_indep_escape_2";
 				text="trigger_win_indep_escape_2";
-				onActivation="[""mission_winConditionFulfilled"", [""indep_escape""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_escape""] call mission_fnc_winConditionTriggered";
 				sizeA=2000;
 				sizeB=5000;
 				activationBy="GUER";
@@ -1388,7 +1388,7 @@ class Mission
 			{
 				name="trigger_win_indep_escape_3";
 				text="trigger_win_indep_escape_2";
-				onActivation="[""mission_winConditionFulfilled"", [""indep_escape""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_escape""] call mission_fnc_winConditionTriggered";
 				sizeA=2000;
 				sizeB=6000;
 				activationBy="GUER";
@@ -1408,7 +1408,7 @@ class Mission
 			{
 				name="trigger_win_indep_escape_4";
 				text="trigger_win_indep_escape_2";
-				onActivation="[""mission_winConditionFulfilled"", [""indep_escape""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_escape""] call mission_fnc_winConditionTriggered";
 				sizeA=2000;
 				sizeB=5000;
 				activationBy="GUER";
@@ -6130,7 +6130,7 @@ class Mission
 				name="trigger_win_indep_escape_5";
 				text="trigger_win_indep_escape_5";
 				condition="call{this && (alive unit_indep_c)}";
-				onActivation="[""mission_winConditionFulfilled"", [""ind_escape""]] call CBA_fnc_globalEvent;";
+				onActivation="[thisTrigger, ""indep_escape""] call mission_fnc_winConditionTriggered";
 				sizeA=4000;
 				sizeB=4000;
 				activationType="NOT PRESENT";

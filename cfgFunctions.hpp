@@ -45,7 +45,7 @@ class CfgFunctions {
             class spawn_boat {};
             class update_task_survive {};
             class vehicleFlightPlaneDamageHandler {};
-            class vehicleTheftHandler {};            
+            class vehicleTheftHandler {};   
 		};
 		class Client {
 			file = "functions\client";
@@ -54,6 +54,7 @@ class CfgFunctions {
 		class Server {
 			file = "functions\server";
 			class getMyAllegiance {};
+            class winConditionTriggered {};
 		};
         class MurderWatch {
             file ="functions\murderWatch";
