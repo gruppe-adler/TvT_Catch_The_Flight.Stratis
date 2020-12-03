@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 params ["_message", "_type"];
 
 if (isNil "_type") then {

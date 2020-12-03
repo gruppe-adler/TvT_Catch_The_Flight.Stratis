@@ -1,7 +1,4 @@
-#define DEBUG_MODE_FULL
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 private _unit = _this;
 private _name = name _unit;

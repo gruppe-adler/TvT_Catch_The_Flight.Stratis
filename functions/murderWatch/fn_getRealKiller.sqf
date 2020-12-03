@@ -1,6 +1,5 @@
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\..\script_component.hpp"
+
 
 // get the guy who's responsible for a death OR objNull on suicidal behaviour
 

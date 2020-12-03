@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 params [["_type", "", [""]]];
 
 if (isServer) then {

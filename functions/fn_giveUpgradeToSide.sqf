@@ -1,7 +1,4 @@
-#define DEBUG_MODE_FULL
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 _targetSide = param [0, sideUnknown];
 _deceased = param [1, objNull]; // optional

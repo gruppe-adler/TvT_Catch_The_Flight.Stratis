@@ -1,7 +1,4 @@
-#define DEBUG_MODE_FULL
-#define PREFIX grad
-#define COMPONENT vehicleOwnership
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 _vehicle =  param [0, objNull];
 

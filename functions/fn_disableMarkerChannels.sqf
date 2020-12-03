@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 /**
  * declare channels as illegal  for markers.
  *
@@ -6,7 +8,6 @@
  * periodically clears illegal markers
  */
 
-#include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _channels = _this;
 _interval = 10;

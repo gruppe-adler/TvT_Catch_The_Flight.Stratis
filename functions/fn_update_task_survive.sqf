@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 _taskSurviveState = 'FAILED';
 if (alive player) then {
     _taskSurviveState = 'SUCCEEDED';

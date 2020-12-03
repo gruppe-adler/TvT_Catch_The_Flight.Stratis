@@ -1,3 +1,6 @@
+#include "..\..\script_component.hpp"
+
+
 params ["_deceased", "_deceasedAllegiance"];
 [
     [(name _deceased), (getPos _deceased)],

@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 _plane = _this;
 
 _plane addEventHandler ["HandleDamage", {

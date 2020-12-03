@@ -1,7 +1,4 @@
-
-#define PREFIX mission
-#define COMPONENT vehicleOwnership
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 
 GRAD_VehicleReleaseOwnership = {

@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 if (isNil "task_survive") then {
     task_survive = player createSimpleTask ['dont_die'];
     task_survive setSimpleTaskDescription [localize "str_GRAD_task_dd_desc", localize "str_GRAD_task_dd_title", localize "str_GRAD_task_dd_title"];

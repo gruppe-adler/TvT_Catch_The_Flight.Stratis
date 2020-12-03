@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 private _position = param [0];
 private _title = localize "str_GRAD_INDEP_C_title";
 private _content = localize "str_GRAD_INDEP_C_story";

@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 switch (side player) do {
 	case east: {
 		{ [_x] call Mission_fnc_createTaskOpforAvoidArea; } forEach [trigger_opfor_katzenwache_0, trigger_opfor_katzenwache_1, trigger_opfor_katzenwache_2];

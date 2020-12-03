@@ -1,7 +1,5 @@
-#define PREFIX mission
-#define COMPONENT fn
+#include "..\..\script_component.hpp"
 
-#include "\x\cba\addons\main\script_macros_mission.hpp"
 
 _allegiance = param [0, sideUnknown];
 

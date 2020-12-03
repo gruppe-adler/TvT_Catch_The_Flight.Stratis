@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 /**
  * When different sides are friends, you can usually access their inventories.
  *
