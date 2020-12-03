@@ -9,4 +9,4 @@
     };
 } remoteExec ["BIS_fnc_call", [EAST, CIVILIAN], true];
 
-INFO("opfor alerted to target person at airport");
+INFO("opfor & associates alerted to target person being at airport");

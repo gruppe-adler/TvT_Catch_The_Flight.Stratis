@@ -9,4 +9,4 @@
     };
 } remoteExec ["BIS_fnc_call", [EAST, CIVILIAN], true];
 
-INFO("opfor alerted to target person at beach");
+INFO("opfor & associated alerted to target person being at a beach");

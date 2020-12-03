@@ -42,13 +42,13 @@ onIDCardLoad = {
 
     _sideToBoss = {
         switch (_this) do {
-            case independent: { "INDEP Boss"};
-            case opfor: {"military command"};
+            case independent: { "Smuggler Schellnhuber"};
+            case opfor: {"Military command"};
             default {"Great Unknown"};
         };
     };
 
-    _getControlForBackground = {
+    private _getControlForBackground = {
         private _backgroundCheck = param [0, []];
         private _side = param [1, sideUnknown];
 
