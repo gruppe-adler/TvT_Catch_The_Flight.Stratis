@@ -69,6 +69,7 @@ class Loadouts {
 			class Type {
 				class Soldier_F {
 					primaryWeapon = "arifle_AKS_F";
+					primaryWeaponMagazine = "30Rnd_545x39_Mag_F";
 					addItemsToVest[] = {
 						LIST_6("30Rnd_545x39_Mag_F")
 					};
@@ -101,14 +102,16 @@ class Loadouts {
 					goggles[] = {
 						"g_balaclava_blk", "g_balaclava_oli",
 						"g_bandanna_khk", "g_bandanna_oli", "g_bandanna_tan"				
-					};
+					};					
 					handgunWeapon = "rhs_weap_makarov_pm";
+					handgunWeaponMagazine = "rhs_mag_9x18_8_57N181S";
 					addItemsToUniform[] = {
 						LIST_3("rhs_mag_9x18_8_57N181S")
 					};
 				};
 				class Soldier_AR_F {
 					primaryWeapon = "rhs_weap_pkm";
+					primaryWeaponMagazine = "rhs_100Rnd_762x54mmR_green";
 					addItemsToVest[] = {
 						LIST_1("rhs_100Rnd_762x54mmR_green")
 					};
@@ -148,6 +151,7 @@ class Loadouts {
 				"rds_uniform_Profiteer1", "rds_uniform_Profiteer2", "rds_uniform_Profiteer3", "rds_uniform_Profiteer4"
 			};
 			handgunWeapon = "rhs_weap_makarov_pm";
+			handgunWeaponMagazine = "rhs_mag_9x18_8_57N181S";
 			binoculars = "Binocular";
 			addItemsToUniform[] = {
 				LIST_2("rhs_mag_9x18_8_57N181S")
