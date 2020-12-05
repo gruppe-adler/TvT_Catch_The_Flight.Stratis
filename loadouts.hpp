@@ -78,6 +78,7 @@ class Loadouts {
 				class Soldier_TL_F {
 					binoculars = "Binocular";
 					primaryWeapon = "arifle_AKS_F";
+					primaryWeaponMagazine = "30Rnd_545x39_Mag_F";
 					addItemsToVest[] = {
 						LIST_1("ACE_SpraypaintRed"),
 						LIST_2("SmokeShell"),
@@ -88,6 +89,7 @@ class Loadouts {
 					binoculars = "Binocular";
 					vest = "rhsgref_6b23_ttsko_mountain_nco";
 					primaryWeapon = "arifle_AKS_F";
+					primaryWeaponMagazine = "30Rnd_545x39_Mag_F";
 					addItemsToVest[] = {
 						LIST_1("ACE_SpraypaintRed"),
 						LIST_4("30Rnd_545x39_Mag_F"),
