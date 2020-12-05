@@ -3,6 +3,12 @@ class Loadouts {
 	perPlayerDelay = 1;
 	handleRadios = 1;
 	resetLoadout = 1;
+	customGear = 120;
+	customGearAllowedCategories[] = {
+		"uniform",
+		"headgear",
+		"goggles"
+    };
 
 	class AllUnits {
 		addItemsToUniform[] = {
@@ -19,10 +25,26 @@ class Loadouts {
 
 		class CIV_F {
 			class AllUnits {
-				uniform = "rds_uniform_Woodlander1";
+				uniform[] = {
+					"rds_uniform_Woodlander1", "rds_uniform_Woodlander2", "rds_uniform_Woodlander3", "rds_uniform_Woodlander4",
+					"rds_uniform_Worker1", "rds_uniform_Worker2", "rds_uniform_Worker3", "rds_uniform_Worker4"
+
+				};
+				headgear[] = {
+					"rds_worker_cap1", "rds_worker_cap2", "rds_worker_cap3", "rds_worker_cap4",
+					"rds_villager_cap1", "rds_villager_cap2", "rds_villager_cap3", "rds_villager_cap4"
+					
+				};
 				addItemsToUniform[] = {
 					LIST_1("ACE_SpraypaintRed"),
 					"SmokeShell"
+				};
+				goggles[] = {
+					"rds_long_hair_01", "rds_long_hair_02", "rds_long_hair_03",
+					"tryk_beard", "tryk_beard2", "tryk_beard3", "tryk_beard4", 
+					"tryk_beard_bw", "tryk_beard_bw2", "tryk_beard_bw3", "tryk_beard_bw4", 
+					"tryk_beard_bk", "tryk_beard_bk2", "tryk_beard_bk3", "tryk_beard_bk4", 
+					"tryk_beard_gr", "tryk_beard_gr2", "tryk_beard_gr3", "tryk_beard_gr4"
 				};
 			};
 		};
@@ -100,13 +122,28 @@ class Loadouts {
 		};
 
 		class I_Officer_F {
-			uniform = "rds_uniform_Woodlander1";
+			uniform[] = {
+				"rds_uniform_Functionary1", "rds_uniform_Functionary2", 
+				"rds_uniform_Profiteer1", "rds_uniform_Profiteer2", "rds_uniform_Profiteer3", "rds_uniform_Profiteer4"
+			};
 			handgunWeapon = "rhs_weap_makarov_pm";
 			binoculars = "Binocular";
 			addItemsToUniform[] = {
 				LIST_2("rhs_mag_9x18_8_57N181S")
 			};
-			headgear = "H_Hat_checker";
+			headgear[] = {
+				"H_Hat_checker",
+				"h_hat_tinfoil_f",
+				"rds_profiteer_cap1", "rds_profiteer_cap2", "rds_profiteer_cap3", "rds_profiteer_cap4", 
+				"h_strawhat", "h_strawhat_dark"
+			};
+			goggles[] = {
+				"g_shades_black", "g_shades_blue", "g_shades_green", "g_shades_red", 
+				"g_aviator",
+				"g_spectacles", "g_spectacles_tinted",
+				"G_squares", "g_squares_tinted"
+			};
 		};
 	};
 };
+  
