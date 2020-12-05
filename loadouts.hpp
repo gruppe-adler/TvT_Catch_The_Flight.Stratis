@@ -59,6 +59,12 @@ class Loadouts {
 					LIST_1("ACE_epinephrine"),
 					LIST_1("ACE_morphine")
 				};
+				goggles[] = {
+					"gm_headgear_foliage_summer_forest_01", "gm_headgear_foliage_summer_forest_02", "gm_headgear_foliage_summer_forest_03", "gm_headgear_foliage_summer_forest_04",
+					"gm_headgear_foliage_summer_grass_01", "gm_headgear_foliage_summer_grass_02", "gm_headgear_foliage_summer_grass_03", "gm_headgear_foliage_summer_grass_04",
+					"g_balaclava_blk", "g_balaclava_oli",
+					"g_bandanna_khk", "g_bandanna_oli", "g_bandanna_tan"
+				};
 			};
 		};
 	};
@@ -69,6 +75,7 @@ class Loadouts {
 			addItemsToVest[] = {
 				LIST_6("30Rnd_545x39_Mag_F")
 			};
+
 		};
 		class O_Soldier_TL_F {
 			binoculars = "Binocular";
@@ -81,6 +88,7 @@ class Loadouts {
 		};
 		class O_Soldier_SL_F {
 			binoculars = "Binocular";
+			vest = "rhsgref_6b23_ttsko_mountain_nco";
 			primaryWeapon = "arifle_AKS_F";
 			addItemsToVest[] = {
 				LIST_1("ACE_SpraypaintRed"),
@@ -90,7 +98,18 @@ class Loadouts {
 				LIST_2("SmokeShellRed")
 			};
 		};
-		class O_Officer_F: O_Soldier_SL_F {};
+		class O_Officer_F: O_Soldier_SL_F {
+			vest = "rhsgref_6b23_ttsko_mountain_officer";
+			headgear = "rhsgref_fieldcap_ttsko_mountain";
+			goggles[] = {
+				"g_balaclava_blk", "g_balaclava_oli",
+				"g_bandanna_khk", "g_bandanna_oli", "g_bandanna_tan"				
+			};
+			handgunWeapon = "rhs_weap_makarov_pm";
+			addItemsToUniform[] = {
+				LIST_3("rhs_mag_9x18_8_57N181S")
+			};
+		};
 		class O_Soldier_AR_F {
 			primaryWeapon = "rhs_weap_pkm";
 			addItemsToVest[] = {
@@ -99,6 +118,7 @@ class Loadouts {
 		};
 		class O_medic_F: O_Soldier_F {
 			backpack = "rhs_assault_umbts";
+			vest = "rhsgref_6b23_ttsko_mountain_medic";
 			addItemsToBackpack[] = {
 				LIST_10("ACE_fieldDressing"),
 				LIST_10("ACE_fieldDressing"),
@@ -146,4 +166,3 @@ class Loadouts {
 		};
 	};
 };
-  
