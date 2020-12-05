@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=389;
+		nextID=393;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7068.5391,216.09782,6031.9653};
-		dir[]={-0.060363337,-0.95497316,-0.29048663};
-		up[]={-0.19447963,0.2966921,-0.93496072};
-		aside[]={-0.97904748,-5.6382269e-005,0.20363215};
+		pos[]={3274.6475,8.4061384,5769.8213};
+		dir[]={-0.97853363,-0.20563881,0.015442085};
+		up[]={-0.20565742,0.97861654,0.0034353996};
+		aside[]={0.015817206,-0.00018508572,0.99990261};
 	};
 };
 binarizationWanted=0;
@@ -37,13 +37,15 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"A3_Air_F_Exp_Plane_Civil_01",
 	"ace_realisticnames",
-	"A3_Boat_F_Boat_Transport_01"
+	"A3_Boat_F_Boat_Transport_01",
+	"A3_Supplies_F_Exp_Ammoboxes",
+	"ace_dragging"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
 			className="rhs_c_a2port_car";
@@ -127,6 +129,20 @@ class AddonsMetaData
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item12
+		{
+			className="A3_Supplies_F_Exp";
+			name="Arma 3 Apex - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item13
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -269,7 +285,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=69;
+		items=70;
 		class Item0
 		{
 			dataType="Object";
@@ -6191,6 +6207,47 @@ class Mission
 			type="Empty";
 			id=388;
 			atlOffset=-1.4781952e-005;
+		};
+		class Item69
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3266.5444,5.5536819,5770.1113};
+				angles[]={0,5.4485865,6.2806892};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="opfor_crate";
+			};
+			id=391;
+			type="Box_Syndicate_Ammo_F";
+			atlOffset=-4.7683716e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

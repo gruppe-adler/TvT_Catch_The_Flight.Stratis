@@ -58,6 +58,16 @@ class Params
 		texts[] = {$STR_GRAD_FOG_NOFOG, $STR_GRAD_FOG_FOG_900, $STR_GRAD_FOG_FOG_1800, $STR_GRAD_FOG_FOG_3600, $STR_GRAD_FOG_PERMAFOG};
         default = FOG_FOG_1800;
     };
+    class MinDistanceFromCrimeToGetUpgrade {
+        title = $STR_GRAD_minDistanceFromCrimeToGetUpgrade;
+        values[] = {0, 10, 50, 150, 500, 1500};
+        default = 500;
+    };
+    class NumberOfLrRadiosForOpfor {
+        title = $STR_GRAD_numberOfLrRadiosForOpfor;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        default = 0;
+    };
 };
 
 #include "cfgFunctions.hpp"

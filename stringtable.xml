@@ -41,6 +41,15 @@
                 <Original>fog settings</Original>
                 <German></German>
             </Key>
+			<Key ID="str_GRAD_minDistanceFromCrimeToGetUpgrade">
+                <Original>min distance from a crime scene to be eligible for an upgrade</Original>
+                <German>Mindestabstand von einem Verbrechen, um ein Upgrade kriegen zu können</German>
+            </Key>
+			<Key ID="str_GRAD_numberOfLrRadiosForOpfor">
+                <Original>number of long range radios stashed in crates for the military</Original>
+                <German>Anzahl an LR-Funkgeräten, die für das Militär in Kisten bereitgestellt werden</German>
+            </Key>
+			
 			<Key ID="str_GRAD_FOG_NOFOG">
 				<Original>no fog</Original>
 				<German></German>

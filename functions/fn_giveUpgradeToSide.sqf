@@ -8,7 +8,6 @@ _this params [
 
 TRACE_1("starting upgrade for side %1", _targetSide);
 
-_minDistance = 200;
 _radioClass = "tf_fadak";
 _getPistolclasses = {
 	["rhs_weap_makarov_pm"]
@@ -164,7 +163,7 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 
 _isAlive = {alive _this};
 _isTargetAllegiance = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
-_isNotTooClose = { (_this distance2D _deceasedPos) >= _minDistance };
+_isNotTooClose = { (_this distance2D _deceasedPos) >= GVAR(minDistanceFromCrimeToGetUpgrade) };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
 

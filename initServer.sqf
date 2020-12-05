@@ -11,3 +11,7 @@ mission_state_boat_spawned = false;
 GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
 [] call Mission_fnc_setAllSidesFriendly;
 [] spawn Mission_fnc_doTheWeather;
+
+
+GVAR(NumberOfLrRadiosForOpfor) = "NumberOfLrRadiosForOpfor" call BIS_fnc_getParamValue;
+opfor_crate addBackpackCargoGlobal ["TFAR_anprc155_coyote", GVAR(NumberOfLrRadiosForOpfor)];
