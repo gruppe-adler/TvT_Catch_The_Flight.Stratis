@@ -18,7 +18,6 @@ _player addEventHandler ["HandleRating", {0}];
 ["InitializePlayer", [_player, true]] call BIS_fnc_dynamicGroups;
 _player call Mission_fnc_preventOtherSidesFromStealing;
 _player call Mission_fnc_setupTasks;
-[] call Mission_fnc_setupIDCard;
 [] call Mission_fnc_setupActionBackgroundCheck;
 [] call Mission_fnc_setupACEInteractVehicleRelease;
 [_player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
@@ -27,6 +26,9 @@ _player call Mission_fnc_setupTasks;
 	{
 		if (side player == east) then {
 			["ace_map_bft_enabled", true, 1, "mission"] call CBA_settings_fnc_set
+		};
+		if (side player == independent && rank player == "CAPTAIN") then {
+			player setVariable ["ACE_Name", "Schlemihl Schellnhuber", true];
 		};
 	}, 
 	[], 

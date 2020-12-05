@@ -9,10 +9,11 @@ GVAR(rankCompare_gte) = {
 };
 
 GRAD_IdCard_backgroundCheck_getAllegiance = {
-    _unit = param [0, objNull];
-    _checkedSide = param [1, sideUnknown];
+    private _unit = param [0, objNull];
+    private _checkedSide = param [1, sideUnknown];
+    private _otherSide = if (_checkedSide isEqualTo opfor) then {independent} else {opfor};
 
-    _realAllegiance = _unit call Mission_fnc_getAllegiance;
+    private _realAllegiance = _unit call Mission_fnc_getAllegiance;
     if (_realAllegiance == sideUnknown) then {
         WARNING_1("player %1 doesnt seem to have allegiance", _unit);
     };
@@ -20,9 +21,9 @@ GRAD_IdCard_backgroundCheck_getAllegiance = {
     _random = random 1;
 
     if (_realAllegiance == _checkedSide && _random < 0.1) exitWith {-1};
-    if (_realAllegiance == _checkedSide && _random < 0.8) exitWith {1};
-    if (_realAllegiance != _checkedSide && _random < 0.1) exitWith {1};
-    if (_realAllegiance != _checkedSide && _random < 0.8) exitWith {-1};
+    if (_realAllegiance == _checkedSide && _random < 0.9) exitWith {1};
+    if (_realAllegiance == _otherSide && _random < 0.1) exitWith {1};
+    if (_realAllegiance == _otherSide && _random < 0.9) exitWith {-1};
 
     0
 };
@@ -30,9 +31,21 @@ GRAD_IdCard_backgroundCheck_getAllegiance = {
 GRAD_IdCard_doBackgroundCheck = {
     private _varname = format ["mission_allegiance_%1", toLower str side player];
 
-    private _background = _target getVariable _varname;
-    if ([_background] call CBA_fnc_isHash) exitWith {
-        ["background check already been done"] call Mission_fnc_showHint;
+    private _backgroundCheck = _target getVariable [_varname, []];
+    if ([_backgroundCheck] call CBA_fnc_isHash) exitWith {
+
+            private _intToDescription = {
+                private _descriptions = ["hostile", "neutral", "friendly"];
+                private _idx = _this + 1;
+                (_descriptions select _idx);
+            };
+
+            [
+                [format["Background already exists on %1", name _target], 1.5, [1, 1, 0, 1]], 
+                ["Likely political views"],
+                [format ["Towards military:  <t underline='1'>%1</t>", ([_backgroundCheck, opfor, 0] call CBA_fnc_hashGet) call _intToDescription]],
+                [format ["Towards Schellnhuber:<t underline='1'> %1</t>", ([_backgroundCheck, independent, 0] call CBA_fnc_hashGet) call _intToDescription]]
+            ] call CBA_fnc_notify;
     };
 
     private _duration = "BackgroundCheckDuration" call BIS_fnc_getParamValue;
@@ -46,55 +59,30 @@ GRAD_IdCard_doBackgroundCheck = {
             private _varname = _args param [1, ""];
 
             private _allegiances = [] call CBA_fnc_hashCreate;
-            [_allegiances, opfor, ([_target, opfor] call GRAD_IdCard_backgroundCheck_getAllegiance)] call CBA_fnc_hashSet;
-            [_allegiances, independent, ([_target, independent] call GRAD_IdCard_backgroundCheck_getAllegiance)] call CBA_fnc_hashSet;
+            private _attitudeTowardsOpfor = [_target, opfor] call GRAD_IdCard_backgroundCheck_getAllegiance;
+            private _attitudeTowardsIndepdendent = [_target, independent] call GRAD_IdCard_backgroundCheck_getAllegiance;
+            [_allegiances, opfor, _attitudeTowardsOpfor] call CBA_fnc_hashSet;
+            [_allegiances, independent,_attitudeTowardsIndepdendent] call CBA_fnc_hashSet;
             [_allegiances, "isPublic", false] call CBA_fnc_hashSet;
 
             TRACE_3("setting  background data to %1; varname %2, val %3 ", _target, _varname, _allegiances);
             _target setVariable [_varname, _allegiances, true];
 
-            _addPublishNode = {
-                _unit = param [0, objNull];
-                _varname = param [1, ""];
-                TRACE_2("debug var passing", _unit, _varname);
-                _action = [
-                    "GRAD_IdCard_publish",
-                    (name _unit),
-                    "",
-                    {
-                        TRACE_1("debug var passing2", _this);
-                        _args = param [2, []];
-                        _unit = _args param [0, objNull];
-                        _varname = _args param [1, ""];
-
-                        _hash = _unit getVariable _varname;
-
-                        TRACE_3("publishing info on %1, varname %2, val %3", _unit, _varname, _hash);
-
-                        [_hash, "isPublic", true] call CBA_fnc_hashSet;
-                        _unit setVariable [_varname, _hash, true];
-                    },
-                    {
-                        _args = param [2, []];
-                        _unit = _args param [0, objNull];
-                        _varname = _args param [1, ""];
-
-                        _hash = _unit getVariable _varname;
-
-                        (! ([_hash, "isPublic", false] call CBA_fnc_hashGet))
-                    },
-                    {},
-                    [_unit, _varname]
-                ] call ace_interact_menu_fnc_createAction;
-                [player, 1, ["ACE_SelfActions", "GRAD_IdCard_Actions", "GRAD_IdCard_Actions_publishBackgrounds"], _action] call ace_interact_menu_fnc_addActionToObject;
+            private _intToDescription = {
+                private _descriptions = ["hostile", "neutral", "friendly"];
+                private _idx = _this + 1;
+                (_descriptions select _idx);
             };
 
-            [_target, _varname] call _addPublishNode;
-
-            ["background check finished. information about allegiance is shown with the ID card now."] call Mission_fnc_showHint;
+            [
+                [format["Background check finished on %1", _target], 1.5, [1, 1, 0, 1]], 
+                ["Likely political views"],
+                [format ["Towards military:  <t underline='1'>%1</t>", _attitudeTowardsOpfor call _intToDescription]],
+                [format ["Towards Schellnhuber:<t underline='1'> %1</t>", _attitudeTowardsIndepdendent call _intToDescription]]
+            ] call CBA_fnc_notify;
         },
         {
-            ["background check canceled"] call Mission_fnc_showHint;
+            ["background check canceled"] call CBA_fnc_notify;
         },
         (format ["Performing background check on %1", name _target]),
         {true}
@@ -107,9 +95,7 @@ private _action = [
     "",
     GRAD_IdCard_doBackgroundCheck,
     {
-        private _varname = format ["mission_allegiance_%1", toLower str side player];
-        _hasBeenChecked = [(_target getVariable [_varname, []])]  call CBA_fnc_isHash;
-        ([rank player, "CAPTAIN"] call GVAR(rankCompare_gte)) && !(_hasBeenChecked)
+        [rank player, "CAPTAIN"] call GVAR(rankCompare_gte)
     }
 ] call ace_interact_menu_fnc_createAction;
 ["C_Man_1", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;

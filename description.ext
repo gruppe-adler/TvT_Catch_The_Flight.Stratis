@@ -68,6 +68,8 @@ class Params
 
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
+#include "node_modules\grad-passport\grad_passport.hpp"
+
 class CfgSounds {
 	sounds[] = {};
     #include "node_modules\grad-leaveNotes\cfgSounds.hpp"

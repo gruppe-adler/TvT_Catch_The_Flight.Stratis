@@ -3,6 +3,7 @@ class CfgFunctions {
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
+    #include "node_modules\grad-passport\cfgFunctions.hpp"
 	#include "functions\grad-vehicle-damage-report\cfgFunctions.hpp"
     
 	class Config {
@@ -26,7 +27,6 @@ class CfgFunctions {
             class createTaskSurvival {};
             class disableMarkerChannels {};
             class doTheWeather {};
-            class formatIDCard {};
             class getAllegiance {};
             class giveUpgradeToSide {};
             class handleWinConditionFulfilled {};
@@ -37,7 +37,6 @@ class CfgFunctions {
             class preventOtherSidesFromStealing {};
             class setAllSidesFriendly {};
             class setupACEInteractVehicleRelease {};
-            class setupIDCard {};
             class setupMurderWatch {};
             class setupVehicleTheftWatch {};
             class setupTasks {};

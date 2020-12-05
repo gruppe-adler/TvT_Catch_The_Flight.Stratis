@@ -640,6 +640,7 @@ class Mission
 					class Attributes
 					{
 						rank="CAPTAIN";
+						init="call{this setVariable [""grad_passport_firstName"", ""Schlemihl""];" \n "this setVariable [""grad_passport_lastName"", ""Schellnhuber""];}";
 						name="unit_indep_c";
 						description="Schlemihl Schellnhuber";
 						isPlayable=1;
