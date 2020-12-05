@@ -16,18 +16,17 @@ params [
     ["_killer", objNull, [objNull]]
 ];
 
-_killer = _this call Mission_fnc_getRealKiller;
-
-TRACE_1("killer for %1 is %2", _deceased, _killer);
-
 private _deceasedAllegiance = sideUnknown;
-_killerAllegiance = _killer call Mission_fnc_getAllegiance;
-if (_deceased isEqualTo civilian) then {
-    _deceasedAllegiance = civilian;
+if (_deceased isEqualType sideUnknown) then {
+    _deceasedAllegiance = _deceased;
+    _deceased = objNull;
 } else {
+    _killer = [_deceased, _killer] call Mission_fnc_getRealKiller;
     _deceasedAllegiance = _deceased call Mission_fnc_getAllegiance;
 };
+private _killerAllegiance = _killer call Mission_fnc_getAllegiance;
 
+TRACE_3("killer for %1 (side %2) is %3", _deceased, _deceasedAllegiance, _killer);
 
 switch (_killerAllegiance) do {
     case independent: {
@@ -38,7 +37,7 @@ switch (_killerAllegiance) do {
             case opfor: {
                 INFO_2("Kill: %1 => %2", _killer, _deceased);
 
-                if ((_deceased getVariable "mission_faction") == "OPF_F") then {
+                if ((_deceased getVariable ["mission_faction", ""]) == "OPF_F") then {
                     _this call _triggerIndepCMarkerForOpfor;
                 };
                 [opfor, _deceased, 2] call Mission_fnc_giveUpgradeToSide;
@@ -67,7 +66,7 @@ switch (_killerAllegiance) do {
         };
     };
     default {
-        INFO_2("Kill by neutral: %1 => %2", _killer, _deceased);
+        INFO_3("Kill by neutral: %1 => %2 (side %3)", _killer, _deceased, _deceasedAllegiance);
     };
 };
 

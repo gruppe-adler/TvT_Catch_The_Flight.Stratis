@@ -1,7 +1,10 @@
 #include "..\..\script_component.hpp"
 
 
-params ["_deceased", "_deceasedAllegiance"];
+params [
+    ["_deceased", objNull, [objNull]], 
+    ["_deceasedAllegiance", sideUnknown, [sideUnknown]]
+];
 [
     [(name _deceased), (getPos _deceased)],
     {

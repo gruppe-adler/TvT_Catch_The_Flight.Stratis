@@ -1,8 +1,10 @@
 #include "..\script_component.hpp"
 
-_targetSide = param [0, sideUnknown];
-_deceased = param [1, objNull]; // optional
-_upgradeCount = param  [2, 1];
+_this params [
+	["_targetSide", sideUnknown, [sideUnknown]],
+	["_deceased", objNull, [objNull]],
+	["_upgradeCount", 1,[0]]
+];
 
 TRACE_1("starting upgrade for side %1", _targetSide);
 

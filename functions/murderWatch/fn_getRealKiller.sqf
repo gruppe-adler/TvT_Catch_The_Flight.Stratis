@@ -1,12 +1,13 @@
 #include "..\..\script_component.hpp"
 
-
 // get the guy who's responsible for a death OR objNull on suicidal behaviour
 
-_deceased = param [0, objNull];
-_officialKiller = param [1, objNull];
+params [
+    ["_deceased", objNull, [objNull, sideUnknown]], 
+    ["_officialKiller", objNull, [objNull]]
+];
 
-_killer = _officialKiller;
+private _killer = _officialKiller;
 if (_deceased == _officialKiller) then  { // probably no suicide but...
     _killer = _deceased getVariable ["ace_medical_lastDamageSource", objNull];
 } else {
