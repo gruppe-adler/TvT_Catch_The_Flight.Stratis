@@ -18,7 +18,9 @@ tf_give_personal_radio_to_regular_soldier = false;
 
 ["grad_civs_civKilled", { 
 	params ["_deathPos", "_killer"]; 
-	[civilian, _killer] call Mission_fnc_killedHandler;
+	if (isServer) then {
+		[civilian, _killer] call Mission_fnc_killedHandler;
+	};	
 }] call CBA_fnc_addEventHandler;
 
 ["grad_civs_vehicleTheft", {
@@ -39,5 +41,5 @@ mission_winConditionFulfilledHandle = [
 	}
 ] call CBA_fnc_addEventHandler;
 
-{ _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this }] call CBA_fnc_select);
+{ _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this}] call CBA_fnc_select);
 { _x call Mission_fnc_setupVehicleTheftWatch; } forEach ([vehicles, {(local _this) && (_this isKindOf "Car") }] call CBA_fnc_select);
