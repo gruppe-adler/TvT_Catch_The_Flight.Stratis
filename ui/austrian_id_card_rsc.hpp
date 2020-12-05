@@ -10,12 +10,6 @@ class grad_passport_at: grad_passport_defaultPassport {
         };
     };
 	class Controls: Controls {
-		// delete PlaceOfBirthTitle;
-		// delete ExpiresTitle;
-		// delete LastNameTitle;
-		// delete FirstNameTitle;
-		// delete DateOfBirthTitle;
-
         class Serial: Serial {
             x = (MISSION_PASSPORT_AT_LEFTCOLUMN_X + GRAD_PASSPORT_DEFAULT_INDENT_X);
             y = GRAD_PASSPORT_DEFAULT_LINE_Y(0);
