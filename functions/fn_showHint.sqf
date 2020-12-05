@@ -7,5 +7,5 @@ if (isNil "_type") then {
 };
 
 systemChat format ["mission: %1", _message];
-hint _message;
+_message call cba_fnc_notify;
 diag_log format ["mission: %1: %2", _type, _message];
