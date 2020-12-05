@@ -20,7 +20,7 @@ _unit addEventHandler ["InventoryOpened", {
 	{
 		if ((_x in _militarySides) && (_x != side player)) then {
 			_preventOpening = true;
-			hint format ["Can't access %1, I'm being watched here", _container];
+			(format ["Can't access %1, I'm being watched here", _container]) call cba_fnc_notify;
 		};
 	} forEach [side _vehicle, side _container, side _secondaryContainer];
 
