@@ -69,6 +69,7 @@ class Params
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
 
 #include "node_modules\grad-passport\grad_passport.hpp"
+#include "ui\austrian_id_card_rsc.hpp"
 
 class CfgSounds {
 	sounds[] = {};
