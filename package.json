@@ -19,11 +19,11 @@
         "tvt"
     ],
     "dependencies": {
-        "@gruppe-adler/replay": "github:gruppe-adler/grad-replay#custom-colors",
-        "grad-leaveNotes": "^2.0.0",
-        "grad-loadout": "^4.4.0",
-        "grad-makeFire": "^2.0.0",
-        "grad-passport": "github:gruppe-adler/grad-passport#configurable-name",
+        "@gruppe-adler/replay": "^1.6",
+        "grad-leaveNotes": "2",
+        "grad-loadout": "4",
+        "grad-makeFire": "2",
+        "grad-passport": "1",
         "grad-tvtsettings": "0.0.3"
     }
 }
