@@ -8,7 +8,9 @@ if (isNil "Mission_fnc_setupMurderWatch_var_unit_indep_c_radius") then {
 };
 
 _this addMPEventHandler ["MPKilled", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	if (isServer) then {
+		INFO_2("unit %1 has been killed by %2", _unit, _instigator);
 		_this call Mission_fnc_killedHandler;
 	};
 }];
@@ -19,6 +21,7 @@ _this addMPEventHandler ["MPHit", {
 	_unit setVariable ["mission_lasthit", CBA_missiontime];
 	if (isServer) then {
 		if (isNull _instigator) exitWith {};
+		INFO_2("unit %1 has been hit by %2", _unit, _instigator);
 		switch (_instigator call Mission_fnc_getAllegiance) do {
 			case independent: { [opfor, _unit, 1] call Mission_fnc_giveUpgradeToSide; };
 			case opfor: { [independent, _unit, 1] call Mission_fnc_giveUpgradeToSide; };		
