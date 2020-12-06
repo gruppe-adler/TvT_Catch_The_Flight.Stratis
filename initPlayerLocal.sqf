@@ -19,7 +19,7 @@ _player addEventHandler ["HandleRating", {0}];
 _player call Mission_fnc_preventOtherSidesFromStealing;
 _player call Mission_fnc_setupTasks;
 [] call Mission_fnc_setupACEInteractVehicleRelease;
-[_player, 600] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
+[_player] call Mission_fnc_limitSwimmingAbility; // doesnt really make sense to do this for AI
 
 [
 	{
@@ -33,3 +33,5 @@ _player call Mission_fnc_setupTasks;
 	[], 
 	5
 ] call CBA_fnc_waitAndExecute;
+
+GVAR(drowningTimeout) = 600;

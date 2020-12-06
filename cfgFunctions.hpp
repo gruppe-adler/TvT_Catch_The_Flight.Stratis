@@ -47,6 +47,7 @@ class CfgFunctions {
 		class Client {
 			file = "functions\client";
 			class getMyAllegianceCallback {};
+            class isSwimming {};
 		};
 		class Server {
 			file = "functions\server";

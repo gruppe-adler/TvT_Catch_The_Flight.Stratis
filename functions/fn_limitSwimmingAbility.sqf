@@ -1,57 +1,42 @@
 #include "..\script_component.hpp"
 
-params [
-	"_unit",
-	"_drowningTimeout"
-];
+params ["_unit"];
 
-_interval = 30;
+_interval = 2;
 _unit setVariable ["Mission_fnc_limitSwimming_dangerStart", time];
 _unit setVariable ["Mission_fnc_limitSwimming_swimming", false];
 
 _drownLoop = {
-	_isSwimmingInDeepWater = {
-		_pos = getPosATL _this;
-		(
-			(surfaceIsWater _pos) &&
-			(vehicle _this == _this) &&
-			(
-				(!isTouchingGround _this) ||
-				(underwater _this)
-			)
-		 );
-	};
-
 	params ["_params"];
-	_unit = _params select 0;
-	_drowningTimeout = _params select 1;
+	private _unit = _params select 0;
+	private _drowningTimeout = GVAR(drowningTimeout);
 
-	_swimmingStartTime = _unit getVariable ["Mission_fnc_limitSwimming_dangerStart", time];
+	private _hasBeenSwimmingSince = _unit getVariable ["mission_swimstart", -1];
+	private _isSwimming = _unit call mission_fnc_isSwimming;
 
-	_pos = getPos _unit;
-
-	if (!(_unit call _isSwimmingInDeepWater)) then {
-		_swimmingStartTime = time;
-		if (_unit getVariable ["Mission_fnc_limitSwimming_swimming", false]) then {
-				["Du hast dich vom Schwimmen erholt."] call Mission_fnc_showHint;
-				_unit setVariable ["Mission_fnc_limitSwimming_swimming", false];
-			};
-	} else {
-		_unit setVariable ["Mission_fnc_limitSwimming_swimming", true];
+	if (_hasBeenSwimmingSince == -1) exitWith { 
+		if _isSwimming then {
+			_unit setVariable ["mission_swimstart", CBA_missiontime, true];
+		};
+	};
+	
+	if (!_isSwimming) exitWith {
+		["Du hast dich vom Schwimmen erholt."] call Mission_fnc_showHint;		
+		_unit setVariable ["mission_swimstart", nil, true];
 	};
 
-	if ((_swimmingStartTime + (_drowningTimeout/2)) < time) then {
+
+	if ((_hasBeenSwimmingSince + (_drowningTimeout/2)) < CBA_missiontime) then {
 		["Das Schwimmen wird sehr anstrengend. Point of no return erreicht oder überschritten!"] call Mission_fnc_showHint;
 	};
 
-   if ((_swimmingStartTime + _drowningTimeout) < time) then {
+   if ((_hasBeenSwimmingSince + _drowningTimeout) < CBA_missiontime) then {
 	   ["Du ersäufst. Dein letzter haßerfüllter Gedanke gilt dem Missionsbauer."] call Mission_fnc_showHint;
        INFO_1("Spieler %1 ertrinkt", _unit);
 		_unit setUnconscious true;
 		[{_this setDamage 1;}, _unit, 5] call CBA_fnc_waitAndExecute;
 
    };
-   _unit setVariable ["Mission_fnc_limitSwimming_dangerStart", _swimmingStartTime];
 };
 
-[_drownLoop, _interval, [_unit, _drowningTimeout]] call CBA_fnc_addPerFrameHandler;
+[_drownLoop, _interval, [_unit]] call CBA_fnc_addPerFrameHandler;
