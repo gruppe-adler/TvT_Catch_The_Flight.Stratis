@@ -1,7 +1,4 @@
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
-#include "missionDefines.hpp"
+#include "script_component.hpp"
 
 disableRemoteSensors true;
 
@@ -27,9 +24,19 @@ tf_give_personal_radio_to_regular_soldier = false;
 	params ["_vehicle", "_thief"];
 	if (isNull _thief) exitWith {};
 	if (isServer) then {
-		INFO_2("neutral civilian vehicle %1 might have been stolen by %2, will wait for confirmation (i.e. switch to driver seat...)", _vehicle, _thief);
+		INFO_2("neutral civilian vehicle %1 may have been stolen by %2, will wait for confirmation (i.e. switch to driver seat...)", _vehicle, _thief);
 		_vehicle setVariable ["grad_civs_knownThief", objNull, true];
 		_vehicle setVariable ["grad_civs_knownStolen", false, true];
+		[
+			[],
+			{
+				if (!(isNil "grad_civs_gta_stolenVehiclePfh")) then {
+					[grad_civs_gta_stolenVehiclePfh] call CBA_fnc_removePerFrameHandler;
+				};
+			}
+		] remoteExec ["BIS_fnc_call", _thief, true];
+
+		 
 		[
 			{
 				params ["_vehicle", "_thief"];
