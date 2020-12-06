@@ -163,7 +163,6 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 
 _isAlive = {alive _this};
 _isTargetAllegiance = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
-_isNotTooClose = { (_this distance2D _deceasedPos) >= GVAR(minDistanceFromCrimeToGetUpgrade) };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
 
@@ -175,7 +174,7 @@ if (!(isNull _deceased)) then {
 _eligibleUnits = allUnits;
 {
 	_eligibleUnits = [_eligibleUnits, _x] call CBA_fnc_select;
-} forEach [_isTargetAllegiance, _isAlive, _isNotTooClose, _isNotTheIndependentBoss];
+} forEach [_isTargetAllegiance, _isAlive, _isNotTheIndependentBoss];
 
 _eligibleUnits = [
 	_eligibleUnits,

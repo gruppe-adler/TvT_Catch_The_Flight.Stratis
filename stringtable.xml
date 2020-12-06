@@ -25,10 +25,6 @@
 				<Original>debug mode</Original>
 				<German>Debugmodus</German>
 			</Key>
-            <Key ID="str_GRAD_backgroundCheckDurationInSeconds">
-				<Original>Background check duration in seconds</Original>
-				<German>Dauer der Hintergrundüberprüfung in Sekunden</German>
-			</Key>
 			<Key ID="str_GRAD_no">
 				<Original>no</Original>
 				<German>nein</German>
@@ -40,10 +36,6 @@
             <Key ID="str_GRAD_fogSettings">
                 <Original>fog settings</Original>
                 <German></German>
-            </Key>
-			<Key ID="str_GRAD_minDistanceFromCrimeToGetUpgrade">
-                <Original>min distance from a crime scene to be eligible for an upgrade</Original>
-                <German>Mindestabstand von einem Verbrechen, um ein Upgrade kriegen zu können</German>
             </Key>
 			<Key ID="str_GRAD_numberOfLrRadiosForOpfor">
                 <Original>number of long range radios stashed in crates for the military</Original>
