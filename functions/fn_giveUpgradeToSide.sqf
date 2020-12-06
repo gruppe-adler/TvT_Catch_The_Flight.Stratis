@@ -6,7 +6,7 @@ _this params [
 	["_upgradeCount", 1,[0]]
 ];
 
-TRACE_1("starting upgrade for side %1", _targetSide);
+INFO_2("starting %1 upgrades for side %1", _upgradeCount, _targetSide);
 
 _radioClass = "tf_fadak";
 _getPistolclasses = {
@@ -128,7 +128,7 @@ _addWeaponGlobal = {
 
 _addRadioDelayed = {
 	{
-		_msg = format ["%1: Gegebenenfalls Platz in der Jacke freimachen, gleich gibts ein Funkgerät!", name player];
+		_msg = format ["%1: Gegebenenfalls Platz in der Jacke freimachen, in 30s gibts ein Funkgerät!", name player];
 		[_msg] call Mission_fnc_showHint;
 		[{player addItem "tf_fadak";}, [], 30] call CBA_fnc_waitAndExecute;
 	} remoteExec ["BIS_fnc_call", _this, true];
