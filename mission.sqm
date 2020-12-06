@@ -5943,6 +5943,7 @@ class Mission
 				position[]={3497.084,1.9073486e-005,617.15002};
 			};
 			name="hc1";
+			isPlayable=1;
 			description="Headless Client";
 			id=393;
 			type="HeadlessClient_F";
