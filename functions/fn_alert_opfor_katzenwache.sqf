@@ -4,6 +4,10 @@ params [
     ["_alertedTrigger", objNull, [objNull]]
 ];
 
+if (!(alive unit_indep_c)) exitWith {
+    INFO("Katzenwachenalarm wird abgebrochen, Schlemihl lebt nicht mehr");
+};
+
 INFO("Katzenwachenalarm getriggert!");
 
 {

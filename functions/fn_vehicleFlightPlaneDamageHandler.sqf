@@ -5,6 +5,9 @@ _plane = _this;
 _plane addEventHandler ["HandleDamage", {
     params ["_unit", "_selectionName", "_totalDamage", "_source", "_projectile", "_hitPartIndex", "_instigator"];
 
+    if (!(alive unit_indep_c)) exitWith {
+        INFO("Plane damage handler wird abgebrochen, Schlemihl lebt nicht mehr");
+    };
     if (mission_state_katzenwache) exitWith {};
 
     // if a driver exists, disregard damage except the driver is opfor-aligned
