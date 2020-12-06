@@ -11,7 +11,9 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-	if ((taskState taskSurvive) != "FAILED") then {
+	INFO_1("task_survive state is %1", taskState task_survive);
+	if ((taskState task_survive) != "FAILED") then {
+		INFO("setting to suceeded!");
 		task_survive setTaskState "SUCCEEDED";
 	};
 
@@ -59,6 +61,7 @@ if (hasInterface) then {
 		{REPLAY_FINISHED}, 
 		{
 			private _alive = "SUCCEEDED" == (taskState task_survive);
+			INFO_2("alive %2 after replay due to task state %1", taskState task_survive, _alive);
 			private _missionSuccess = "SUCCEEDED" == (taskState task_main_objective);
 			if (_alive && _missionSuccess) exitWith {
 				["end1", true] call BIS_fnc_endMission;
