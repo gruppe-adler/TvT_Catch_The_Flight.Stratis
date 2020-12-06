@@ -18,6 +18,7 @@ class CfgFunctions {
             class alert_plane_damaged {};
             class alert_indep_at_airport {};
             class alert_indep_at_beach {};
+            class createAreaMarker {};
             class createTaskCivKill {};
             class createTaskCivProtect {};
             class createTaskOpfor {};

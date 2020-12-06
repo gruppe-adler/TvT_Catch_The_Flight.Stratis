@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=455;
+		nextID=456;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7103.1055,13.747018,5972.7593};
-		dir[]={-0.83909607,-0.49261457,0.23130119};
-		up[]={-0.47494859,0.87014794,0.13111767};
-		aside[]={0.26587099,-0.00016237149,0.96414793};
+		pos[]={2088.6882,162.48206,4606.2109};
+		dir[]={-0.085564002,-0.5862996,0.80571806};
+		up[]={-0.061734807,0.80999452,0.58311355};
+		aside[]={0.99454993,-0.00015111396,0.10550554};
 	};
 };
 binarizationWanted=0;
@@ -371,7 +371,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=103;
+		items=104;
 		class Item0
 		{
 			dataType="Object";
@@ -675,7 +675,7 @@ class Mission
 				name="trigger_opfor_katzenwache_0";
 				text="trigger_opfor_katzenwache_0";
 				condition="call{this && !mission_state_katzenwache;}";
-				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "mission_state_katzenwache = true;}";
+				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "}";
 				sizeA=400;
 				sizeB=800;
 				activationBy="EAST";
@@ -688,14 +688,14 @@ class Mission
 		class Item3
 		{
 			dataType="Trigger";
-			position[]={2537.031,85.520699,5561.7129};
+			position[]={2539.9839,88.692558,5585.7002};
 			angle=0.61086518;
 			class Attributes
 			{
 				name="trigger_opfor_katzenwache_1";
 				text="trigger_opfor_katzenwache_1";
 				condition="call{this && !mission_state_katzenwache;}";
-				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "mission_state_katzenwache = true;}";
+				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "}";
 				sizeA=300;
 				sizeB=150;
 				activationBy="EAST";
@@ -703,7 +703,7 @@ class Mission
 			};
 			id=118;
 			type="EmptyDetectorAreaR250";
-			atlOffset=3.0490036;
+			atlOffset=3.0488052;
 		};
 		class Item4
 		{
@@ -715,7 +715,7 @@ class Mission
 				name="trigger_opfor_katzenwache_2";
 				text="trigger_opfor_katzenwache_2";
 				condition="call{this && !mission_state_katzenwache;}";
-				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "mission_state_katzenwache = true;}";
+				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "}";
 				sizeA=300;
 				sizeB=150;
 				activationBy="EAST";
@@ -1331,7 +1331,7 @@ class Mission
 		{
 			dataType="Trigger";
 			position[]={6595.6338,16.410004,9624.5176};
-			angle=2.0943952;
+			angle=2.3561945;
 			class Attributes
 			{
 				name="trigger_win_indep_escape_3";
@@ -1370,7 +1370,7 @@ class Mission
 		class Item13
 		{
 			dataType="Trigger";
-			position[]={3521.6079,0.00026094913,7536.917};
+			position[]={3427.0171,0,7436.1938};
 			class Attributes
 			{
 				name="trigger_indep_spawn_boat_1";
@@ -1384,27 +1384,27 @@ class Mission
 			};
 			id=202;
 			type="EmptyDetectorAreaR50";
-			atlOffset=1.3789999;
+			atlOffset=1.6509035;
 		};
 		class Item14
 		{
 			dataType="Trigger";
-			position[]={4598.1548,0.00042410195,7023.6431};
-			angle=3.6160426;
+			position[]={5576.4219,5.2452087e-005,6291.4492};
+			angle=3.6160431;
 			class Attributes
 			{
 				name="trigger_indep_spawn_boat_2";
 				text="trigger_indep_spawn_boat_2";
 				condition="call{this && mission_state_katzenwache && !mission_state_boat_spawned}";
 				onActivation="call{[(getPos thisTrigger)] call Mission_fnc_spawn_boat; mission_state_boat_spawned = true;" \n "[] call Mission_fnc_alert_indep_at_beach;}";
-				sizeA=300;
+				sizeA=500;
 				sizeB=300;
 				activationBy="GUER";
 				isServerOnly=1;
 			};
 			id=203;
 			type="EmptyDetectorAreaR50";
-			atlOffset=0.177;
+			atlOffset=3.221;
 		};
 		class Item15
 		{
@@ -5675,7 +5675,7 @@ class Mission
 				name="trigger_civ_katzenwache";
 				text="trigger_civ_katzenwache";
 				condition="call{this && !mission_state_katzenwache && (opfor in (thisList call Mission_fnc_getAllegiance))}";
-				onActivation="call{mission_state_katzenwache = true;" \n "[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "}";
+				onActivation="call{[thisTrigger] call Mission_fnc_alert_opfor_katzenwache;" \n "}";
 				sizeA=400;
 				sizeB=800;
 				activationBy="CIV";
@@ -8296,7 +8296,7 @@ class Mission
 			};
 			id=454;
 			type="gm_gc_bgs_mi2us";
-			atlOffset=4.7683716e-007;
+			atlOffset=9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8509,6 +8509,46 @@ class Mission
 					};
 				};
 				nAttributes=11;
+			};
+		};
+		class Item103
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2101.8604,1.4992801,4804.4941};
+				angles[]={0,4.9642892,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				fuel=0.012753628;
+			};
+			id=455;
+			type="C_Rubberboat";
+			atlOffset=0.88956583;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};

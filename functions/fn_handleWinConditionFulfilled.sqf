@@ -11,7 +11,7 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-	if (taskState taskSurvive != "FAILED") then {
+	if ((taskState taskSurvive) != "FAILED") then {
 		task_survive setTaskState "SUCCEEDED";
 	};
 
@@ -60,13 +60,13 @@ if (hasInterface) then {
 		{
 			private _alive = "SUCCEEDED" == (taskState task_survive);
 			private _missionSuccess = "SUCCEEDED" == (taskState task_main_objective);
-			if (_alive && _missionSuccess) then {
+			if (_alive && _missionSuccess) exitWith {
 				["end1", true] call BIS_fnc_endMission;
 			};
-			if (!_alive && _missionSuccess) then {
+			if (!_alive && _missionSuccess) exitWith {
 				["deadwin", false] call BIS_fnc_endMission;
 			};
-			if (!_missionSuccess) then {
+			if (!_missionSuccess) exitWith {
 				["end1", false] call BIS_fnc_endMission;
 			};			
 		},

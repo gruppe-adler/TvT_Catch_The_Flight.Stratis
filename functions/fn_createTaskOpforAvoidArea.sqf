@@ -12,6 +12,8 @@ _condition = localize "str_GRAD_OPFOR_A_avoid_condition";
 
 ISNILS(task_opfor_katzenwache, []);
 
+[_trigger, "DiagGrid", "ColorOrange"] call Mission_fnc_createAreaMarker;
+
 _task = player createSimpleTask [_title];
 _task setSimpleTaskDescription [_condition, _title, _title];
 _task setSimpleTaskType "map";

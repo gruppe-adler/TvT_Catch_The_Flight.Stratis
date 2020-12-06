@@ -7,6 +7,10 @@ params [
 if (!(alive unit_indep_c)) exitWith {
     INFO("Katzenwachenalarm wird abgebrochen, Schlemihl lebt nicht mehr");
 };
+if (mission_state_katzenwache) exitWith {
+    INFO("Katzenwachenalarm wird abgebrochen, wurde schon getriggert");
+};
+mission_state_katzenwache = true;
 
 INFO("Katzenwachenalarm getriggert!");
 
