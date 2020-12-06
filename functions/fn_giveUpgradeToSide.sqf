@@ -110,7 +110,7 @@ _unitGetNextUpgradeLevel = {
 	} forEach _unitHasUpgradeLevel;
 
 	_nextLevel = ((count _unitHasUpgradeLevel) - _reverseLevel);
-	_this setVariable ["Mission_nextLevel", _nextLevel];
+	_this setVariable ["Mission_nextLevel", _nextLevel, true];
 
 	_nextLevel
 };
