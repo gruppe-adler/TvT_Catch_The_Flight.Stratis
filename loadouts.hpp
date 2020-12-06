@@ -57,7 +57,8 @@ class Loadouts {
 				radio = "tf_fadak";
 				addItemsToUniform[] = {
 					LIST_1("ACE_epinephrine"),
-					LIST_1("ACE_morphine")
+					LIST_1("ACE_morphine"),
+					"ACE_key_east"
 				};
 				goggles[] = {
 					"gm_headgear_foliage_summer_forest_01", "gm_headgear_foliage_summer_forest_02", "gm_headgear_foliage_summer_forest_03", "gm_headgear_foliage_summer_forest_04",

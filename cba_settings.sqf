@@ -42,3 +42,6 @@ force grad_civs_residents_chatTime = 90;
 force grad_civs_residents_maxCivsResidents = 20;
 force grad_civs_voyage_maxCivsInVehicles = 6;
 force grad_civs_voyage_spawnDistancesInVehicles = "[1500, 3000]";
+
+force ace_vehiclelock_lockVehicleInventory = true;
+force ace_vehiclelock_vehicleStartingLockState = 2;
