@@ -14,7 +14,6 @@ class CfgFunctions {
 	class Mission {
 		file = functions;
 		class Shit {
-            class setupActionBackgroundCheck {};
             class alert_opfor_katzenwache {};
             class alert_plane_damaged {};
             class alert_indep_at_airport {};

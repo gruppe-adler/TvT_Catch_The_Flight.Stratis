@@ -45,12 +45,6 @@ class Params
 		texts[] = {$STR_GRAD_no, $STR_GRAD_yes};
 		default = 0;
 	};*/
-    class BackgroundCheckDuration
-    {
-        title = $STR_GRAD_backgroundCheckDurationInSeconds;
-        values[] = {1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
-        default = 2;
-    };
     class FogSettings
     {
         title = $STR_GRAD_fogSettings;
