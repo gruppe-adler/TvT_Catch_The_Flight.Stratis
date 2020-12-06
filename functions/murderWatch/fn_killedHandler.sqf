@@ -40,12 +40,12 @@ switch (_killerAllegiance) do {
                 if ((_deceased getVariable ["mission_faction", ""]) == "OPF_F") then {
                     _this call _triggerIndepCMarkerForOpfor;
                 };
-                [opfor, _deceased, 2] call Mission_fnc_giveUpgradeToSide;
+                [opfor, _deceased, 3] call Mission_fnc_giveUpgradeToSide;
             };
             default {
                 INFO_2("Unbeteiligtenkill %1 => %2", _killer, _deceased);
 
-                [opfor, _deceased, 1] call Mission_fnc_giveUpgradeToSide;
+                [opfor, _deceased, 2] call Mission_fnc_giveUpgradeToSide;
             };
         };
     };
@@ -54,14 +54,14 @@ switch (_killerAllegiance) do {
             case independent: {
                 INFO_2("Kill: %1 => %2", _killer, _deceased);
 
-                [independent, _deceased, 2] call Mission_fnc_giveUpgradeToSide;
+                [independent, _deceased, 3] call Mission_fnc_giveUpgradeToSide;
             };
             case opfor: {
                 INFO_2("Teamkill %1 => %2", _killer, _deceased);
             };
             default {
                 INFO_2("Unbeteiligtenkill %1 => %2", _killer, _deceased);
-                [independent, _deceased, 1] call Mission_fnc_giveUpgradeToSide;
+                [independent, _deceased, 2] call Mission_fnc_giveUpgradeToSide;
             };
         };
     };

@@ -27,12 +27,14 @@ tf_give_personal_radio_to_regular_soldier = false;
 ["grad_civs_vehicleTheft", {
 	params ["_vehicle", "_thief"];
 	if (isNull _thief) exitWith {};
-	INFO_2("neutral civilian vehicle %1 has been stolen by %2", _vehicle, _thief);
-	switch (_thief call Mission_fnc_getAllegiance) do {
-		case independent: { [opfor, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };
-		case opfor: { [independent, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };		
+	if (isServer) then {
+		INFO_2("neutral civilian vehicle %1 has been stolen by %2", _vehicle, _thief);
+		switch (_thief call Mission_fnc_getAllegiance) do {
+			case independent: { [opfor, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };
+			case opfor: { [independent, _vehicle, 1] call Mission_fnc_giveUpgradeToSide; };		
+		};
+		_vehicle call GRAD_vehicleDamageReport_fnc_registerVehicle;
 	};
-	_vehicle call GRAD_vehicleDamageReport_fnc_registerVehicle;
 }] call CBA_fnc_addEventHandler;
 
 mission_winConditionFulfilledHandle = [

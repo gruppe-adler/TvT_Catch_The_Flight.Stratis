@@ -11,7 +11,7 @@ _this addMPEventHandler ["MPKilled", {
 	params ["_unit", "_killer", "_instigator", "_useEffects"];
 	if (isServer) then {
 		INFO_2("unit %1 has been killed by %2", _unit, _instigator);
-		_this call Mission_fnc_killedHandler;
+		[_unit, _instigator] call Mission_fnc_killedHandler;
 	};
 }];
 
