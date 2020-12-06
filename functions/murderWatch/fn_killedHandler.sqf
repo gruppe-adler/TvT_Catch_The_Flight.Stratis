@@ -70,6 +70,6 @@ switch (_killerAllegiance) do {
     };
 };
 
-if (_deceasedAllegiance in [independent, opfor]) then {
+if ((!isNull _deceased) && (_deceasedAllegiance in [independent, opfor])) then {
     [_deceased, _deceasedAllegiance] call Mission_fnc_triggerKIAMarker;
 };
