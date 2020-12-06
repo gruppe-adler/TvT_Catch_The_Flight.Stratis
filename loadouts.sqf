@@ -1,14 +1,3 @@
-[
-	{
-		params ["_value", "_unit"];
-		if (_value == "rds_uniform_Woodlander1") then {
-			_value = selectRandom ([] call Config_fnc_civilianUniforms);
-		};
-		_value
-	},
-	"uniform"
-] call GRAD_Loadout_fnc_addReviver;
-
 _lessSprayPaint = {
 	params ["_value", "_unit"];
 
