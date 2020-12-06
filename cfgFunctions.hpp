@@ -8,7 +8,6 @@ class CfgFunctions {
     
 	class Config {
 		class General {
-			class civilianUniforms { file = "config\fn_civilianUniforms.json"; };
 		};
 	};
 	class Mission {
