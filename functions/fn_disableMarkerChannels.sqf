@@ -10,7 +10,7 @@
 
 
 _channels = _this;
-_interval = 10;
+_interval = 1;
 
 missionNamespace setVariable ["Mission_fnc_disabledMarkerChannels", _channels];
 
