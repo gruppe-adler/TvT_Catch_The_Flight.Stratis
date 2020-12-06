@@ -11,7 +11,9 @@ if (isServer) then {
 };
 
 if (hasInterface) then {
-	[] call Mission_fnc_update_task_survive;
+	if (taskState taskSurvive != "FAILED") then {
+		task_survive setTaskState "SUCCEEDED";
+	};
 
 	private _allegiance = player call Mission_fnc_getAllegiance;
 	private _winningFaction = switch (_type) do {
@@ -55,7 +57,19 @@ if (hasInterface) then {
 
 	[
 		{REPLAY_FINISHED}, 
-		{["end1", "SUCCEEDED" == (taskState task_main_objective)] call BIS_fnc_endMission},
+		{
+			private _alive = "SUCCEEDED" == (taskState task_survive);
+			private _missionSuccess = "SUCCEEDED" == (taskState task_main_objective);
+			if (_alive && _missionSuccess) then {
+				["end1", true] call BIS_fnc_endMission;
+			};
+			if (!_alive && _missionSuccess) then {
+				["deadwin", false] call BIS_fnc_endMission;
+			};
+			if (!_missionSuccess) then {
+				["end1", false] call BIS_fnc_endMission;
+			};			
+		},
 		[]
 	] call CBA_fnc_waitUntilAndExecute;
 };

@@ -90,3 +90,17 @@ class RscTitles
 {
     #include "IdCard.hpp"
 };
+
+
+class CfgDebriefing
+{  
+	class deadwin
+	{
+		title = "You are dead.";
+		subtitle = "Dead people do not win.";
+		description = "Your team won, but you did not. You died.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};
