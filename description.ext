@@ -93,3 +93,12 @@ class CfgDebriefing
 		pictureColor[] = {0.6,0.1,0.2,1};
 	};
 };
+
+class GRAD_Replay {
+	trackedSides[] = {"west", "east", "civilian", "independent"};
+	trackedVehicles = 0;                              
+	trackedAI = 0;                                    
+	sendingChunkSize = 10;                            
+	trackShots = 1;                                   
+	upload = 1;                                       
+};
