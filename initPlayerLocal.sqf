@@ -41,7 +41,7 @@ _player addEventHandler ["SeatSwitchedMan", {
 	params ["_player", "_potentialCiv", "_vehicle"];
 	if (_potentialCiv getVariable ["grad_civs_primaryTask", ""] != "") then {
 		private _gradCiv = _potentialCiv;
-		if ("Driver" in (assignedVehicleRole _player)) then {
+		if ("driver" in (assignedVehicleRole _player)) then {
 			INFO("player switched place with a grad-civ  driver, whom i will now eject.");
 			// uh oh, someone has removed the grad-civs driver, thus effectively stealing the vehicle.
 			// we need to make sure this is recognized - which it currently is not if the civ were to stay in the vehicle
@@ -59,7 +59,11 @@ _player addEventHandler ["SeatSwitchedMan", {
 					moveOut _this;
 				}				
 			] call CBA_statemachine_fnc_manualTransition;
+		} else {
+			INFO("seat switched with a grad-civ, but it was not with the driver");	
 		};
 		
+	} else {
+		INFO("seat switched, but it was not with a grad-civ");
 	};
 }];
