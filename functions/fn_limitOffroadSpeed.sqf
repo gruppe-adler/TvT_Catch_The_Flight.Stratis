@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 /**
  * Wheeled vehicles go over rough ground as if it were concrete.
  * No more!

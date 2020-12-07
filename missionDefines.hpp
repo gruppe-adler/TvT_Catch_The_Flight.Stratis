@@ -24,3 +24,5 @@
 #define FOG_FOG_1800 1800
 #define FOG_FOG_3600 3600
 #define FOG_PERMAFOG 999999
+
+#define DEBUG_MODE_FULL

@@ -1,3 +1,5 @@
+#include "..\script_component.hpp"
+
 _title = localize "str_GRAD_OPFOR_A_title";
 _content = localize "str_GRAD_OPFOR_A_story";
 _condition = localize "str_GRAD_OPFOR_A_condition";

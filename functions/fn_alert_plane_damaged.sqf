@@ -1,7 +1,4 @@
-
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 INFO("plane damage thingy triggered (either plane damage or removal)!");
 
@@ -14,6 +11,10 @@ INFO("plane damage thingy triggered (either plane damage or removal)!");
 {
 	["Am Flughafen ist ein Flugzeug manipuliert worden. Verdächtige Aktivität im Nordteil der Insel gemeldet. Wir fürchten, die Zielperson könnte von dort per Boot flüchten."] call Mission_fnc_showHint;
     {
-        _x setTaskState "canceled";
+		_x params [
+			["_trigger", objNull, [objNull]],
+			["_task", taskNull, [taskNull]]
+		];
+        _task setTaskState "canceled";
     } forEach task_opfor_katzenwache;
 } remoteExec ["BIS_fnc_call", [EAST], true];

@@ -1,15 +1,13 @@
-#define DEBUG_MODE_FULL
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
-_targetSide = param [0, sideUnknown];
-_deceased = param [1, objNull]; // optional
-_upgradeCount = param  [2, 1];
+_this params [
+	["_targetSide", sideUnknown, [sideUnknown]],
+	["_deceased", objNull, [objNull]],
+	["_upgradeCount", 1,[0]]
+];
 
-TRACE_1("starting upgrade for side %1", _targetSide);
+INFO_2("starting %1 upgrades for side %1", _upgradeCount, _targetSide);
 
-_minDistance = 200;
 _radioClass = "tf_fadak";
 _getPistolclasses = {
 	["rhs_weap_makarov_pm"]
@@ -112,7 +110,7 @@ _unitGetNextUpgradeLevel = {
 	} forEach _unitHasUpgradeLevel;
 
 	_nextLevel = ((count _unitHasUpgradeLevel) - _reverseLevel);
-	_this setVariable ["Mission_nextLevel", _nextLevel];
+	_this setVariable ["Mission_nextLevel", _nextLevel, true];
 
 	_nextLevel
 };
@@ -130,7 +128,7 @@ _addWeaponGlobal = {
 
 _addRadioDelayed = {
 	{
-		_msg = format ["%1: Gegebenenfalls Platz in der Jacke freimachen, gleich gibts ein Funkgerät!", name player];
+		_msg = format ["%1: Gegebenenfalls Platz in der Jacke freimachen, in 30s gibts ein Funkgerät!", name player];
 		[_msg] call Mission_fnc_showHint;
 		[{player addItem "tf_fadak";}, [], 30] call CBA_fnc_waitAndExecute;
 	} remoteExec ["BIS_fnc_call", _this, true];
@@ -165,7 +163,6 @@ _unitApplyUpgradeLevel = [ // to be applied to units
 
 _isAlive = {alive _this};
 _isTargetAllegiance = { (_this call Mission_fnc_getAllegiance) == _targetSide; };
-_isNotTooClose = { (_this distance2D _deceasedPos) >= _minDistance };
 _isNotTheIndependentBoss =  {(vehicleVarName _this) != "unit_indep_c"};
 
 
@@ -177,7 +174,7 @@ if (!(isNull _deceased)) then {
 _eligibleUnits = allUnits;
 {
 	_eligibleUnits = [_eligibleUnits, _x] call CBA_fnc_select;
-} forEach [_isTargetAllegiance, _isAlive, _isNotTooClose, _isNotTheIndependentBoss];
+} forEach [_isTargetAllegiance, _isAlive, _isNotTheIndependentBoss];
 
 _eligibleUnits = [
 	_eligibleUnits,

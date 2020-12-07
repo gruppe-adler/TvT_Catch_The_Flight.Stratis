@@ -1,10 +1,12 @@
 {
     "author": "Moritz Schmidt <fusselwurm@gmail.com>",
     "version": "1.1.0",
-    "contributors": [{
-        "name": "Moritz Schmidt",
-        "email": "fusselwurm@gmail.com"
-    }],
+    "contributors": [
+        {
+            "name": "Moritz Schmidt",
+            "email": "fusselwurm@gmail.com"
+        }
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/gruppe-adler/TvT_Where_is_the_Escape_from_Rat_Life.Stratis"
@@ -17,9 +19,11 @@
         "tvt"
     ],
     "dependencies": {
-        "grad-loadout": "^4.4.0",
-        "engima-traffic": "~0.2.0",
-        "grad-leaveNotes": "^2.0.0",
-        "grad-makeFire": "^2.0.0"
+        "@gruppe-adler/replay": "^1.6",
+        "grad-leaveNotes": "2",
+        "grad-loadout": "4",
+        "grad-makeFire": "2",
+        "grad-passport": "1",
+        "grad-tvtsettings": "0.0.3"
     }
 }

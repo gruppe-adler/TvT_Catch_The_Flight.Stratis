@@ -1,20 +1,23 @@
 class CfgFunctions {
+    #include "node_modules\@gruppe-adler\replay\cfgFunctions.hpp"
 	#include "node_modules\grad-loadout\cfgFunctions.hpp"
     #include "node_modules\grad-leaveNotes\cfgFunctions.hpp"
     #include "node_modules\grad-makeFire\cfgFunctions.hpp"
+    #include "node_modules\grad-passport\cfgFunctions.hpp"
 	#include "functions\grad-vehicle-damage-report\cfgFunctions.hpp"
+    
 	class Config {
 		class General {
-			class civilianUniforms { file = "config\fn_civilianUniforms.json"; };
 		};
 	};
 	class Mission {
 		file = functions;
 		class Shit {
-            class setupActionBackgroundCheck {};
             class alert_opfor_katzenwache {};
             class alert_plane_damaged {};
             class alert_indep_at_airport {};
+            class alert_indep_at_beach {};
+            class createAreaMarker {};
             class createTaskCivKill {};
             class createTaskCivProtect {};
             class createTaskOpfor {};
@@ -23,34 +26,33 @@ class CfgFunctions {
             class createTaskSurvival {};
             class disableMarkerChannels {};
             class doTheWeather {};
-            class formatIDCard {};
             class getAllegiance {};
             class giveUpgradeToSide {};
+            class handleWinConditionFulfilled {};
             class limitOffroadSpeed {};
             class limitSwimmingAbility {};
+            class onPlayerKilled {};
+            class onPlayerRespawn {};
             class preventOtherSidesFromStealing {};
             class setAllSidesFriendly {};
             class setupACEInteractVehicleRelease {};
-            class setupIDCard {};
             class setupMurderWatch {};
             class setupVehicleTheftWatch {};
             class setupTasks {};
             class showHint {};
             class spawn_boat {};
-            class update_task_survive {};
             class vehicleFlightPlaneDamageHandler {};
-            class vehicleTheftHandler {};
-            class win_indep_elim {};
-            class win_indep_escape {};
-            class win_opfor_elim {};
+            class vehicleTheftHandler {};   
 		};
 		class Client {
 			file = "functions\client";
 			class getMyAllegianceCallback {};
+            class isSwimming {};
 		};
 		class Server {
 			file = "functions\server";
 			class getMyAllegiance {};
+            class winConditionTriggered {};
 		};
         class MurderWatch {
             file ="functions\murderWatch";

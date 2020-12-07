@@ -1,11 +1,8 @@
-
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+#include "..\script_component.hpp"
 
 private _units = _this;
 
-TRACE_1("calling allegiance with %1", _this);
+//TRACE_1("calling allegiance with %1", _this);
 
 private _returnArray = true;
 if (typeName _units != "ARRAY") then {
@@ -28,7 +25,7 @@ private _getUnitAllegiance = {
 
     };
 
-    TRACE_2("allegiance of %1 has been determined as %2", _this, _allegiance);
+    // TRACE_2("allegiance of %1 has been determined as %2", _this, _allegiance);
 
     _allegiance
 };

@@ -13,8 +13,20 @@ disabledAI = 0;
 enableDebugConsole = 1;
 
 respawn = 3;
-respawnDelay = 9999999;
-respawnTemplates[] = {"ace_spectator"};
+respawnDelay = 999999;
+respawnTemplates[] = {"grad_permaChoice"};
+
+cba_settings_hasSettingsFile = 1;
+
+class CfgRespawnTemplates {
+    class grad_permaChoice {
+        displayName = "choose your fate";
+        onPlayerKilled = "Mission_fnc_onPlayerKilled";
+        onPlayerRespawn = "Mission_fnc_onPlayerRespawn";
+        respawnTypes[] = {1,2,3,4,5};
+        respawnOnStart = 0;
+    };
+};
 
 class Header
 {
@@ -33,12 +45,6 @@ class Params
 		texts[] = {$STR_GRAD_no, $STR_GRAD_yes};
 		default = 0;
 	};*/
-    class BackgroundCheckDuration
-    {
-        title = $STR_GRAD_backgroundCheckDurationInSeconds;
-        values[] = {1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377};
-        default = 2;
-    };
     class FogSettings
     {
         title = $STR_GRAD_fogSettings;
@@ -46,16 +52,23 @@ class Params
 		texts[] = {$STR_GRAD_FOG_NOFOG, $STR_GRAD_FOG_FOG_900, $STR_GRAD_FOG_FOG_1800, $STR_GRAD_FOG_FOG_3600, $STR_GRAD_FOG_PERMAFOG};
         default = FOG_FOG_1800;
     };
-};
-
-class EngimaTraffic {
-    vehicleSets[] = {"RDS_CIV", "RHS_GREF"};
+    class NumberOfLrRadiosForOpfor {
+        title = $STR_GRAD_numberOfLrRadiosForOpfor;
+        values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        default = 0;
+    };
 };
 
 #include "cfgFunctions.hpp"
-#include "ace_settings.h"
-#include "loadouts.h"
+#include "loadouts.hpp"
+
+#include "node_modules\@gruppe-adler\replay\ui\defines.hpp"
+#include "node_modules\@gruppe-adler\replay\ui\dialog.hpp"
+
 #include "node_modules\grad-leaveNotes\grad_leaveNotes.hpp"
+
+#include "node_modules\grad-passport\grad_passport.hpp"
+#include "ui\austrian_id_card_rsc.hpp"
 
 class CfgSounds {
 	sounds[] = {};
@@ -65,4 +78,27 @@ class CfgSounds {
 class RscTitles
 {
     #include "IdCard.hpp"
+};
+
+
+class CfgDebriefing
+{  
+	class deadwin
+	{
+		title = "You are dead.";
+		subtitle = "Dead people do not win.";
+		description = "Your team won, but you did not. You died.";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+};
+
+class GRAD_Replay {
+	trackedSides[] = {"west", "east", "civilian", "independent"};
+	trackedVehicles = 0;                              
+	trackedAI = 0;                                    
+	sendingChunkSize = 10;                            
+	trackShots = 1;                                   
+	upload = 1;                                       
 };

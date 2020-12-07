@@ -7,27 +7,23 @@
 				<German>Catch the Flight</German>
 			</Key>
 			<Key ID="str_GRAD_onLoadMission">
-				<Original>The military wants to kill someone who doesnt want to die.</Original>
-				<German>Das Militär will jemanden umbringen, der nicht sterben möchte.</German>
+				<Original>It's a peaceful morning, but smuggler Schellnhuber is in quite a hurry.</Original>
+				<German>Ein scheinbar friedlicher Morgen, doch Schmuggler Schellnhuber hat es überaus eilig.</German>
 			</Key>
 			<Key ID="str_GRAD_overviewText">
 				<Original>
-					The military administration is moving to arrest someone they dont like.
-					Luckily, that person got warned. And he's got some good friends who will try to help him get away
+					The military administration is moving to arrest notrious smuggler Schellnhuber.
+					Luckily, he got warned. And he's got some good friends who will try to help him get away
 					from the island.
 				</Original>
 				<German>
-					Die Militärverwaltung rückt aus, um eine in Ungnade gefallene Person zu verhaften.
-					Glücklicherweise hat derjenige einige gute Freunde, ihm helfen wollen, von der Insel zu entkommen.
+					Die Militärverwaltung rückt aus, um Schellnhuber das Lebenslicht auszupusten.
+					Glücklicherweise hat er Unterstützer, die ihm helfen können von der Insel zu entkommen.
 				</German>
 			</Key>
 			<Key ID="str_GRAD_debugMode">
 				<Original>debug mode</Original>
 				<German>Debugmodus</German>
-			</Key>
-            <Key ID="str_GRAD_backgroundCheckDurationInSeconds">
-				<Original>Background check duration in seconds</Original>
-				<German>Dauer der Hintergrundüberprüfung in Sekunden</German>
 			</Key>
 			<Key ID="str_GRAD_no">
 				<Original>no</Original>
@@ -41,6 +37,11 @@
                 <Original>fog settings</Original>
                 <German></German>
             </Key>
+			<Key ID="str_GRAD_numberOfLrRadiosForOpfor">
+                <Original>number of long range radios stashed in crates for the military</Original>
+                <German>Anzahl an LR-Funkgeräten, die für das Militär in Kisten bereitgestellt werden</German>
+            </Key>
+			
 			<Key ID="str_GRAD_FOG_NOFOG">
 				<Original>no fog</Original>
 				<German></German>

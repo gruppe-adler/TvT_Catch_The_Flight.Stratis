@@ -1,7 +1,16 @@
+#include "..\script_component.hpp"
 
-#define PREFIX mission
-#define COMPONENT fn
-#include "\x\cba\addons\main\script_macros_mission.hpp"
+params [
+    ["_alertedTrigger", objNull, [objNull]]
+];
+
+if (!(alive unit_indep_c)) exitWith {
+    INFO("Katzenwachenalarm wird abgebrochen, Schlemihl lebt nicht mehr");
+};
+if (mission_state_katzenwache) exitWith {
+    INFO("Katzenwachenalarm wird abgebrochen, wurde schon getriggert");
+};
+mission_state_katzenwache = true;
 
 INFO("Katzenwachenalarm getriggert!");
 
@@ -11,11 +20,26 @@ INFO("Katzenwachenalarm getriggert!");
 
 } remoteExec ["BIS_fnc_call", [RESISTANCE], true];
 
-{
-    if (!(isNil "task_opfor_katzenwache")) then {
-        ["Unsere Leute am Flughafen wurden entdeckt. Verdächtige Aktivität im Nordteil der Insel gemeldet. Wir fürchten, die Zielperson könnte von dort per Boot flüchten."] call Mission_fnc_showHint;
-        {
-            _x setTaskState "failed";
-        } forEach task_opfor_katzenwache;
-    };
-} remoteExec ["BIS_fnc_call", [EAST, CIVILIAN], true];
+[
+    [_alertedTrigger], 
+    {
+        params [
+            ["_alertedTrigger", objNull, [objNull]]
+        ];
+        if (!(isNil "task_opfor_katzenwache")) then {
+            ["Unsere Leute am Flughafen wurden entdeckt. Verdächtige Aktivität im Nordteil der Insel gemeldet. Wir fürchten, die Zielperson könnte von dort per Boot flüchten."] call Mission_fnc_showHint;
+            {
+                _x params [
+                    ["_trigger", objNull, [objNull]],
+                    ["_task", taskNull, [taskNull]]
+                ];
+                if (_trigger isEqualTo _alertedTrigger) then {
+                    _task setTaskState "FAILED";
+                } else {
+                    _task setTaskState "CANCELED";
+                };
+                
+            } forEach task_opfor_katzenwache;
+        };
+    }
+] remoteExec ["BIS_fnc_call", [EAST, CIVILIAN], true];

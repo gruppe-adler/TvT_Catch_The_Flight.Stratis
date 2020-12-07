@@ -2,8 +2,8 @@
 
 {
     if (player call Mission_fnc_getAllegiance == opfor) then {
-        ["Zielperson am Flughafen gesichtet!"] call Mission_fnc_showHint;
+        ["Zielperson an Strand im Norden der Insel gesichtet!"] call Mission_fnc_showHint;
     };
 } remoteExec ["BIS_fnc_call", [EAST, CIVILIAN], true];
 
-INFO("opfor & associates alerted to target person being at airport");
+INFO("opfor & associated alerted to target person being at a beach");
