@@ -12,18 +12,12 @@ _triggerIndepCMarkerForOpfor = {
 };
 
 params [
-    ["_deceased", objNull, [objNull, sideUnknown]], 
+    ["_deceased", objNull, [objNull]], 
     ["_killer", objNull, [objNull]]
 ];
 
-private _deceasedAllegiance = sideUnknown;
-if (_deceased isEqualType sideUnknown) then {
-    _deceasedAllegiance = _deceased;
-    _deceased = objNull;
-} else {
-    _killer = [_deceased, _killer] call Mission_fnc_getRealKiller;
-    _deceasedAllegiance = _deceased call Mission_fnc_getAllegiance;
-};
+_killer = [_deceased, _killer] call Mission_fnc_getRealKiller;
+private _deceasedAllegiance = _deceased call Mission_fnc_getAllegiance;
 private _killerAllegiance = _killer call Mission_fnc_getAllegiance;
 
 TRACE_3("killer for %1 (side %2) is %3", _deceased, _deceasedAllegiance, _killer);
