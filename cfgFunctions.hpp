@@ -37,7 +37,7 @@ class CfgFunctions {
             class setAllSidesFriendly {};
             class setupACEInteractVehicleRelease {};
             class setupMurderWatch {};
-            class setupVehicleTheftWatch {};
+            class setupPlayerGetInVehicleWatch {};
             class setupTasks {};
             class showHint {};
             class spawn_boat {};

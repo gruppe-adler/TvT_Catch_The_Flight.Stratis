@@ -42,4 +42,3 @@ mission_winConditionFulfilledHandle = [
 ] call CBA_fnc_addEventHandler;
 
 { _x call Mission_fnc_setupMurderWatch; } forEach ([allUnits, {local _this}] call CBA_fnc_select);
-{ _x call Mission_fnc_setupVehicleTheftWatch; } forEach ([vehicles, {(local _this) && (_this isKindOf "Car") }] call CBA_fnc_select);
