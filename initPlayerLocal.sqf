@@ -38,3 +38,5 @@ _player call Mission_fnc_setupPlayerGetInVehicleWatch;
 GVAR(drowningTimeout) = 600;
 
 [QGVAR(spawnPosition), { player setPos _this}] call CBA_fnc_addEventHandler;
+
+[QGVAR(playerConnected), player] call CBA_fnc_serverEvent;

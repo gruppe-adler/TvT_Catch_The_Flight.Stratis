@@ -22,10 +22,9 @@ GVAR(civSpawnPositions) = (allUnits select { typeOf _x == "C_Soldier_VR_F"}) app
 	deleteVehicle _x;
 	_pos
 };
+ISNILS(GVAR(randomCivSpawnPositions), []);
 
-
-
-addMissionEventHandler [QGVAR(playerConnected), {
+[QGVAR(playerConnected), {
 	if (count GVAR(randomCivSpawnPositions) == 0) then {
 		GVAR(randomCivSpawnPositions) = GVAR(civSpawnPositions) call BIS_fnc_arrayShuffle;	
 	};
@@ -33,4 +32,4 @@ addMissionEventHandler [QGVAR(playerConnected), {
 	private _player = _this;
 	
 	[QGVAR(spawnPosition), _pos, _player] call CBA_fnc_targetEvent;
-}];
+}] call CBA_fnc_addEventHandler;
