@@ -15,3 +15,22 @@ GVAR(civPlayerAllegiances) = [] call CBA_fnc_HashCreate;
 
 GVAR(NumberOfLrRadiosForOpfor) = "NumberOfLrRadiosForOpfor" call BIS_fnc_getParamValue;
 opfor_crate addBackpackCargoGlobal ["TFAR_anprc155_coyote", GVAR(NumberOfLrRadiosForOpfor)];
+
+
+GVAR(civSpawnPositions) = (allUnits select { typeOf _x == "C_Soldier_VR_F"}) apply {
+	private _pos = getPos _x;
+	deleteVehicle _x;
+	_pos
+};
+
+
+
+addMissionEventHandler [QGVAR(playerConnected), {
+	if (count GVAR(randomCivSpawnPositions) == 0) then {
+		GVAR(randomCivSpawnPositions) = GVAR(civSpawnPositions) call BIS_fnc_arrayShuffle;	
+	};
+	private _pos = GVAR(randomCivSpawnPositions) deleteAt 0;
+	private _player = _this;
+	
+	[QGVAR(spawnPosition), _pos, _player] call CBA_fnc_targetEvent;
+}];

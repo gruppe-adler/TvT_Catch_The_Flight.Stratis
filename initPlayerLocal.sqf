@@ -1,4 +1,3 @@
-
 #define PREFIX mission
 #define COMPONENT fn
 #include "\x\cba\addons\main\script_macros_mission.hpp"
@@ -37,3 +36,5 @@ _player call Mission_fnc_setupPlayerGetInVehicleWatch;
 ] call CBA_fnc_waitAndExecute;
 
 GVAR(drowningTimeout) = 600;
+
+[QGVAR(spawnPosition), { player setPos _this}] call CBA_fnc_addEventHandler;
